@@ -59,7 +59,7 @@ snapMRF实现MRF重建参数图一共可以分为5个部分，其中前两步为
 	
 	\item \texttt{decay\_signal()}将$T_1$和$T_2$衰减作用在状态矩阵\texttt{*d\_w}中并把结果保存在状态矩阵中。这里衰减的时间有四种不同的选择，分别为：$T_\mathrm{E}$ (\texttt{type=1})，$T_\mathrm{R}-T_\mathrm{E}$ (\texttt{type=2})，$T_\mathrm{E}/2$ (\texttt{type=3})和$T_\mathrm{R}$ (\texttt{type=4})。$T_\mathrm{E}$和$T_\mathrm{R}$存储在向量\texttt{*d\_mrf}中，而$T_1$和$T_2$存储在向量{*d\_params}。这个核相当于EPG模型中的$E$算子。
 	
-	\item \texttt{dephase\_gradients()}将失相效果作用于状态矩阵\texttt{*d\_w}上，并将结果保存回状态矩阵。这个核相当于EPG模型中的$S$算子。
+	\item \texttt{dephase\_gradients()}将失相效果作用于状态矩阵\texttt{*d\_w}上，并将结果保存回状态矩阵。这个核相当于EPG模型中的$H$算子。
 \end{itemize}
 
 \section{单元测试}
