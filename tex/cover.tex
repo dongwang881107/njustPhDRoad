@@ -1,0 +1,57 @@
+%%
+%%% >>> Title Page
+%%
+%%
+%%%%********************** Chinese Title Page ****************************************
+%%
+  \classification{}
+  \confidential{}
+  \UDC{}
+%% 标题格式 \title[short title for headers]{Long title of thesis}
+  \title[MR快速成像的数学模型和加速方法]{MR快速成像的数学模型和加速方法}
+  \titleUpp{MR快速成像的数学模型}
+  \titleLow{和加速方法}
+  \author{王冬}
+  \advisor{杨孝平}
+  \advisortitle{教授}
+  \degree{工学博士}
+  \major{控制科学与工程}
+  \interest{图像处理的数学建模、理论和算法}
+  \school{南京理工大学}
+  \submitdate{2019.10}
+  \incoverdate{2019年10月}
+  %
+  \titleBackbone{M\\R\\快\\速\\成\\像\\的\\数\\学\\模\\型\\和\\加\\速\\方\\法}
+  \schoolBackbone{南\\京\\理\\工\\大\\学}
+%%
+%%%%********************** English Title Page ****************************************
+%%
+  \englishtitle{Mathematical models and acceleration methods in MR rapid imaging}
+  \englishauthor{Dong Wang}
+  \englishadvisor{Xiaoping Yang}
+  \englishinstitute{Nanjing University of Science \& Technology}
+  \englishdate{October, 2019}
+  \englishdegree{Dissertation}
+%%
+%%%%********************** Generate CHN & Eng Title ***********************************
+%%%
+%%
+\maketitle
+%%
+\makeincovertitle
+%%
+\makeenglishtitle
+%% make statement page
+\makeatletter
+\cleardoublepage
+\thispagestyle{empty}
+\begin{center}
+\input{tex/statement}
+\end{center}
+\clearpage
+\if@twoside
+  \thispagestyle{empty}
+  \cleardoublepage
+\fi
+ \makeatother
+%%%%*********************************** END *******************************************

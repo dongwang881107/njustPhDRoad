@@ -1,0 +1,305 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdftex 2018.10.29)  14 MAY 2019 20:57
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**njustThesis.cfg
+(./njustThesis.cfg
+./njustThesis.cfg:14: Undefined control sequence.
+l.14 \ProvidesFile
+                  {njustThesis.cfg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:179: Undefined control sequence.
+l.179 \CTEXsetup
+                [name={,}]{chapter}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:180: Undefined control sequence.
+l.180 \CTEXsetup
+                [number={\arabic{chapter}}]{chapter}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:180: Undefined control sequence.
+l.180 \CTEXsetup[number={\arabic
+                                {chapter}}]{chapter}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:213: Undefined control sequence.
+l.213 \theoremstyle
+                   {plain}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:214: Undefined control sequence.
+l.214   \newtheorem
+                   {algo}{ÁÆóÊ≥ï\ }[chapter]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Á in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ó in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no ï in font cmr10!
+./njustThesis.cfg:215: Undefined control sequence.
+l.215   \newtheorem
+                   {thm}{ÂÆöÁêÜ\ }[chapter]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no Á in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no Ü in font cmr10!
+./njustThesis.cfg:216: Undefined control sequence.
+l.216   \newtheorem
+                   {lem}[thm]{ÂºïÁêÜ\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ï in font cmr10!
+Missing character: There is no Á in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no Ü in font cmr10!
+./njustThesis.cfg:217: Undefined control sequence.
+l.217   \newtheorem
+                   {prop}[thm]{ÂëΩÈ¢ò\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ë in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no È in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no ò in font cmr10!
+./njustThesis.cfg:218: Undefined control sequence.
+l.218   \newtheorem
+                   {cor}[thm]{Êé®ËÆ∫\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no é in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no Ë in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ∫ in font cmr10!
+./njustThesis.cfg:219: Undefined control sequence.
+l.219 \theoremstyle
+                   {definition}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:220: Undefined control sequence.
+l.220   \newtheorem
+                   {defn}{ÂÆö‰πâ\ }[chapter]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no π in font cmr10!
+Missing character: There is no â in font cmr10!
+./njustThesis.cfg:221: Undefined control sequence.
+l.221   \newtheorem
+                   {conj}{ÁåúÊÉ≥\ }[chapter]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Á in font cmr10!
+Missing character: There is no å in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no É in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+./njustThesis.cfg:222: Undefined control sequence.
+l.222   \newtheorem
+                   {exmp}{‰æã\ }[chapter]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no æ in font cmr10!
+Missing character: There is no ã in font cmr10!
+./njustThesis.cfg:223: Undefined control sequence.
+l.223   \newtheorem
+                   {rem}{Ê≥®\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no ® in font cmr10!
+./njustThesis.cfg:224: Undefined control sequence.
+l.224   \newtheorem
+                   {case}{ÊÉÖÂΩ¢\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no É in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+./njustThesis.cfg:225: Undefined control sequence.
+l.225 \theoremstyle
+                   {break}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:226: Undefined control sequence.
+l.226   \newtheorem
+                   {bthm}[thm]{ÂÆöÁêÜ\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no Á in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no Ü in font cmr10!
+./njustThesis.cfg:227: Undefined control sequence.
+l.227   \newtheorem
+                   {blem}[thm]{ÂºïÁêÜ\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ï in font cmr10!
+Missing character: There is no Á in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no Ü in font cmr10!
+./njustThesis.cfg:228: Undefined control sequence.
+l.228   \newtheorem
+                   {bprop}[thm]{ÂëΩÈ¢ò\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ë in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no È in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no ò in font cmr10!
+./njustThesis.cfg:229: Undefined control sequence.
+l.229   \newtheorem
+                   {bcor}[thm]{Êé®ËÆ∫\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no é in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no Ë in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ∫ in font cmr10!
+./njustThesis.cfg:230: Undefined control sequence.
+l.230 \renewcommand
+                   {\proofname}{\bf ËØÅÊòé}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./njustThesis.cfg:230: Undefined control sequence.
+l.230 \renewcommand{\proofname
+                              }{\bf ËØÅÊòé}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ë in font cmbx10!
+Missing character: There is no Ø in font cmbx10!
+Missing character: There is no Å in font cmbx10!
+Missing character: There is no Ê in font cmbx10!
+Missing character: There is no ò in font cmbx10!
+Missing character: There is no é in font cmbx10!
+)
+! Emergency stop.
+<*> njustThesis.cfg
+                   
+*** (job aborted, no legal \end found)
+
+!  ==> Fatal error occurred, no output PDF file produced!
