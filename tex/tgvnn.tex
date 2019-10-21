@@ -114,7 +114,7 @@ $$\mathrm{TGV}_\alpha^2(u)=\min_{\omega\in \mathrm{BD}(\Omega)}\alpha_1\|\nabla_
 \subsection{模型离散化}
 为了求解模型，我们给出$\mathrm{TGV}_{\alpha}^2$的离散格式。本节的离散化可参照文献\cite{tgv,pd}。首先将区域$\Omega\subset\mathbb{C}^3$离散为网格：
 $$\Omega=\{(i,j,k)\big|1\leq i\leq N_1, 1\leq j\leq N_2, 1\leq k\leq d\},$$
-其中$m$, $n$和$d$是动态图像的维度。假设$U=\mathbb{C}^{N_1\times N_2\times d}$, $V=U\times U\times U=U^3$和$W=U\times U\times U\times U\times U\times U=U^6$是三个有限维空间。定义空间$U$中的标量内积$\langle u,u' \rangle _U=\sum_{(i,j,k)\in \Omega}u_{i,j,k}u'_{i,j,k}, u,u'\in U$，范数$\|u\|_U=\sqrt{\langle u,u \rangle _U}$。同样的，$V$和$W$中的标量内积分别为$\langle v,v'\rangle_V=\sum_{i=1}^3\langle v_i,v_i'\rangle_U$和$\langle w,w'\rangle_W=\sum_{i=1}^3\langle w_i,w_i'\rangle_U + 2\sum_{i=4}^6\langle w_i,w_i'\rangle_U$。
+其中$N_1$，$N_2$和$d$是动态图像的维度。假设$U=\mathbb{C}^{N_1\times N_2\times d}$, $V=U\times U\times U=U^3$和$W=U\times U\times U\times U\times U\times U=U^6$是三个有限维空间。定义空间$U$中的标量内积$\langle u,u' \rangle _U=\sum_{(i,j,k)\in \Omega}u_{i,j,k}u'_{i,j,k}, u,u'\in U$，范数$\|u\|_U=\sqrt{\langle u,u \rangle _U}$。同样的，$V$和$W$中的标量内积分别为$\langle v,v'\rangle_V=\sum_{i=1}^3\langle v_i,v_i'\rangle_U$和$\langle w,w'\rangle_W=\sum_{i=1}^3\langle w_i,w_i'\rangle_U + 2\sum_{i=4}^6\langle w_i,w_i'\rangle_U$。
 
 在这里，用有限差分来离散$\mathrm{TGV}_{\alpha}^2$，空间步长为1，时间步长由参数$\mu$决定。向前向后差分算子记作：
 \begin{align*}
