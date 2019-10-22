@@ -157,10 +157,12 @@ NN & 0.3 & 40 & - & - & -\\
 数据通过Cartesian全采样模式获得，然后通过一些列的随机采样模式进行回顾性下采样。虽然前瞻性下采样更加符合现实，但是前瞻性地获取上百种不同的下采样模式是不切实际的。为了缩小文章的重点，我们只选取了肿瘤中心所在的切片。在我们的数据中，这是第6个切片。同时在所有的重建中，我们切除了胸腔的后边部分来增加图像的稀疏性，这是因为跳动的心脏会在相位编码方向上产生伪影，从而降低重建图像的信噪比。切掉胸腔的过程可以在下采样数据中进行，因为即使在充满伪影的图像中，胸腔也是很容易被划分出来的。最终图像的维度为$192\times 128\times 105$。
 
 \subsection{下采样方法}
-我们生成了200个不同的Cartesian下采样模式，每个采样模式的维度都和数据相同，即$192\times 128\times 105$。在每一帧图像上，我们对低频区域进行全采样，对高频区域进行随机采样。具体来说，我们在k-space中选取中心窗口大小为20的区域作为低频区域，而在外围的高频区域，我们随机选择一些相位编码线，使得总体来说外围的每一条相位编码被选取的次数相同。这200个下采样模式的平均下采样率为4.5。这里我们选择4.5是因为Cartesian采样的固有限制，更高的采样率可以使用non-Cartesian采样模式获得，但这不在本文考虑范围内。图\ref{fig:mask}显示了一个Cartesian采样模式的例子。
+我们生成了200个不同的Cartesian下采样模式，每个采样模式的维度都和数据相同，即$192\times 128\times 105$。在每一帧图像上，我们对低频区域进行全采样，对高频区域进行随机采样。具体来说，我们在k-space中选取中心窗口大小为20的区域作为低频区域，而在外围的高频区域，我们随机选择一些相位编码线，使得总体来说外围的每一条相位编码被选取的次数相同。这200个下采样模式的平均下采样率为4.5。这里我们选择4.5是因为Cartesian采样的固有限制，更高的采样率可以使用non-Cartesian采样模式获得，但这不在本文考虑范围内。图\ref{fig:mask1}显示了一个Cartesian采样模式的例子。
 
 \begin{figure}[htbp]
 \centering
+  \setlength{\abovecaptionskip}{20pt}
+  \setlength{\belowcaptionskip}{20pt}  
   \begin{overpic}[scale=0.6]{img/qetsr/figure1.eps}
     \put(-7,34){\large \color{black}{\bf $k_y$}}
     \put(45,34){\large \color{black}{\bf $k_y$}}
@@ -169,9 +171,9 @@ NN & 0.3 & 40 & - & - & -\\
   \end{overpic}
   \\
 \caption{
-Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在x方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。
+Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在$x$方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。
 }
-\label{fig:mask}
+\label{fig:mask1}
 \end{figure}
 
 \subsection{评估方法}
@@ -181,7 +183,7 @@ Cartesian采样模式的例子。左图显示的是所有帧的采样模式，�
 \end{equation}
 其中$X_{\mathrm{ori}}$为全采样图像，即原图像，$X_{\mathrm{rec}}$为算法重建后的图像。
 
-我们使用的第二种评估方法是通过DCE-MRI的药代动力学(pharmacokinetic)模型来进行定量分析。本文我们使用最常用的标准Tofts-Kely模型\cite{tofts}来计算\kt 和\Ve 的值。首先我们分别计算全采样和重建图像\kt 和\Ve，然后用一致性相关系数 (concordance correlation coefficients, CCC)来度量他们之间的相似性程度。这是DCE-MRI中进行定量参数分析的常用方法。在统计学上，CCC的定义如下：
+我们使用的第二种评估方法是通过DCE-MRI的药代动力学(pharmacokinetic)模型来进行定量分析。本文我们使用最常用的标准Tofts-Kely模型\cite{tofts}来计算\kt 和\Ve 的值。首先我们分别计算全采样和重建图像\kt 和\Ve，然后用一致性相关系数（concordance correlation coefficients，CCC）来度量他们之间的相似性程度。这是DCE-MRI中进行定量参数分析的常用方法。在统计学上，CCC的定义如下：
 \begin{equation}
 \mathrm{CCC} = \frac{2\sigma_\mathrm{ori} \sigma_\mathrm{rec}}{\sigma_\mathrm{ori}^2+\sigma_\mathrm{rec}^2+(\mu_\mathrm{ori}-\mu_\mathrm{rec})^2},
 \end{equation}

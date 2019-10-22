@@ -50,7 +50,7 @@ MR成像过程通常被建模为二维或三维空间的Fourier编码，即首�
 
 加速MR成像通常的思路是在不降低图像质量的前提下，减少获取的k-space数据，从而达到加速成像的效果。但由于下采样时，采样率没有达到Nyquist采样定理的要求，通过简单的Fourier补零重建的图像（称为zerofilled图像）会出现下采样伪影，而消除伪影主要有以下三个策略。第一种策略是使得生成的伪影与图像非相干或者在视觉上不明显\cite{Tsai,Marseille,Greiser}，但这些方法所得到的重建图像通常信噪比低。第二种策略是利用k-space中数据的冗余性，比如部分傅里叶成像\cite{McGibney}（partial-Fourier）和平行成像（parallel MRI, pMRI）。pMRI是目前在临床上应用比较成功的一大类加速方法，它是一种以空间换时间的成像策略。具体来说，pMRI通过多个成像线圈接收信号，而每个线圈都在k-space进行下采样，最后通过算法将所有线圈接收到的数据还原出来。经典的pMRI方法有SENSE（sensitivity encoding）\cite{sense}，SMASH（simultaneous acquisition of apatial harmonics）\cite{smash}，GRAPPA（generalized autocalibrating partially parallel acquisitions）\cite{grappa}等。第三种策略是利用图像在空间域或者时间域上的冗余性，如UNFOLD\cite{Madore}和k-t BLAST/SNESE\cite{Tsao}等。可以看出，以上方法的共同点是假设MR图像中存在着冗余性，并且可以利用这些冗余性来降低采样率，以达到加速成像的目的。
 
-2005年，Candès，Tao，Romberg\cite{candes2004near,candes2006compressive,candes2006quantitative,candes2006stable}和Donoho\cite{Donoho2006Compressed}等人提出了压缩感知（compressed sensing）理论。压缩感知是一种新的采样理论，可以加速信号的采集与重建。根据传统Nyquist采样定理\cite{Nyquist}，当采样率达到信号最高频率两倍以上的时，信号才可以被精确地重建出来。我们称满足Nyquist采用定理的采样方式成为全采样。当对信号进行均匀下采样时，采集到的信号会出现相干伪影，使用传统的重建方法很难将其去除。而压缩感知理论突破了Nyquist定理对高采样率要求的限制，可以用很少的数据来精确地重建信号。压缩感知理论有三个主要部分，分别为稀疏性、非相干下采样和非线性重建算法。具体来说，首先假设信号在某个变换域稀疏，对信号进行非相干下采样，然后通过非线性重建算法即可以高概率地将信号重建出来。因此，压缩感知理论自诞生以来就被应用在MR成像中，可以显著地提高成像速度和质量，并成为了快速MR成像的主流方法。本论文研究的重点之一即为压缩感知在MRI中的应用，我们将在第\ref{sec:cs,sec:csmri}小节介绍基于压缩感知的MR成像的研究现状。
+2005年，Candès，Tao，Romberg\cite{candes2004near,candes2006compressive,candes2006quantitative,candes2006stable}和Donoho\cite{Donoho2006Compressed}等人提出了压缩感知（compressed sensing）理论。压缩感知是一种新的采样理论，可以加速信号的采集与重建。根据传统Nyquist采样定理\cite{Nyquist}，当采样率达到信号最高频率两倍以上的时，信号才可以被精确地重建出来。我们称满足Nyquist采用定理的采样方式成为全采样。当对信号进行均匀下采样时，采集到的信号会出现相干伪影，使用传统的重建方法很难将其去除。而压缩感知理论突破了Nyquist定理对高采样率要求的限制，可以用很少的数据来精确地重建信号。压缩感知理论有三个主要部分，分别为稀疏性、非相干下采样和非线性重建算法。具体来说，首先假设信号在某个变换域稀疏，对信号进行非相干下采样，然后通过非线性重建算法即可以高概率地将信号重建出来。因此，压缩感知理论自诞生以来就被应用在MR成像中，可以显著地提高成像速度和质量，并成为了快速MR成像的主流方法。本论文研究的重点之一即为压缩感知在MRI中的应用，我们将在第\ref{sec:cs}和\ref{sec:csmri}小节介绍基于压缩感知的MR成像的研究现状。
 
 \section{压缩感知的基本理论}
 \label{sec:cs}
@@ -236,7 +236,7 @@ FISTA算法是压缩感知重建中常用的算子分裂算法之一，被广泛
 Primal-Dual\cite{pd}算法是近年来比较热门的一阶算法，收敛速度快，并且算法的收敛有着严格的定理保证。Primal-Dual算法被广泛应用于凸-凹鞍点问题的极大极小问题中：
 \beq
 \min_{x\in\mathcal{X}}\max_{y\in\mathcal{Y}}\quad\langle \mathcal{K}x,y\rangle+f(x)-g(y),
-\label{equ:saddle}
+\label{equ:saddle1}
 \eeq
 其中$\mathcal{X}$和$\mathcal{Y}$是Hilbert空间，$\mathcal{K}:\mathcal{X}\rightarrow\mathcal{Y}$是线性连续映射，并且泛函$f:\mathcal{X}\rightarrow(-\infty,\infty]$和$g:\mathcal{Y}\rightarrow(-\infty,\infty]$是适定的、凸的和下半连续的。这里我们仅给出$l_1$稀疏优化问题（\ref{equ:unconstraint}）的Primal-Dual算法的迭代步骤，如算法\ref{alg:primaldual}所示。具体的推导过程和详细信息请参考第\ref{chap:tgvlr}章。
 \begin{algorithm}
@@ -318,7 +318,7 @@ MR成像是从Fourier域（也称为k-space）采样并重建数据的过程。�
 }
 \centering
 \caption{MRI中常用的采样模式}
-\label{fig:pattern}
+\label{fig:mask}
 \end{figure}
 
 如何设计压缩感知MR重建的采样模式一直是研究人员所关心的话题，也决定着重建图像质量的好坏和重建算法的速度。设计的思路之一是将以上四种采样模式进行组合。比如，对于二维MR成像，伪径向采样\cite{Sajan2011Accelerated}（pseudo radial sampling）也是常见的采样模式，如图\ref{fig:mask1}所示。伪径向采样结合了Cartesian和径向采样的优点，其采样点均在Cartesian网格上，同时使得采样点尽量沿径向方向。这样既可以获得高的采样率，又简化了计算。对于动态MR成像或者三维MR成像，由于其冗余性体现在多个维度上，采样矩阵的设计有了更大的空间。文献\cite{smith2012}针对胸部DCE-MRI图像，结合了Cartesian采样和随机采样，如图\ref{fig:mask1}（a）所示。具体来说，在每一帧图像上使用Cartesian采样，并使得帧与帧之间采样有最大的正交性。文献\cite{Sajan2011Accelerated}中针对动态MR图像，结合了伪径向采样和随机采样，如图\ref{fig:mask1}（b）所示。具体来说，在每一帧图像上均匀地选取一些伪径向采样线，并使得帧与帧之间的采样线随机转动一个角度以增加非相干性，即在空间上采用伪径向采样，在时间上采用随机采样，这也是动态MR采样模式的设计思路之一。文献\cite{holland2013compressed}针对fMRI图像，采用了变化密度螺旋采样模式。具体来说，这种采样方式使得k-space中心区域可以达到Nyquist采样率，而k-space的外围则是下采样，从而增加了采样的非相干性。除了fMRI，变化密度螺旋采样也被应用在心脏电影成像\cite{kressler2007three}、扩散张量成像\cite{karampinos2009high}、心脏血管造影成像\cite{santos2006single}中。

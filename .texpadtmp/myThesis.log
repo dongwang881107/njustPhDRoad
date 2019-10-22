@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  21 OCT 2019 23:24
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  22 OCT 2019 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1585,13 +1585,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enitdp@description=\count349
 )) (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.aux
 
-LaTeX Warning: Label `equ:saddle' multiply defined.
-
-
-LaTeX Warning: Label `tab:cartesian' multiply defined.
-
-
-LaTeX Warning: Label `fig:mask' multiply defined.
+LaTeX Warning: Label `fig:mask1' multiply defined.
 
 )
 \openout1 = `myThesis.aux'.
@@ -2016,10 +2010,6 @@ File: img/intro/t2.eps Graphic file (type eps)
 [1
 
 ] [2]
-
-LaTeX Warning: Reference `sec:cs,sec:csmri' on page 3 undefined on input line 53.
-
-
 Overfull \hbox (2.99277pt too wide) in paragraph at lines 53--54
 []\TU/lmr/m/n/12.045 2005 \TU/STSong(0)/m/n/12.045 年，| \TU/lmr/m/n/12.045 Candès\TU/STSong(0)/m/n/12.045 ，| \TU/lmr/m/n/12.045 Tao\TU/STSong(0)/m/n/12.045 ，| \TU/lmr/m/n/12.045 Romberg$[]$ \TU/STSong(0)/m/n/12.045 和 \TU/lmr/m/n/12.045 Donoho$[]$ \TU/STSong(0)/m/n/12.045 等 人 提 出 了 压 缩 感 知  |（\TU/lmr/m/n/12.045 compressed
  []
@@ -2361,17 +2351,14 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
  29157 strings out of 492970
- 591938 string characters out of 6133937
- 678660 words of memory out of 5000000
+ 591931 string characters out of 6133937
+ 678704 words of memory out of 5000000
  32605 multiletter control sequences out of 15000+600000
  563143 words of font info for 205 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

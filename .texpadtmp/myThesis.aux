@@ -101,7 +101,7 @@
 \newlabel{alg:fista}{{2}{8}{FISTA算法迭代流程\relax }{algorithm.2}{}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces $l_1$稀疏重建的FISTA算法\relax }}{8}{algorithm.3}}
 \newlabel{alg:fista2}{{3}{8}{$l_1$稀疏重建的FISTA算法\relax }{algorithm.3}{}}
-\newlabel{equ:saddle}{{1.17}{8}{非线性重建算法}{equation.1.2.17}{}}
+\newlabel{equ:saddle1}{{1.17}{8}{非线性重建算法}{equation.1.2.17}{}}
 \citation{Donoho2006Compressed}
 \citation{lustig2006}
 \citation{lustig2006}
@@ -139,7 +139,7 @@
 \citation{karampinos2009high}
 \citation{santos2006single}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces MRI中常用的采样模式\relax }}{12}{figure.caption.8}}
-\newlabel{fig:pattern}{{1.5}{12}{MRI中常用的采样模式\relax }{figure.caption.8}{}}
+\newlabel{fig:mask}{{1.5}{12}{MRI中常用的采样模式\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Cartesian采样}}}{12}{figure.caption.8}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {径向采样}}}{12}{figure.caption.8}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {螺旋采样}}}{12}{figure.caption.8}}
@@ -399,7 +399,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}比较方法}{56}{subsection.3.3.2}}
 \citation{ssim}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 文章使用的动态采样模式（一帧）。\relax }}{57}{figure.caption.25}}
-\newlabel{fig:mask}{{3.1}{57}{文章使用的动态采样模式（一帧）。\relax }{figure.caption.25}{}}
+\newlabel{fig:mask3}{{3.1}{57}{文章使用的动态采样模式（一帧）。\relax }{figure.caption.25}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {动态伪随机采样（一帧）}}}{57}{figure.caption.25}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {动态Cartesian采样（一帧）}}}{57}{figure.caption.25}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces 文章提出模型使用的参数\relax }}{58}{table.caption.26}}
@@ -421,7 +421,6 @@
 \newlabel{fig:breast2}{{3.6}{63}{各个模型在Breast2上的重建结果（第25帧）。为了在视觉上更好地展示胸部肿瘤，我们切除了心脏部分。第1行：重建图像；第2行：红色方框区域的放大图像；第3行：相对于原始图像的差值图像；第4行：红色方框区域放大的差值图像。为了增加可见度，差值图像放大了10倍。\relax }{figure.caption.32}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces 各个模型在Breast3上的重建结果（第1帧）。为了在视觉上更好地展示胸部肿瘤，我们切除了心脏部分。第1行：重建图像；第2行：红色方框区域的放大图像；第3行：相对于原始图像的差值图像；第4行：红色方框区域放大的差值图像。为了增加可见度，差值图像放大了10倍。\relax }}{64}{figure.caption.33}}
 \newlabel{fig:breast3}{{3.7}{64}{各个模型在Breast3上的重建结果（第1帧）。为了在视觉上更好地展示胸部肿瘤，我们切除了心脏部分。第1行：重建图像；第2行：红色方框区域的放大图像；第3行：相对于原始图像的差值图像；第4行：红色方框区域放大的差值图像。为了增加可见度，差值图像放大了10倍。\relax }{figure.caption.33}{}}
-\newlabel{tab:cartesian}{{3.4}{65}{实验结果}{table.caption.36}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces 各个模型在Breast1上的重建结果（时间方向）。（a）、（b）和（c）行分别为重建图像的第1，第53和第105帧；（d）行是肿瘤区域（红色方框）的平均像素值时间曲线；（e）行是肿瘤区域某一像素点的像素值时间曲线。\relax }}{66}{figure.caption.35}}
 \newlabel{fig:breast1_time}{{3.8}{66}{各个模型在Breast1上的重建结果（时间方向）。（a）、（b）和（c）行分别为重建图像的第1，第53和第105帧；（d）行是肿瘤区域（红色方框）的平均像素值时间曲线；（e）行是肿瘤区域某一像素点的像素值时间曲线。\relax }{figure.caption.35}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces 各个模型在不同加速因子下在Breast1数据上的重建结果\relax }}{66}{table.caption.36}}
@@ -478,14 +477,14 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}评估方法}{74}{subsection.4.3.3}}
 \citation{Smith2015}
 \citation{qetsr}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces  Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在x方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。 \relax }}{75}{figure.caption.39}}
-\newlabel{fig:mask}{{4.1}{75}{Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在x方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。 \relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces  Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在$x$方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。 \relax }}{75}{figure.caption.39}}
+\newlabel{fig:mask1}{{4.1}{75}{Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在$x$方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。 \relax }{figure.caption.39}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}程序运行}{75}{subsection.4.3.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}实验结果}{75}{section.4.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}图像质量}{75}{subsection.4.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}参数精度}{76}{subsection.4.4.2}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces 200个Cartesian采样模式重建的均值SER与CCC\relax }}{76}{table.caption.40}}
 \newlabel{tab:result}{{4.2}{76}{200个Cartesian采样模式重建的均值SER与CCC\relax }{table.caption.40}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}参数精度}{76}{subsection.4.4.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces  第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、zerofilled、WT、FT、TV、TGV$_{\alpha }^2$和NN的重建图像，第二行是相应的与全采样之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha ^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。 \relax }}{77}{figure.caption.41}}
 \newlabel{fig:recon}{{4.2}{77}{第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、zerofilled、WT、FT、TV、TGV$_{\alpha }^2$和NN的重建图像，第二行是相应的与全采样之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha ^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。 \relax }{figure.caption.41}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces  重建图像SER的箱型图。除了TV和TGV$_\alpha ^2$之间，所有结果在统计学上都有显著差异。从箱型图中可以看出，NN的平均SER最高（29.1），而WT的SER最低（21.8）。 \relax }}{78}{figure.caption.42}}
