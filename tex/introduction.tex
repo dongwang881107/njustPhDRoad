@@ -48,7 +48,7 @@ MRI利用核磁共振现象来实现高对比度成像，它可以非侵入式�
 
 MR成像过程通常被建模为二维或三维空间的Fourier编码，即首先从图像的Fourier域（通常称为k-space）中采样，再通过算法将图像重建出来。详细的MR成像原理请参考第\ref{chap:pre}章。为了准确地重建图像，采样率需要达到Nyquist采样定理\cite{Nyquist}的要求。所以，MRI的成像速度通常很慢，尤其是dMRI和三维MRI，这对成像设备和病人都是很大的负担。因此如何提高MR成像速度和质量，一直是研究人员最关心的问题。
 
-加速MR成像通常的思路是在不降低图像质量的前提下，减少获取的k-space数据，从而达到加速成像的效果。但由于下采样时，采样率没有达到Nyquist采样定理的要求，通过简单的Fourier补零重建的图像（称为zerofilled图像）会出现下采样伪影，而消除伪影主要有以下三个策略。第一种策略是使得生成的伪影与图像非相干或者在视觉上不明显\cite{Tsai,Marseille,Greiser}，但这些方法所得到的重建图像通常信噪比低。第二种策略是利用k-space中数据的冗余性，比如部分傅里叶成像\cite{McGibney}（partial-Fourier）和平行成像（parallel MRI, pMRI）。pMRI是目前在临床上应用比较成功的一大类加速方法，它是一种以空间换时间的成像策略。具体来说，pMRI通过多个成像线圈接收信号，而每个线圈都在k-space进行下采样，最后通过算法将所有线圈接收到的数据还原出来。经典的pMRI方法有SENSE（sensitivity encoding）\cite{sense}，SMASH（simultaneous acquisition of apatial harmonics）\cite{smash}，GRAPPA（generalized autocalibrating partially parallel acquisitions）\cite{grappa}等。第三种策略是利用图像在空间域或者时间域上的冗余性，如UNFOLD\cite{Madore}和k-t BLAST/SNESE\cite{Tsao}等。可以看出，以上方法的共同点是假设MR图像中存在着冗余性，并且可以利用这些冗余性来降低采样率，以达到加速成像的目的。
+加速MR成像通常的思路是在不降低图像质量的前提下，减少获取的k-space数据，从而达到加速成像的效果。但由于下采样时，采样率没有达到Nyquist采样定理的要求，通过简单的Fourier补零重建的图像（称为Zerofilled图像）会出现下采样伪影，而消除伪影主要有以下三个策略。第一种策略是使得生成的伪影与图像非相干或者在视觉上不明显\cite{Tsai,Marseille,Greiser}，但这些方法所得到的重建图像通常信噪比低。第二种策略是利用k-space中数据的冗余性，比如部分傅里叶成像\cite{McGibney}（partial-Fourier）和平行成像（parallel MRI, pMRI）。pMRI是目前在临床上应用比较成功的一大类加速方法，它是一种以空间换时间的成像策略。具体来说，pMRI通过多个成像线圈接收信号，而每个线圈都在k-space进行下采样，最后通过算法将所有线圈接收到的数据还原出来。经典的pMRI方法有SENSE（sensitivity encoding）\cite{sense}，SMASH（simultaneous acquisition of apatial harmonics）\cite{smash}，GRAPPA（generalized autocalibrating partially parallel acquisitions）\cite{grappa}等。第三种策略是利用图像在空间域或者时间域上的冗余性，如UNFOLD\cite{Madore}和k-t BLAST/SNESE\cite{Tsao}等。可以看出，以上方法的共同点是假设MR图像中存在着冗余性，并且可以利用这些冗余性来降低采样率，以达到加速成像的目的。
 
 2005年，Candès，Tao，Romberg\cite{candes2004near,candes2006compressive,candes2006quantitative,candes2006stable}和Donoho\cite{Donoho2006Compressed}等人提出了压缩感知（compressed sensing）理论。压缩感知是一种新的采样理论，可以加速信号的采集与重建。根据传统Nyquist采样定理\cite{Nyquist}，当采样率达到信号最高频率两倍以上的时，信号才可以被精确地重建出来。我们称满足Nyquist采用定理的采样方式成为全采样。当对信号进行均匀下采样时，采集到的信号会出现相干伪影，使用传统的重建方法很难将其去除。而压缩感知理论突破了Nyquist定理对高采样率要求的限制，可以用很少的数据来精确地重建信号。压缩感知理论有三个主要部分，分别为稀疏性、非相干下采样和非线性重建算法。具体来说，首先假设信号在某个变换域稀疏，对信号进行非相干下采样，然后通过非线性重建算法即可以高概率地将信号重建出来。因此，压缩感知理论自诞生以来就被应用在MR成像中，可以显著地提高成像速度和质量，并成为了快速MR成像的主流方法。本论文研究的重点之一即为压缩感知在MRI中的应用，我们将在第\ref{sec:cs}和\ref{sec:csmri}小节介绍基于压缩感知的MR成像的研究现状。
 
@@ -321,7 +321,7 @@ MR成像是从Fourier域（也称为k-space）采样并重建数据的过程。�
 \label{fig:mask}
 \end{figure}
 
-如何设计压缩感知MR重建的采样模式一直是研究人员所关心的话题，也决定着重建图像质量的好坏和重建算法的速度。设计的思路之一是将以上四种采样模式进行组合。比如，对于二维MR成像，伪径向采样\cite{Sajan2011Accelerated}（pseudo radial sampling）也是常见的采样模式，如图\ref{fig:mask1}所示。伪径向采样结合了Cartesian和径向采样的优点，其采样点均在Cartesian网格上，同时使得采样点尽量沿径向方向。这样既可以获得高的采样率，又简化了计算。对于动态MR成像或者三维MR成像，由于其冗余性体现在多个维度上，采样矩阵的设计有了更大的空间。文献\cite{smith2012}针对胸部DCE-MRI图像，结合了Cartesian采样和随机采样，如图\ref{fig:mask1}（a）所示。具体来说，在每一帧图像上使用Cartesian采样，并使得帧与帧之间采样有最大的正交性。文献\cite{Sajan2011Accelerated}中针对动态MR图像，结合了伪径向采样和随机采样，如图\ref{fig:mask1}（b）所示。具体来说，在每一帧图像上均匀地选取一些伪径向采样线，并使得帧与帧之间的采样线随机转动一个角度以增加非相干性，即在空间上采用伪径向采样，在时间上采用随机采样，这也是动态MR采样模式的设计思路之一。文献\cite{holland2013compressed}针对fMRI图像，采用了变化密度螺旋采样模式。具体来说，这种采样方式使得k-space中心区域可以达到Nyquist采样率，而k-space的外围则是下采样，从而增加了采样的非相干性。除了fMRI，变化密度螺旋采样也被应用在心脏电影成像\cite{kressler2007three}、扩散张量成像\cite{karampinos2009high}、心脏血管造影成像\cite{santos2006single}中。
+如何设计压缩感知MR重建的采样模式一直是研究人员所关心的话题，也决定着重建图像质量的好坏和重建算法的速度。设计的思路之一是将以上四种采样模式进行组合。比如，对于二维MR成像，伪径向采样\cite{Sajan2011Accelerated}（pseudo radial sampling）也是常见的采样模式，如图\ref{fig:maskdynamic}所示。伪径向采样结合了Cartesian和径向采样的优点，其采样点均在Cartesian网格上，同时使得采样点尽量沿径向方向。这样既可以获得高的采样率，又简化了计算。对于动态MR成像或者三维MR成像，由于其冗余性体现在多个维度上，采样矩阵的设计有了更大的空间。文献\cite{smith2012}针对胸部DCE-MRI图像，结合了Cartesian采样和随机采样，如图\ref{fig:maskdynamic}（a）所示。具体来说，在每一帧图像上使用Cartesian采样，并使得帧与帧之间采样有最大的正交性。文献\cite{Sajan2011Accelerated}中针对动态MR图像，结合了伪径向采样和随机采样，如图\ref{fig:maskdynamic}（b）所示。具体来说，在每一帧图像上均匀地选取一些伪径向采样线，并使得帧与帧之间的采样线随机转动一个角度以增加非相干性，即在空间上采用伪径向采样，在时间上采用随机采样，这也是动态MR采样模式的设计思路之一。文献\cite{holland2013compressed}针对fMRI图像，采用了变化密度螺旋采样模式。具体来说，这种采样方式使得k-space中心区域可以达到Nyquist采样率，而k-space的外围则是下采样，从而增加了采样的非相干性。除了fMRI，变化密度螺旋采样也被应用在心脏电影成像\cite{kressler2007three}、扩散张量成像\cite{karampinos2009high}、心脏血管造影成像\cite{santos2006single}中。
 
 \begin{figure}[htbp]
 \centering
@@ -332,7 +332,7 @@ MR成像是从Fourier域（也称为k-space）采样并重建数据的过程。�
 \includegraphics[width=3in]{img/intro/pradial.eps}
 }
 \caption{动态MRI中常用的采样模式。}
-\label{fig:mask1}
+\label{fig:maskdynamic}
 \end{figure}
 
 综上所述，压缩感知MR重建的采样矩阵既需要满足非相干性，也需要考虑MR的物理限制。对于二维MR成像，主要的采样模式有Cartesian采样、径向采样和螺旋采样；而对于动态MR成像和三维MR成像，冗余性体现在多个维度上，采样矩阵的设计有着更多的自由度。一般的思路是在根据不同的问题，在不同的维度上选择不同的采样模式。
@@ -482,7 +482,7 @@ PANO算子可以稀疏化表示同一相似度的图像块，在MR重建中也�
 \end{equation}
 模型（\ref{equ:slmri}）的最重要的优势是更新$\mathcal{S}$的时候存在闭形式的解，因此也避免了字典学习更新中的繁琐计算。目前，基于稀疏变换学习的重建模型已经有了很多推广，比如STL-MRI\cite{ravishankar2015efficient}、UNITE-MRI\cite{ravishankar2016data}、FRIST-MRI\cite{wen2017frist}、STROLLR-MRI\cite{wen2018power}等。详细的算法流程及综述请参考\cite{wen2019transform}。
 
-最近几年，由于深度学习\cite{lecun2015deep,schmidhuber2015deep}（deep learning）的兴起和火热，出现了很多利用深度神经网络进行压缩感知重建的方法，如\cite{jin2017deep,admmnet,wang2016accelerating,lee2018deep,han2018deep,zhu2018image,unetcs,varnet,gannet}等。这大类方法的主要思路是通过神经网络来学习图像的特征，来建立下采样数据和真实数据之间的联系。根据处理图像域的不同，基于深度学习的MR重建可以分为四类，如图\ref{fig:deepmri}所示。其中图\ref{fig:deepmri}（a）是图像域的深度学习。此类方法首先从下采样的k-space数据中得到有高度空间伪影的zerofilled图像，然后训练神经网络学习这些空间伪影，即训练一个从图像域到图像域的神经网络。此类网络的代表有深度残差学习\cite{lee2018deep}和域适应的神经网络\cite{han2018deep}，可以有效地去重建图像中的空间伪影。目前图像域的神经网络的发展趋势是寻找更复杂精妙的损失函数来克服平滑化的伪影。图\ref{fig:deepmri}（b）是混合域的神经网络，这类网络是利用压缩感知模型中的数据项来进行训练和推断，将求解模型的优化算法展开成一个神经网络。这类方法是最常用的基于深度网络的重建方法。LISTA\cite{gregor2010learning}是最早使用这个思想的网络，其将ISTA算法\cite{beck2009fast}展开成了神经网络，来学习权重和稀疏变换。VARnet\cite{varnet}将如下优化问题展开成网络：
+最近几年，由于深度学习\cite{lecun2015deep,schmidhuber2015deep}（deep learning）的兴起和火热，出现了很多利用深度神经网络进行压缩感知重建的方法，如\cite{jin2017deep,admmnet,wang2016accelerating,lee2018deep,han2018deep,zhu2018image,unetcs,varnet,gannet}等。这大类方法的主要思路是通过神经网络来学习图像的特征，来建立下采样数据和真实数据之间的联系。根据处理图像域的不同，基于深度学习的MR重建可以分为四类，如图\ref{fig:deepmri}所示。其中图\ref{fig:deepmri}（a）是图像域的深度学习。此类方法首先从下采样的k-space数据中得到有高度空间伪影的Zerofilled图像，然后训练神经网络学习这些空间伪影，即训练一个从图像域到图像域的神经网络。此类网络的代表有深度残差学习\cite{lee2018deep}和域适应的神经网络\cite{han2018deep}，可以有效地去重建图像中的空间伪影。目前图像域的神经网络的发展趋势是寻找更复杂精妙的损失函数来克服平滑化的伪影。图\ref{fig:deepmri}（b）是混合域的神经网络，这类网络是利用压缩感知模型中的数据项来进行训练和推断，将求解模型的优化算法展开成一个神经网络。这类方法是最常用的基于深度网络的重建方法。LISTA\cite{gregor2010learning}是最早使用这个思想的网络，其将ISTA算法\cite{beck2009fast}展开成了神经网络，来学习权重和稀疏变换。VARnet\cite{varnet}将如下优化问题展开成网络：
 \begin{equation}
 	\hat{x}=\frac{1}{2}\|Ax-b\|_2^2+\alpha\mathcal{R}(x).
 \end{equation}
@@ -589,7 +589,7 @@ $$\|\cdot\|_\mathrm{3DTV}=\|\nabla_3\cdot\|_1,$$
 $$|\nabla_3\cdot|=\sqrt{(\nabla_x \cdot)^2 + (\nabla_y \cdot)^2+(\nabla_t \cdot)^2},$$
 其中$\nabla_x$，$\nabla_y$和$\nabla_t$分别为$x$，$y$和$t$方向上的梯度算子。核范数是矩阵的秩的凸松弛，被广泛应用于动态MR重建模型中。图\ref{fig:lowrank}（b）展示了一个Casorati矩阵奇异值大小的变化。可以看出，Casorati矩阵的奇异值只有很少一部分的值很大，大部分奇异值都接近于零，即其奇异值是$l_1$稀疏的。k-t SLR是第一个使用核范数作为时间稀疏项的模型，可以很好地稀疏化非周期性运动。k-t SLR采用伪径向采样，使用ADMM算法进行求解。模型在心脏体模数据和心脏电影成像的重建效果显著，但是重建算法的速度慢。
 
-Otazo等于提了基于低秩与稀疏分解的思想的动态MR压缩感知重建模型L+S\cite{lpluss}。矩阵分解的目标是将矩阵$X$分解为低秩部分$L$与稀疏部分$S$:
+Otazo等基于矩阵低秩与稀疏分解的思想，提出了适用于动态MR图像的压缩感知重建模型L+S\cite{lpluss}。矩阵分解的目标是将矩阵$X$分解为低秩部分$L$与稀疏部分$S$:
 \begin{equation}
 	\min_{L,S}||L||_*+\lambda||S||_1, \quad s.t. \quad X=L+S.
 \end{equation}
@@ -684,7 +684,7 @@ $$X=\mathrm{UV},$$
 	\min_X \ \|X-f_{\mathrm{cnn}(X_z|\theta)}\|_\mathrm{F}^2+\alpha\|AX-B\|^2_\mathrm{F}.
 	\label{equ:cnndmri}
 \end{equation}
-这里$f_{\mathrm{cnn}}$为CNN的向前映射，参数为$\theta$，其中包含了神经网络的权重，而$X_z$为zerofilled图像。由于zerofilled图像中包含着严重的空间伪影，CNN重建图像的过程可以看成是去除空间伪影的过程。该方法可以在高采样率下保持图像的解剖结构，且重建速度快。Qin等\cite{qin2018convolutional}提出了利用循环神经网络（convolutional recurrent neural network, CRNN）来重建动态MR图像。模型创新性地提出了双向卷积循环单元来学习图像在时空上的冗余性，在心脏图像重建中取得了很好地效果。Wang\cite{wang2018dimension}等在模型（\ref{equ:cnndmri}）的基础上，提出了DIMENSION模型。模型同时利用了动态图像的k-space和空间先验信息，通过监督学习来训练网络。网络由两个主要部分构成，一部分为频率域网络，用于更新k-space；另一部分为空间域网络，用来提取图像中的高级特征。两部分网络通过Fourier变换进行连接。实验表明，DIMENSION可以提高重建图像质量，提高重建速度。Ke等\cite{ke2019crdn}提出了用于动态MR重建的级联残差密集网络CRDN。具体来说，网络利用了卷积层的多层级局部和非局部信息，并且使用了基于TV的增强边缘的损失函数。对比试验表明，CRDN可以在提高重建质量的基础上减少重建时间。
+这里$f_{\mathrm{cnn}}$为CNN的向前映射，参数为$\theta$，其中包含了神经网络的权重，而$X_z$为Zerofilled图像。由于Zerofilled图像中包含着严重的空间伪影，CNN重建图像的过程可以看成是去除空间伪影的过程。该方法可以在高采样率下保持图像的解剖结构，且重建速度快。Qin等\cite{qin2018convolutional}提出了利用循环神经网络（convolutional recurrent neural network, CRNN）来重建动态MR图像。模型创新性地提出了双向卷积循环单元来学习图像在时空上的冗余性，在心脏图像重建中取得了很好地效果。Wang\cite{wang2018dimension}等在模型（\ref{equ:cnndmri}）的基础上，提出了DIMENSION模型。模型同时利用了动态图像的k-space和空间先验信息，通过监督学习来训练网络。网络由两个主要部分构成，一部分为频率域网络，用于更新k-space；另一部分为空间域网络，用来提取图像中的高级特征。两部分网络通过Fourier变换进行连接。实验表明，DIMENSION可以提高重建图像质量，提高重建速度。Ke等\cite{ke2019crdn}提出了用于动态MR重建的级联残差密集网络CRDN。具体来说，网络利用了卷积层的多层级局部和非局部信息，并且使用了基于TV的增强边缘的损失函数。对比试验表明，CRDN可以在提高重建质量的基础上减少重建时间。
 
 综上所述，动态MR图像的稀疏性不仅体现在空间上，也体现在时间上。而且，时间上稀疏项的选择是尤其重要的，可以很大程度上决定重建结果的好坏。目前，基于模型的方法既有传统的利用Fourier变换、TV的模型，也有利用图像的低秩性或结构低秩性和基于分解思想的方法。基于数据的方法相对较少，主要有训练时空字典的模型和搭建深度神经网络的方法。
 

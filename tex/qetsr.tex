@@ -219,7 +219,7 @@ Cartesian采样模式的例子。左图显示的是所有帧的采样模式，�
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=1\textwidth]{img/qetsr/figure2.eps}}
 \caption{
-第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、zerofilled、WT、FT、TV、TGV$_{\alpha}^2$和NN的重建图像，第二行是相应的与全采样之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。
+第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、Zerofilled、WT、FT、TV、TGV$_{\alpha}^2$和NN的重建图像，第二行是相应的与全采样之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。
 }
 \label{fig:recon}
 \end{figure}
@@ -245,7 +245,7 @@ Cartesian采样模式的例子。左图显示的是所有帧的采样模式，�
 \centerline{\includegraphics[width=1.0\textwidth]{img/qetsr/figure4.eps}}
 \centering
 \caption{
-\kt 和\Ve 参数肿瘤部分放大后的图像。第一行从左到右依次显示了全采样、zerofilled、WT、FT、TV和TGV$_{\alpha}^2$的\kt 图像；第二行是相应的\Ve 图像。在视觉上，TV和TGV$_{\alpha}^2$与全采样的参数图像最接近。
+\kt 和\Ve 参数肿瘤部分放大后的图像。第一行从左到右依次显示了全采样、Zerofilled、WT、FT、TV和TGV$_{\alpha}^2$的\kt 图像；第二行是相应的\Ve 图像。在视觉上，TV和TGV$_{\alpha}^2$与全采样的参数图像最接近。
 }
 \label{fig:zoom}
 \end{figure}
@@ -261,13 +261,13 @@ Cartesian采样模式的例子。左图显示的是所有帧的采样模式，�
 \label{fig:baplot}
 \end{figure}
 
-图\ref{fig:curves}显示了全采样图像与重建图像肿瘤区域像素时间曲线的比较。图\ref{fig:curves}（a）是肿瘤区域所有像素平均值的时间曲线，而图\ref{fig:curves}（b）是肿瘤中心像素点(96,96)的时间曲线。从图\ref{fig:curves}中可以看出，zerofilled图像最初5帧的重建结果是准确的，但是当注入CA之后，像素值就被低估了，导致SER、\kt 和\Ve 的减小。WT低估了所有帧的肿瘤区域的平均像素值。在图\ref{fig:curves}（a）中，FT的最初5帧和最后5帧的拟合效果很差，而且整体体现出了振荡的效应。这一点从图\ref{fig:curves}（b）中可以更明显地观察到。TGV$_{\alpha}^2$和TV最好地拟合了肿瘤区域平均像素值和单个像素值的时间曲线。在最初的几帧中，NN高估了平均像素值，这也影响了其最终\kt 和\Ve 的准确性。
+图\ref{fig:curves}显示了全采样图像与重建图像肿瘤区域像素时间曲线的比较。图\ref{fig:curves}（a）是肿瘤区域所有像素平均值的时间曲线，而图\ref{fig:curves}（b）是肿瘤中心像素点(96,96)的时间曲线。从图\ref{fig:curves}中可以看出，Zerofilled图像最初5帧的重建结果是准确的，但是当注入CA之后，像素值就被低估了，导致SER、\kt 和\Ve 的减小。WT低估了所有帧的肿瘤区域的平均像素值。在图\ref{fig:curves}（a）中，FT的最初5帧和最后5帧的拟合效果很差，而且整体体现出了振荡的效应。这一点从图\ref{fig:curves}（b）中可以更明显地观察到。TGV$_{\alpha}^2$和TV最好地拟合了肿瘤区域平均像素值和单个像素值的时间曲线。在最初的几帧中，NN高估了平均像素值，这也影响了其最终\kt 和\Ve 的准确性。
 
 \begin{figure}[htbp]
 \centerline
 {\includegraphics[width=0.9\textwidth]{img/qetsr/figure6.eps}}
 \caption{
-全采样图像与重建图像肿瘤区域像素时间曲线的比较图。（a）肿瘤区域平均像素值的时间曲线比较；（b）肿瘤中心像素(96,96)的时间曲线比较。图（a）显示zerofilled图像在注入CA之后低估了肿瘤区域的平均像素值。WT在整体上低估了平均像素值。FT在最初和最后的5帧的时间曲线拟合很差，而且整体上表现出了振荡的效应。TV和TGV$_{\alpha}^2$最好地拟合了时间曲线。NN在注入CA之前高估了平均像素值，并且在注入CA之后略微低估了平均像素值。图（b）表明zerofilled图像在CA注入之后低估了肿瘤中心的像素值。FT和WT均表现出振荡的效应，使得曲线的拟合变得不准确。TV和TGV$_{\alpha}^2$的时间曲线表现平稳，而NN在注入CA之前高估了肿瘤中心像素值。
+全采样图像与重建图像肿瘤区域像素时间曲线的比较图。（a）肿瘤区域平均像素值的时间曲线比较；（b）肿瘤中心像素(96,96)的时间曲线比较。图（a）显示Zerofilled图像在注入CA之后低估了肿瘤区域的平均像素值。WT在整体上低估了平均像素值。FT在最初和最后的5帧的时间曲线拟合很差，而且整体上表现出了振荡的效应。TV和TGV$_{\alpha}^2$最好地拟合了时间曲线。NN在注入CA之前高估了平均像素值，并且在注入CA之后略微低估了平均像素值。图（b）表明Zerofilled图像在CA注入之后低估了肿瘤中心的像素值。FT和WT均表现出振荡的效应，使得曲线的拟合变得不准确。TV和TGV$_{\alpha}^2$的时间曲线表现平稳，而NN在注入CA之前高估了肿瘤中心像素值。
 }
 \label{fig:curves}
 \end{figure}

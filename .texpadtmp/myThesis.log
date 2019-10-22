@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  22 OCT 2019 19:06
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  22 OCT 2019 19:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1583,11 +1583,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@toks=\toks33
 \enit@inbox=\box88
 \enitdp@description=\count349
-)) (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.aux
-
-LaTeX Warning: Label `fig:mask1' multiply defined.
-
-)
+)) (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.aux)
 \openout1 = `myThesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
@@ -2051,10 +2047,6 @@ File: img/intro/casorati.eps Graphic file (type eps)
 File: img/intro/lowrank.eps Graphic file (type eps)
 <img/intro/lowrank.eps>
  [22]
-Overfull \hbox (1.31615pt too wide) in paragraph at lines 592--593
-[]\TU/lmr/m/n/12.045 Otazo \TU/STSong(0)/m/n/12.045 等 于 提 了 基 于 低 秩 与 稀 疏 分 解 的 思 想 的 动 态 \TU/lmr/m/n/12.045 MR \TU/STSong(0)/m/n/12.045 压 缩 感 知 重 建 模 型 \TU/lmr/m/n/12.045 L+S$[]$\TU/STSong(0)/m/n/12.045 。|
- []
-
 File: img/intro/pincat.eps Graphic file (type eps)
 <img/intro/pincat.eps>
 File: img/intro/pincatl.eps Graphic file (type eps)
@@ -2063,7 +2055,7 @@ File: img/intro/pincats.eps Graphic file (type eps)
 <img/intro/pincats.eps>
 File: img/intro/compare.eps Graphic file (type eps)
 <img/intro/compare.eps>
-[23] [24] [25] [26]
+ [23] [24] [25] [26]
 File: img/intro/mrf.png Graphic file (type bmp)
 <img/intro/mrf.png>
  [27]
@@ -2105,12 +2097,7 @@ File: img/intro/se.png Graphic file (type bmp)
 <img/intro/se.png>
 File: img/intro/ge.png Graphic file (type bmp)
 <img/intro/ge.png>
- [40] [41] [42]
-Overfull \hbox (6.30757pt too wide) in paragraph at lines 221--223
-\TU/STSong(0)/m/n/12.045 其 中 $\OML/cmm/m/it/12.045 ^^K$ \TU/STSong(0)/m/n/12.045 是 偏 转 角，| $\OML/cmm/m/it/12.045 ^^^$ \TU/STSong(0)/m/n/12.045 是 相 位 角。|  将 方 程  |（[][]\TU/lmr/m/n/12.045 2.23[][]\TU/STSong(0)/m/n/12.045 ）|  和 方 程  |（[][]\TU/lmr/m/n/12.045 2.24[][]\TU/STSong(0)/m/n/12.045 ）|  通 过 $\OML/cmm/m/it/12.045 T[]\OT1/cmr/m/n/12.045 (\OML/cmm/m/it/12.045 ^^K\OT1/cmr/m/n/12.045 ) = \OML/cmm/m/it/12.045 T[]\OT1/cmr/m/n/12.045 (^^H)\OML/cmm/m/it/12.045 T[]\OT1/cmr/m/n/12.045 (\OML/cmm/m/it/12.045 ^^K\OT1/cmr/m/n/12.045 )\OML/cmm/m/it/12.045 T[]\OT1/cmr/m/n/12.045 (\OMS/cmsy/m/n/12.045 ^^@\OT1/cmr/m/n/12.045 ^^H)$
- []
-
-[43] [44]) (./tex/tgvnn.tex [45] [46
+ [40] [41] [42] [43] [44]) (./tex/tgvnn.tex [45] [46
 
 ]
 3
@@ -2150,11 +2137,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 . - 'normal' (m/n) with NFSS spec.: <->"STFangsong/OT:mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-
-Overfull \hbox (5.21143pt too wide) in paragraph at lines 302--303
-[]\TU/STSong(0)/m/n/12.045 我 们 将 提 出 的 模 型 和 最 先 进 的 模 型 进 行 对 比，|  它 们 分 别 是 \TU/lmr/m/n/12.045 kt-SLR[][][][][]$[]$, kt-RPCA[][][][][]$[]$,
- []
-
 [56]
 File: img/intro/pradial.eps Graphic file (type eps)
 <img/intro/pradial.eps>
@@ -2207,19 +2189,9 @@ File: img/qetsr/figure7.eps Graphic file (type eps)
 ]
 5
 [85]
-Overfull \hbox (12.60942pt too wide) in paragraph at lines 26--27
-[]\TU/STSong(0)/m/n/12.045 图 形 处 理 单 元 是 目 前 常 用 的 加 速 平 行 计 算 的 方 法，|  在 成 像 领 域 有 着 广 泛 的 应 用$[]$。|
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [86]
-Overfull \hbox (23.19121pt too wide) in paragraph at lines 39--40
-\TU/STSong(0)/m/n/12.045 剩 显 存 将 指 纹 数 据 分 为 大 小 相 等 的 组，|  在 每 个 小 组 上 进 行 匹 配。|  函 数 \TU/lmtt/m/n/12.045 MRF_minimatch()
- []
-
-
 Underfull \vbox (badness 2269) has occurred while \output is active []
 
  [87]
@@ -2350,16 +2322,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 29157 strings out of 492970
- 591931 string characters out of 6133937
- 678704 words of memory out of 5000000
- 32605 multiletter control sequences out of 15000+600000
+ 29158 strings out of 492970
+ 591948 string characters out of 6133937
+ 678713 words of memory out of 5000000
+ 32606 multiletter control sequences out of 15000+600000
  563143 words of font info for 205 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,17n,77p,10541b,909s stack positions out of 5000i,500n,10000p,200000b,80000s
