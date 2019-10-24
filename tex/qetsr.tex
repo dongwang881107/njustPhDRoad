@@ -11,7 +11,7 @@
 在压缩感知应用于临床肿瘤成像之前，其可靠性和准确性的研究是必要的。本篇论文的主要目的是通过量化分析的方式来比较和评估5中不同的时间方向的稀疏项，它们分别是：
 \begin{enumerate}
 	\item Fourier变换的$l_1$范数 ($l_1$-norm of the Fourier transform, FT)；
-	\item 希尔小波变换的$l_1$范数 ($l_1$-norm of the Haar wavelet transform, WT)；
+	\item Haar小波变换的$l_1$范数 ($l_1$-norm of the Haar wavelet transform, WT)；
 	\item 全变差 (total variation, TV)；
 	\item 二阶TGV (second-order TGV, $\textrm{TGV}_{\alpha}^2$)；
 	\item 核范数 (nuclear norm, NN)。
@@ -34,8 +34,8 @@ $$B=AX+\epsilon,$$
 \hat{X} = \argmin_X \frac{1}{2}\|AX-B\|_\mathrm{F}^2 + \alpha ||\mathcal{F}_t X||_1.
 \end{equation}
 
-\subsection{希尔小波变换}
-小波变换是基于压缩感知重建中常用的稀疏表示。对于MR图像而言，希尔小波有两个感兴趣特征。第一，分片常数的信号在希尔小波的表示下是稀疏的。第二，希尔小波变换和MR图像的采集域，即Fourier域有着高非相干性。根据压缩感知理论，这意味着对于给定的下采样率，希尔小波变换可以获得更好的重建图像。比如，k-t SPARSE\cite{Lustig2010Sparse}将空间小波变换成功地应用在了心脏电影成像中。记$\mathcal{W}_t$为一维时间方向的希尔小波变换，我们可以得到模型：
+\subsection{Haar小波变换}
+小波变换是基于压缩感知重建中常用的稀疏表示。对于MR图像而言，Haar小波有两个感兴趣特征。第一，分片常数的信号在Haar小波的表示下是稀疏的。第二，Haar小波变换和MR图像的采集域，即Fourier域有着高非相干性。根据压缩感知理论，这意味着对于给定的下采样率，Haar小波变换可以获得更好的重建图像。比如，k-t SPARSE\cite{Lustig2010Sparse}将空间小波变换成功地应用在了心脏电影成像中。记$\mathcal{W}_t$为一维时间方向的Haar小波变换，我们可以得到模型：
 \begin{equation}
 \hat{X} = \argmin_X \frac{1}{2}\|AX-B\|_\mathrm{F}^2 + \alpha ||\mathcal{W}_t X||_1.
 \end{equation}
@@ -54,16 +54,14 @@ $$|\nabla_3\cdot|=\sqrt{(\nabla_x \cdot)^2 + (\nabla_y \cdot)^2 + (\nabla_t \cdo
 
 \subsection{二阶TGV}
 如上所言，有限差分算子可以很好地对MR图像进行稀疏表示，但是也会带来阶梯效应。因此，Bredies\cite{bredies2010total}等提出了基于高阶导数信息的TGV，更好地对图像中的高阶信息进行建模，消除阶梯效应。对于二维图像$u\in \mathbb{C}^{N_1\times N_2}$，其离散二阶TGV的定义如下：
-\begin{equation}
-\mathrm{TGV}_\alpha^2(u)=\argmin_v \alpha_1\|\nabla u-v\|_1+\alpha_0\|\mathscr{E}(v)\|_1。
-\end{equation}
-这里$v$属于离散复值向量场$V\in \mathbb{C}^{2N_1N_2}$，$\nabla\cdot=(\nabla_x\cdot, \nabla_y\cdot)$一阶有限差分算子，$\mathscr{E}(v)=(\nabla v+\nabla v^T)/2$是二阶对称导数算子。
+$$\mathrm{TGV}_\alpha^2(u)=\min_{\omega\in \mathrm{BD}(\Omega)}\alpha_1\|\nabla_3 u-\omega\|_1 + \alpha_0\|\mathcal{E}(\omega)\|_1,$$
+其中$\nabla\cdot=(\nabla_x\cdot, \nabla_y\cdot)$一阶有限差分算子，$\mathcal{E}(\omega)=\frac{1}{2}(\nabla_3\omega+\nabla_3\omega^{T})$是对称梯度算子，$\mathrm{BD}(\Omega)$ 是有界形变函数空间。
 
 从定义中可以看出，$\mathrm{TGV}_\alpha^2$是TV的高阶推广，可以很好地保持图像一阶和二阶导数之间的平衡。因此$\mathrm{TGV}_\alpha^2$比TV更适合建模图像中的光滑部分。在压缩感知模型中，使用$\mathrm{TGV}_\alpha^2$可以在保持边缘的同时减少阶梯效应。在本文中，我们只考虑时间方向的$\mathrm{TGV}_\alpha^2$：
 \begin{equation}
 \hat{X} = \argmin_X \frac{1}{2}\|AX-B\|_\mathrm{F}^2+\mathrm{TGV}_\alpha^2(X),
 \end{equation}
-这里$\nabla v = \nabla_t v$，$v\in V\in \mathbb{C}^{N_1N_2\times d}$.
+这里$\nabla \omega = \nabla_t \omega$，$\omega\in \mathbb{C}^{N_1N_2d}$.
 
 \subsection{核范数}
 低秩矩阵补全的想法也被应用在动态MR重建中。这时我们将动态MR图像视为一个时空矩阵，每一帧图像则为时空矩阵中的一列，每一个像素点为时空矩阵的一行。由于动态图像时间和空间上的相关性，这样的矩阵可以用低秩模型来刻画。因此，将压缩感知和低秩矩阵补全结合在一起可以进一步加快成像速度。在k-t SLR中，作者在模型中使用了TV和核范数，并在体膜数据和心脏灌注数据中取得了显著的提高。核范数记为$\|X\|_*$，是矩阵$X$所有奇异值的和。本文我们考虑如下模型：

@@ -11,7 +11,7 @@
 
 1. 针对动态MR图像，利用压缩感知和图像分解的思想，提出了基于二阶时空TGV和核范数的重建模型。模型将图像分解为低秩部分和稀疏部分，其中低秩部分用核范数约束，稀疏部分用二阶时空TGV（total generalized variation）约束。核范数用来建模动态图像中时间方向高度相关的背景部分，可以很好地去除空间伪影；而TGV泛函用来表示图像中的光滑部分，可以在保证重建图像边界清晰的同时减少重建图像中的阶梯效应。文章利用Primal-Dual算法来求解模型，并给出了保证算法收敛的范数估计。为了减少算法的计算时间，文章也利用了图形处理单元 (graphics processing unit, GPU) 来加速程序。文章针对体模、心脏灌注与胸部DCE-MRI图像，对比了四种最前沿的针对动态MR重建模型在不同采样模式和不同采样率下的表现。实验结果表明，相对于其他四个模型，我们提出的模型在不同采样模式和不同采样率下，可以更好地消除空间伪影并且保证图像边缘的清晰，对于胸部DCE-MRI图像的效果尤其显著。
 
-2. 针对胸部DCE-MRI图像，比较了5种不同的时间方向的稀疏项，并对重建结果进行了定量分析。这5种稀疏项分别为Fourier变换（Fourier transform）、希尔小波变换（Haar wavelet transform）、TV（total variation）、二阶TGV和核范数（nuclear norm）。所有模型均使用FISTA（fast iterative shrinkage threshold algorithm）快速算法进行求解。实验结果表明，核范数可以得到最高的信噪比，而TV/二阶TGV可以得到最精确地定量分析。因此，对于胸部DCE-MRI, 选择TV/二阶TGV作为稀疏项可以更好地重建病灶部分，而选择核范数则可以提高图像的整体信噪比。
+2. 针对胸部DCE-MRI图像，比较了5种不同的时间方向的稀疏项，并对重建结果进行了定量分析。这5种稀疏项分别为Fourier变换（Fourier transform）、Haar小波变换（Haar wavelet transform）、TV（total variation）、二阶TGV和核范数（nuclear norm）。所有模型均使用FISTA（fast iterative shrinkage threshold algorithm）快速算法进行求解。实验结果表明，核范数可以得到最高的信噪比，而TV/二阶TGV可以得到最精确地定量分析。因此，对于胸部DCE-MRI, 选择TV/二阶TGV作为稀疏项可以更好地重建病灶部分，而选择核范数则可以提高图像的整体信噪比。
 
 3. 针对MRF重建参数图的过程中字典生成与匹配速度慢的问题，利用图形处理单元进行MRF字典的生成与匹配，并开发了一款开源软件snapMRF。软件基于NVIDIA公司的底层框架CUDA（compute unified device architecture），使用C语言编写。snapMRF可以快速并准确地重建参数图，并且适用于不同的MR序列。相比于其他MRF开源软件，如EPG-X（基于CPU的MATLAB语言编写）和pnp-mrf（基于CPU的C语言编写），snapMRF的字典生成速度提高了10--1000倍, 字典匹配速度提高了10--100倍。对于较小的字典，可以达到实时的效果。另外，软件也给出了6种经典MR序列的单元测试，保证对于不同输入的MR序列，字典生成与匹配的正确性。
 

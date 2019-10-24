@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  22 OCT 2019 19:24
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  23 OCT 2019 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2165,9 +2165,7 @@ Underfull \vbox (badness 3039) has occurred while \output is active []
 
 ]
 4
-[69] [70]
-Missing character: There is no 。 in font [lmroman12-regular]:mapping=tex-text;!
- [71] [72] [73]
+[69] [70] [71] [72] [73]
 File: img/qetsr/figure1.eps Graphic file (type eps)
 <img/qetsr/figure1.eps>
  [74] (./tables/table_qetsr_result.tex) [75]
@@ -2327,7 +2325,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
 Here is how much of TeX's memory you used:
  29158 strings out of 492970
  591948 string characters out of 6133937
- 678713 words of memory out of 5000000
+ 678717 words of memory out of 5000000
  32606 multiletter control sequences out of 15000+600000
  563143 words of font info for 205 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
