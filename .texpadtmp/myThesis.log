@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  23 OCT 2019 10:52
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  2 NOV 2019 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1975,7 +1975,7 @@ Underfull \vbox (badness 1603) has occurred while \output is active []
  [3
 
 ]
-Underfull \vbox (badness 3590) has occurred while \output is active []
+Underfull \vbox (badness 1838) has occurred while \output is active []
 
  [4]) [5] [6
 
@@ -2186,58 +2186,50 @@ File: img/qetsr/figure7.eps Graphic file (type eps)
 
 ]
 5
-[85]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [86]
-Underfull \vbox (badness 2269) has occurred while \output is active []
-
+[85] [86]
+File: img/snapmrf/snapMRF.png Graphic file (type bmp)
+<img/snapmrf/snapMRF.png>
  [87]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [88] [89] [90] [91]
+Underfull \vbox (badness 5189) has occurred while \output is active []
+
+ [92]
 File: img/snapmrf/time_vs_epgx.eps Graphic file (type eps)
 <img/snapmrf/time_vs_epgx.eps>
 File: img/snapmrf/time_vs_pnp.eps Graphic file (type eps)
 <img/snapmrf/time_vs_pnp.eps>
- [92] [93] (./tables/table_t1.tex) (./tables/table_t2.tex)
+
+Underfull \vbox (badness 1629) has occurred while \output is active []
+
+ [93] [94] (./tables/table_t1.tex) (./tables/table_t2.tex)
 File: img/snapmrf/figure2.eps Graphic file (type eps)
 <img/snapmrf/figure2.eps>
 File: img/snapmrf/figure3.eps Graphic file (type eps)
 <img/snapmrf/figure3.eps>
- [94] [95] [96] [97] [98]) (./tex/future.tex [99] [100
+ [95] [96] [97] [98] [99] [100]) (./tex/future.tex [101] [102
 
 ]
 6
 
 Underfull \vbox (badness 1199) has occurred while \output is active []
 
- [101]) [102] (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.bbl
+ [103]) [104] (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103
+ [105
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [104]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [105]
-Underfull \hbox (badness 1122) in paragraph at lines 256--262
-[]\TU/lmr/m/n/12.045 Ji S, Ye J.   An accelerated gradient method for trace norm minimiza-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [106]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [107]
-Underfull \hbox (badness 1642) in paragraph at lines 429--434
-[]\TU/lmr/m/n/12.045 Chen C, Huang J.   Compressive sensing MRI with wavelet tree spar-
+Underfull \hbox (badness 1122) in paragraph at lines 256--262
+[]\TU/lmr/m/n/12.045 Ji S, Ye J.   An accelerated gradient method for trace norm minimiza-
  []
 
 
@@ -2247,8 +2239,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [109]
-Underfull \hbox (badness 3803) in paragraph at lines 620--626
-[]\TU/lmr/m/n/12.045 Gregor K, LeCun Y.   Learning fast approximations of sparse cod-
+Underfull \hbox (badness 1642) in paragraph at lines 429--434
+[]\TU/lmr/m/n/12.045 Chen C, Huang J.   Compressive sensing MRI with wavelet tree spar-
  []
 
 
@@ -2258,8 +2250,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [111]
-Underfull \hbox (badness 1077) in paragraph at lines 753--757
-[]\TU/lmr/m/n/12.045 Ke Z, Wang S, Cheng H, et al.  CRDN: Cascaded Residual Dense Net-
+Underfull \hbox (badness 3803) in paragraph at lines 620--626
+[]\TU/lmr/m/n/12.045 Gregor K, LeCun Y.   Learning fast approximations of sparse cod-
  []
 
 
@@ -2269,6 +2261,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [113]
+Underfull \hbox (badness 1077) in paragraph at lines 753--757
+[]\TU/lmr/m/n/12.045 Ke Z, Wang S, Cheng H, et al.  CRDN: Cascaded Residual Dense Net-
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [114]
@@ -2277,9 +2274,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [115]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [116]) (./tex/thanks.tex [117] [118
+ [116]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [117]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [118]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [119]) (./tex/thanks.tex [120]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.045pt
@@ -2290,7 +2294,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.045pt
 (hyperref)                replaced by space on input line 1.
 
-) (./tex/publications.tex [119] [120
+) (./tex/publications.tex [121
+
+] [122
 
 ]
 
@@ -2305,7 +2311,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
- [121]
+ [123]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 114.
@@ -2323,12 +2329,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 29158 strings out of 492970
- 591948 string characters out of 6133937
- 678717 words of memory out of 5000000
- 32606 multiletter control sequences out of 15000+600000
- 563143 words of font info for 205 fonts, out of 8000000 for 9000
+ 29192 strings out of 492970
+ 592754 string characters out of 6133937
+ 680208 words of memory out of 5000000
+ 32637 multiletter control sequences out of 15000+600000
+ 563159 words of font info for 207 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,17n,77p,10541b,909s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,17n,77p,10541b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.pdf (139 pages).
+Output written on /Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.pdf (141 pages).

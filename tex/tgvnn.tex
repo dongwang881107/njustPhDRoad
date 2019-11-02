@@ -1,5 +1,5 @@
 
-\chapter{动态MR图像的低秩和稀疏分解模型}
+\chapter{动态MR图像的低秩和稀疏分解的高阶变分模型和算法}
 \label{chap:tgvlr}
 动态MRI（dynamic MRI, dMRI）是MR成像应用中的一个重要的技术，并且在临床中有着广泛的应用，比如心脏电影成像、磁共振动态对比增强（DCE-MRI）\cite{Yankeelov2009}等，其目的是可视化形态学或者对比度随时间的变化。然而，传统dMRI方法成像速度慢，信噪比低，并且很难在空间分辨率和时间分辨率之间取得平衡 \cite{van1993, Jeffrey2003k, Tsao}。动态MRI重建中最重要的问题是如何平衡时间和空间分辨率，这是由于其数据采集速度慢所决定的。在对动态MR图像进行采样时，如果在每一帧图像上采集了更多的数据，那么在同样的时间内，我们就只能获得更少帧数的数据，造成图像时间分辨率的降低；反之，如果我们保证了时间分辨率，尽可能多的在每一帧图像上都采集数据，那么必然造成在每一帧图像上采集数据的减少，造成空间分辨率的降低。因此，动态MRI的时间分辨率和空间分辨率之间的平衡很难把握。
 
@@ -81,7 +81,7 @@ TGV泛函的数学基础由Bredies等\cite{bredies2010total}所建立，是经�
 \end{aligned}
 \label{equ:tgv}
 \eeq
-这里$\alpha=(\alpha_0,\alpha_1)$是正参数，$S^{3\times 3}$ 是对称矩阵的集合，$C_c^2({\Omega,S^{3\times 3}})$表示带有紧支撑集且映射到$S^{2\times 2}$的二次连续可微函数。散度算子$\mathrm{div} q\in C_c^1(\Omega, \mathbb{C}^3)$和$\mathrm{div}^2\,q \in C_c(\Omega)$的定义如下：
+这里$\alpha=(\alpha_0,\alpha_1)$是正参数，$S^{3\times 3}$ 是对称矩阵的集合，$C_c^2({\Omega,S^{3\times 3}})$表示带有紧支撑集且映射到$S^{3\times 3}$的二次连续可微函数。散度算子$\mathrm{div} q\in C_c^1(\Omega, \mathbb{C}^3)$和$\mathrm{div}^2\,q \in C_c(\Omega)$的定义如下：
 $$(\mathrm{div}q)_i=\sum^3_{j=1}\frac{\partial q_{ij}}{\partial x_j},$$
 $$\mathrm{div}^2q=\sum^3_{j=1}\frac{\partial^2q_{ii}}{\partial x_i^2}+2\sum_{i<j}\frac{\partial q_{ij}}{\partial x_i\partial x_j},$$
 其中$q\in C_c(\Omega, S^{3\times 3})$和$p\in C_c(\Omega, \mathbb{C}^3)$的无穷范数为
@@ -100,7 +100,7 @@ $$\mathrm{ker}(\mathrm{TGV}^2_\alpha)=\{u(x)=Kx+b \,\big|\, x\in\Omega,K\in \mat
 $$\mathrm{TGV}_\alpha^2(u)=\min_{\omega\in \mathrm{BD}(\Omega)}\alpha_1\|\nabla_3 u-\omega\|_1 + \alpha_0\|\mathcal{E}(\omega)\|_1,$$
 其中$\mathcal{E}(\omega)=\frac{1}{2}(\nabla_3\omega+\nabla_3\omega^{T})$是对称梯度算子，$\mathrm{BD}(\Omega)$ 是有界形变函数空间。
 
-\subsection{提出模型}
+\subsection{我们的模型}
 结合低秩填充和图像分解的思想，我们提出模型：
 \beq
 \min_{L,S} \frac{1}{2}\|A(L+S)-B\|_{\mathrm{F}}^2+\mathrm{TGV}^2_\alpha(S)+\beta\|L\|_*,
@@ -111,7 +111,7 @@ $$\mathrm{TGV}_\alpha^2(u)=\min_{\omega\in \mathrm{BD}(\Omega)}\alpha_1\|\nabla_
 \section{模型的离散化和算法}
 在这一节，我们首先给出$\mathrm{TGV}_{\alpha}^2$的离散格式，然后给出Primal-Dual算法来求解模型的流程。
 
-\subsection{模型离散化}
+\subsection{离散化模型}
 为了求解模型，我们给出$\mathrm{TGV}_{\alpha}^2$的离散格式。本节的离散化可参照文献\cite{tgv,pd}。首先将区域$\Omega\subset\mathbb{C}^3$离散为网格：
 $$\Omega=\{(i,j,k)\big|1\leq i\leq N_1, 1\leq j\leq N_2, 1\leq k\leq d\},$$
 其中$N_1$，$N_2$和$d$是动态图像的维度。假设$U=\mathbb{C}^{N_1\times N_2\times d}$, $V=U\times U\times U=U^3$和$W=U\times U\times U\times U\times U\times U=U^6$是三个有限维空间。定义空间$U$中的标量内积$\langle u,u' \rangle _U=\sum_{(i,j,k)\in \Omega}u_{i,j,k}u'_{i,j,k}, u,u'\in U$，范数$\|u\|_U=\sqrt{\langle u,u \rangle _U}$。同样的，$V$和$W$中的标量内积分别为$\langle v,v'\rangle_V=\sum_{i=1}^3\langle v_i,v_i'\rangle_U$和$\langle w,w'\rangle_W=\sum_{i=1}^3\langle w_i,w_i'\rangle_U + 2\sum_{i=4}^6\langle w_i,w_i'\rangle_U$。
@@ -292,16 +292,16 @@ $\mathrm{U}$，$\Sigma$和$\mathrm{V}$是秩为$r$的矩阵$\bar{t}$的奇异值
 易知，当$\mathrm{max}\{2\|A\|^2+12+a^2,12/a^2+13\}$取得最小值时，满足$2\|A\|^2+12+a^2=12/a^2+13$，经过计算可得：
 $$\|\mathcal{K}\|^2\leq \frac{2\|A\|^2+25+\sqrt{(2\|A\|^2-1)^2+48}}{2}.$$ 
 
-\section{实验设置}
+\section{数值实验数据与评价方法}
 \subsection{实验数据}
 我们回顾性地将提出的模型应用在三组不同的动态MR数据集中。第一组数据为生理学改进非均匀心脏躯干数值体模（physiologically improved non uniform cardiac torso，PINCAT），图像维度为$128\times 128\times 50$。第二组数据为活体心脏灌注MR数据（in vivo cardiac perfusion），图像维度为$190\times 90\times 70$ 。这两组数据也被应用在模型kt-SLR中，选择它们是为了更公平地和其他模型进行比较。有关数据集的详细信息，请参考文献\cite{segars2002study, sharif2007adaptive}。
 
 第三组数据是活体胸部DCE-MRI数据。这些数据都来自于不同的病人，并经过了机构审查委员会的批准。这组数据使用了Philips公司的Achieve 3T扫描仪通过破坏性梯度回波序列（spoiled gradient recalled echo, SPGRE）获取，重复时间$T_R$为4.33 ms，回波时间$T_E$为2.12 ms，偏转角为$12^\circ$。采集所得的数据为线圈组合复值数据，维度为$192\times 192\times 10\times 105$，其中相位编码和频率编码均为192，切片数量为10，帧数为105。空间分辨率为$1.33$ mm $\times$ 1.33 mm $\times$ 5 mm，视野大小为256 mm $\times$ 256 mm $\times$ 50 mm。更详细的成像细节请参考文献\cite{li}。我们将这个数据记作Breast1。另外两个胸部数据是在同样的协议不同的成像参数下采集得到的，维度为$192\times 192\times 20\times 25$。我们将这两个数据分别记作Breast2和Breast3。注意，与Breast1不同，Breast2和Breast3只有实值幅度（magnitude）数据。为了缩小论文的焦点，我们只关注通过肿瘤中心的切片。对于Breast1，中心切片为第6个；对于Breast2和Breast3，中心切片为第10个。最终数据的维度分别为$192\times 192\times 105$和$192\times 192\times 25$。
 
-\subsection{比较方法}
-我们将提出的模型和最前沿的模型对比，它们分别是kt-SLR\footnote{\url{http://user.engineering.uiowa.edu/~jcb/Software/ktslr_matlab/Software.html}} \cite{Sajan2011Accelerated}, kt-RPCA\footnote{\url{http://agsp.org/bt/ktrpca/}} \cite{tremoulheac}, L+S\footnote{\url{http://cai2r.net/resources/software}} \cite{lpluss} and ICTGV\footnote{\url{https://github.com/IMTtugraz/AVIONIC}} \cite{infimaltgv}。以上模型的程序都使用MATLAB编写，并且全部开源。所有实验程序均在双核Xeon E5-2630 2.2 GHz CPU，128GB内存和NVIDIA TITAN RTX GPU的工作站上运行，MATLAB的版本为2018a。为了加速MATLAB程序，我们也使用CUDA C语言在GPU上实现提出的模型，并且比较了MATLAB和CUDA的运行时间。两个版本的程序均已开源，详细程序请参考网址\url{https://github.com/chixindebaoyu/tgvnn}。
+\subsection{评价方法}
+我们将提出的模型和最前沿的模型对比，它们分别是kt-SLR\footnote{\url{http://user.engineering.uiowa.edu/~jcb/Software/ktslr_matlab/Software.html}} \cite{Sajan2011Accelerated}, kt-RPCA\footnote{\url{http://agsp.org/bt/ktrpca/}} \cite{tremoulheac}, L+S\footnote{\url{http://cai2r.net/resources/software}} \cite{lpluss} and ICTGV\footnote{\url{https://github.com/IMTtugraz/AVIONIC}} \cite{infimaltgv}。以上模型的程序都使用MATLAB编写，并且全部开源。所有数值实验程序均在双核Xeon E5-2630 2.2 GHz CPU，128GB内存和NVIDIA TITAN RTX GPU的工作站上运行，MATLAB的版本为2018a。为了加速MATLAB程序，我们也使用CUDA C语言在GPU上实现提出的模型，并且比较了MATLAB和CUDA的运行时间。两个版本的程序均已开源，详细程序请参考网址\url{https://github.com/chixindebaoyu/tgvnn}。
 
-我们选取了两种不同的采样模式进行数值试验，并应用到所有模型中。图\ref{fig:mask3}展示了实验中使用的采样模式，其中图\ref{fig:mask3}（a）是伪径向采样模式。在每一帧图像上，我们均匀地选取一些径向采样线，并使得帧与帧之间的采样线随机转动一个角度以增加非相干性。伪径向采样是动态MR重建数值试验中常用的采样模式，其采样点均在Cartesian网格上，直接使用快速Fourier变换即可实现频率域到图像域的转化，计算快速简便。在所有实验中，如非特别说明，我们均使用32条采样线来保证实验的一致性。伪径向采样的总加速因子为6.6，这里的总加速因子为k-space中所有点的个数与k-space采样点个数的比值。为了测试提出的模型在不同采样模式下的表现，我们也选取了Cartesian采样模式进行试验，如图\ref{fig:mask3}（b）所示。Cartesian采样模式是临床MR成像最常用的采样模式。在每一帧图像上，我们对低频区域进行全采样，对高频区域进行随进采样。具体来说，我们在k-space中选取中心窗口大小为20的区域作为低频区域，而在外围的高频区域，我们随机选择一些相位编码线来增加非相干性，使得总体来说外围的每一条相位编码线被选取的次数相同，并且帧与帧之间达到最大的正交性。Cartesian采样的总加速因子为5.1。
+我们选取了两种不同的采样模式进行数值试验，并应用到所有模型中。图\ref{fig:mask3}展示了数值实验中使用的采样模式，其中图\ref{fig:mask3}（a）是伪径向采样模式。在每一帧图像上，我们均匀地选取一些径向采样线，并使得帧与帧之间的采样线随机转动一个角度以增加非相干性。伪径向采样是动态MR重建数值试验中常用的采样模式，其采样点均在Cartesian网格上，直接使用快速Fourier变换即可实现频率域到图像域的转化，计算快速简便。在所有数值实验中，如非特别说明，我们均使用32条采样线来保证数值实验的一致性。伪径向采样的总加速因子为6.6，这里的总加速因子为k-space中所有点的个数与k-space采样点个数的比值。为了测试提出的模型在不同采样模式下的表现，我们也选取了Cartesian采样模式进行试验，如图\ref{fig:mask3}（b）所示。Cartesian采样模式是临床MR成像最常用的采样模式。在每一帧图像上，我们对低频区域进行全采样，对高频区域进行随进采样。具体来说，我们在k-space中选取中心窗口大小为20的区域作为低频区域，而在外围的高频区域，我们随机选择一些相位编码线来增加非相干性，使得总体来说外围的每一条相位编码线被选取的次数相同，并且帧与帧之间达到最大的正交性。Cartesian采样的总加速因子为5.1。
 \begin{figure}[htbp]
 \centering
 \subfigure[动态伪随机采样（一帧）]{
@@ -315,11 +315,11 @@ $$\|\mathcal{K}\|^2\leq \frac{2\|A\|^2+25+\sqrt{(2\|A\|^2-1)^2+48}}{2}.$$
 \label{fig:mask3}
 \end{figure}
 
-实验使用的评估方法为信噪比（signal error ratio，SER）和相似性测度\cite{ssim}（structural similarity index，SSIM），它们是压缩感知重建中最常用到的评估方法。SER的定义为：
+数值实验使用的评估方法为信噪比（signal error ratio，SER）和相似性测度\cite{ssim}（structural similarity index，SSIM），它们是压缩感知重建中最常用到的评估方法。SER的定义为：
 $$\mathrm{SER} = -10\log_{10}\frac{\|X_\mathrm{rec}-X_\mathrm{ori}\|_\mathrm{F}^2}{\|X_\mathrm{ori}\|_\mathrm{F}^2},$$
 其中$X_\mathrm{rec}$为重建后的图像，$X_\mathrm{ori}$为原始的、全采样图像。SSIM的定义为
 $$\mathrm{SSIM} = \frac{(2\mu_\mathrm{rec}\mu_\mathrm{ori}+c_1)(2\sigma_{\mathrm{rec},\mathrm{ori}}+c_2)}{(\mu_\mathrm{rec}^2+\mu_\mathrm{ori}^2+c_1)(\sigma_\mathrm{rec}^2+\sigma_\mathrm{ori}^2+c_2)},$$
-其中$\mu_\mathrm{ori}$和$\mu_\mathrm{rec}$分别为原始图像和重建图像的均值，$\sigma_\mathrm{ori}$和$\sigma_\mathrm{rec}$分别为原始图像和重建图像的方差，$\sigma_{\mathrm{rec,ori}}$为原始图像和重建图像之间的协方差，$c_1$和$c_2$为常数。由于我们处理的是动态MR图像，这里的SSIM计算为每一帧的平均值。实验时为了保证一致性，所有数据都被缩放到[0,1]。我们通过以下方法调试模型参数：对于PINCAT数据，通过对每个参数进行穷举搜索得到最高SER时的参数，并将此参数用于其他数据集中。表\ref{tab:params}展示了提出模型所使用的参数。为了保证算法收敛，伪径向采样的迭代次数设置为500，Cartesian采样的迭代次数设置为1000。
+其中$\mu_\mathrm{ori}$和$\mu_\mathrm{rec}$分别为原始图像和重建图像的均值，$\sigma_\mathrm{ori}$和$\sigma_\mathrm{rec}$分别为原始图像和重建图像的方差，$\sigma_{\mathrm{rec,ori}}$为原始图像和重建图像之间的协方差，$c_1$和$c_2$为常数。由于我们处理的是动态MR图像，这里的SSIM计算为每一帧的平均值。进行数值实验时为了保证一致性，所有数据都被缩放到[0,1]。我们通过以下方法调试模型参数：对于PINCAT数据，通过对每个参数进行穷举搜索得到最高SER时的参数，并将此参数用于其他数据集中。表\ref{tab:params}展示了提出模型所使用的参数。为了保证算法收敛，伪径向采样的迭代次数设置为500，Cartesian采样的迭代次数设置为1000。
 \begin{table}[htbp]
 	\centering
 	\caption{文章提出模型使用的参数}
@@ -336,7 +336,7 @@ $$\mathrm{SSIM} = \frac{(2\mu_\mathrm{rec}\mu_\mathrm{ori}+c_1)(2\sigma_{\mathrm
 	\label{tab:params}
 \end{table}
 
-\section{实验结果}
+\section{数值实验结果}
 表\ref{tab:result3}展示了在伪径向采样模式下，各个模型在不同数据上重建结果的比较。可以看出本文的模型在所有的数据集上都取得了很好地效果，尤其是在cardiac和胸部DCE-MRI数据上，SER和SSIM均为最高。虽然kt-SLR在PINCAT数据上的SER最高，其在胸部数据上的表现很差。同样的，kt-RPCA虽然在胸部数据上的表现仅次于本文提出的模型，但其在PINCAT和cardiac数据上的表现一般。
 \begin{table}
 	\centering
@@ -504,9 +504,9 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \end{table}
 
 \section{本章小结}
-在本章中，我们回顾了动态MR压缩感知的经典模型，并基于图像分解思想提出了利用二阶时空TGV泛函和核范数的重建模型。其中，核范数用来建模时间高度相关的背景部分，可以很好地消除空间伪影；二阶时空TGV泛函可以刻画图像中的光滑部分，在保持图像边缘的同时可以抑制阶梯效应的产生。我们使用Primal-Dual算法来求解模型，并并给出了算法收敛时的范数估计。我们也利用了GPU来加速MATLAB程序。在PINCAT、心脏灌注和胸部DCE-MRI数据上的实验表明，在不同的采样模式和加速因子下，本文的模型都比最前沿的模型在消除空间伪影、保持边缘上的表现更好，尤其是在胸部DCE-MRI数据上。
+在本章中，我们回顾了动态MR压缩感知的经典模型，并基于图像分解思想提出了利用二阶时空TGV泛函和核范数的重建模型。其中，核范数用来建模时间高度相关的背景部分，可以很好地消除空间伪影；二阶时空TGV泛函可以刻画图像中的光滑部分，在保持图像边缘的同时可以抑制阶梯效应的产生。我们使用Primal-Dual算法来求解模型，并并给出了算法收敛时的范数估计。我们也利用了GPU来加速MATLAB程序。在PINCAT、心脏灌注和胸部DCE-MRI数据上的数值实验表明，在不同的采样模式和加速因子下，本文的模型都比最前沿的模型在消除空间伪影、保持边缘上的表现更好，尤其是在胸部DCE-MRI数据上。
 
-实验中，我们在PINCAT数据上手动调试了参数，然后将这组参数应用到其他数据中。这样的调参方法需要满足一个假设，即这组参数可以推广到其他数据中。但是在实际中，并不是所有的模型都满足这样的假设。这些模型的参数可能仅仅取决于噪声水平、加速因子等。因此本章中所展示的结果有一定的局限性，对于某个模型和某组数据而言，不同的参数可能会有更好的结果。
+数值实验中，我们在PINCAT数据上手动调试了参数，然后将这组参数应用到其他数据中。这样的调参方法需要满足一个假设，即这组参数可以推广到其他数据中。但是在实际中，并不是所有的模型都满足这样的假设。这些模型的参数可能仅仅取决于噪声水平、加速因子等。因此本章中所展示的结果有一定的局限性，对于某个模型和某组数据而言，不同的参数可能会有更好的结果。
 
 
 

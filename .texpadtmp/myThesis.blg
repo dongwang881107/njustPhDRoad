@@ -22,12 +22,14 @@ ouput is an unknown function---line 2106 of file GBT7714-2005NLang_Upp.bst
 format.conference.title is an unknown function---line 2623 of file GBT7714-2005NLang_Upp.bst
 format.cconference.title is an unknown function---line 2658 of file GBT7714-2005NLang_Upp.bst
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated field_info (elt_size=4) to 12872 items from 5000.
+Reallocated field_info (elt_size=4) to 13200 items from 5000.
 Database file #1: ../bib/myRefs.bib
-Repeated entry---line 1732 of file ../bib/myRefs.bib
+Repeated entry---line 1813 of file ../bib/myRefs.bib
  : @article{wang2016magnetic
  :                          ,
 I'm skipping whatever remains of this entry
+Name 1 in "Xanthis, Christos G, and Venetis, Ioannis E, and Chalkias, A V, and Aletras, Anthony H" has a comma at the end for entry Xanthis2014MRISIMUL
+while executing---line 3479 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry Yankeelov2009
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry mrf
@@ -425,13 +427,35 @@ You can't pop an empty literal stack for entry bipin_mehta_magnetic_2019
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry malik_extended_2018
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
-You can't pop an empty literal stack for entry Knoll
-while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry gpu
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry biguri2016tigre
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry palenstijn2011performance
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Knoll
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry Sorensen
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry tron
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Eklund2014BROCCOLI
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+Name 1 in "Xanthis, Christos G, and Venetis, Ioannis E, and Chalkias, A V, and Aletras, Anthony H" has a comma at the end for entry Xanthis2014MRISIMUL
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+Name 2 in "Xanthis, Christos G, and Venetis, Ioannis E, and Chalkias, A V, and Aletras, Anthony H" has a comma at the end for entry Xanthis2014MRISIMUL
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+Name 3 in "Xanthis, Christos G, and Venetis, Ioannis E, and Chalkias, A V, and Aletras, Anthony H" has a comma at the end for entry Xanthis2014MRISIMUL
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Xanthis2014MRISIMUL
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Jung2013GPU
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Yakang2010Real
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Garcia2016Accelerated
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Cui2013Distributed
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry vasilevsy_repro_2013
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
@@ -474,45 +498,45 @@ You can't pop an empty literal stack for entry Ma_B1_MRF
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry Hamilton
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
-You've used 192 entries,
+You've used 200 entries,
             6754 wiz_defined-function locations,
-            2236 strings with 44812 characters,
-and the built_in function-call counts, 72163 in all, are:
-= -- 6748
-> -- 2484
+            2275 strings with 46334 characters,
+and the built_in function-call counts, 75457 in all, are:
+= -- 7061
+> -- 2616
 < -- 68
-+ -- 1355
-- -- 578
-* -- 5665
-:= -- 10233
-add.period$ -- 601
-call.type$ -- 192
-change.case$ -- 192
-chr.to.int$ -- 185
-cite$ -- 196
-duplicate$ -- 3042
-empty$ -- 8192
-format.name$ -- 1037
-if$ -- 16809
++ -- 1425
+- -- 609
+* -- 5929
+:= -- 10704
+add.period$ -- 625
+call.type$ -- 200
+change.case$ -- 200
+chr.to.int$ -- 193
+cite$ -- 204
+duplicate$ -- 3170
+empty$ -- 8541
+format.name$ -- 1084
+if$ -- 17564
 int.to.chr$ -- 8
-int.to.str$ -- 193
-missing$ -- 202
-newline$ -- 993
-num.names$ -- 384
-pop$ -- 1406
+int.to.str$ -- 201
+missing$ -- 210
+newline$ -- 1033
+num.names$ -- 400
+pop$ -- 1464
 preamble$ -- 1
-purify$ -- 192
+purify$ -- 200
 quote$ -- 0
-skip$ -- 2429
+skip$ -- 2545
 stack$ -- 0
-substring$ -- 4642
-swap$ -- 206
+substring$ -- 4892
+swap$ -- 214
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 756
+type$ -- 788
 warning$ -- 4
-while$ -- 462
+while$ -- 484
 width$ -- 0
-write$ -- 2708
-(There were 240 error messages)
+write$ -- 2820
+(There were 252 error messages)

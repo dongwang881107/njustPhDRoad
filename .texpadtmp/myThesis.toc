@@ -10,9 +10,9 @@
 \contentsline {subsection}{\numberline {1.2.3}非线性重建算法}{6}{subsection.1.2.3}
 \contentsline {subsection}{\numberline {1.2.4}本节小结}{9}{subsection.1.2.4}
 \contentsline {section}{\numberline {1.3}基于压缩感知MR重建的研究现状}{9}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}稀疏性}{9}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}采样模式}{11}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}重建模型}{13}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.1}MR图像的稀疏性}{9}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}MRI采样模式}{11}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}MR图像的重建模型}{13}{subsection.1.3.3}
 \contentsline {subsection}{\numberline {1.3.4}动态MR图像的重建模型}{19}{subsection.1.3.4}
 \contentsline {subsection}{\numberline {1.3.5}本节小结}{27}{subsection.1.3.5}
 \contentsline {section}{\numberline {1.4}磁共振指纹的研究现状}{27}{section.1.4}
@@ -23,77 +23,66 @@
 \contentsline {section}{\numberline {1.5}本文的主要研究内容和章节安排}{32}{section.1.5}
 \contentsline {chapter}{\numberline {2\hspace {.3em}}背景知识}{35}{chapter.2}
 \contentsline {section}{\numberline {2.1}MRI基本原理}{35}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}数学建模}{35}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}图像重建}{38}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}采样轨迹}{39}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}成像序列}{40}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}本节小结}{41}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.1}MRI的物理原理和数学模型}{35}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}MR采样轨迹}{39}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}MR成像序列}{40}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}本节小结}{41}{subsection.2.1.4}
 \contentsline {section}{\numberline {2.2}扩展相图}{42}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}配置状态矩阵}{42}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}分区状态方法}{43}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}其他因素的作用}{44}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}最终模型}{45}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}本节小结}{45}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.3}其他因素的作用和最终模型}{44}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}本节小结}{45}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}本章总结}{45}{section.2.3}
-\contentsline {chapter}{\numberline {3\hspace {.3em}}动态MR图像的低秩和稀疏分解模型}{47}{chapter.3}
+\contentsline {chapter}{\numberline {3\hspace {.3em}}动态MR图像的低秩和稀疏分解的高阶变分模型和算法}{47}{chapter.3}
 \contentsline {section}{\numberline {3.1}模型的提出}{49}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}低秩矩阵补全}{49}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}二阶时空TGV泛函}{50}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}提出模型}{51}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.3}我们的模型}{51}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}模型的离散化和算法}{51}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}模型离散化}{51}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}离散化模型}{51}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Primal-Dual算法及收敛条件}{54}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}实验设置}{56}{section.3.3}
+\contentsline {section}{\numberline {3.3}数值实验数据与评价方法}{56}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}实验数据}{56}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}比较方法}{56}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}实验结果}{58}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.2}评价方法}{56}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}数值实验结果}{58}{section.3.4}
 \contentsline {section}{\numberline {3.5}本章小结}{67}{section.3.5}
 \contentsline {chapter}{\numberline {4\hspace {.3em}}胸部DCE-MRI压缩感知模型中时间稀疏项的量化评估}{69}{chapter.4}
 \contentsline {section}{\numberline {4.1}图像重建模型}{70}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Fourier变换}{70}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Haar小波变换}{70}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}全变差}{71}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}二阶TGV}{71}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}核范数}{72}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}图像重建算法}{72}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}FISTA}{72}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.1.1}基于Fourier变换的重建模型}{70}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}基于Haar小波变换的重建模型}{70}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}基于TV的重建模型}{71}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}基于二阶TGV的重建模型}{71}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}基于核范数的重建模型}{72}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}图像重建快速算法}{72}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}FISTA快速算法}{72}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}模型参数选择}{73}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}实验方法}{74}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}数据采集}{74}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}下采样方法}{74}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}评估方法}{74}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}程序运行}{75}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}实验结果}{75}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}图像质量}{75}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}参数精度}{76}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}实验分析}{83}{section.4.5}
+\contentsline {section}{\numberline {4.3}数值实验数据与评价方法}{74}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}实验数据}{74}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}评估方法}{74}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}数值实验结果}{75}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}重建图像质量}{75}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}定量参数精度}{76}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}数值实验分析}{83}{section.4.5}
 \contentsline {section}{\numberline {4.6}本章小结}{83}{section.4.6}
 \contentsline {chapter}{\numberline {5\hspace {.3em}}基于GPU的实时磁共振指纹的字典生成和匹配}{85}{chapter.5}
-\contentsline {section}{\numberline {5.1}MRF的主要问题}{85}{section.5.1}
-\contentsline {section}{\numberline {5.2}snapMRF代码结构}{87}{section.5.2}
-\contentsline {section}{\numberline {5.3}GPU核函数的功能}{88}{section.5.3}
-\contentsline {section}{\numberline {5.4}单元测试}{89}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}自旋回波}{89}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}饱和恢复序列}{89}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}无驰豫快速自旋回波}{90}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}有驰豫快速自旋回波}{90}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}快速梯度回波}{90}{subsection.5.4.5}
-\contentsline {subsection}{\numberline {5.4.6}Bloch方程}{90}{subsection.5.4.6}
-\contentsline {subsection}{\numberline {5.4.7}EPG模型}{90}{subsection.5.4.7}
-\contentsline {subsection}{\numberline {5.4.8}字典自匹配}{90}{subsection.5.4.8}
-\contentsline {section}{\numberline {5.5}实验方法}{90}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}运行时间}{91}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}参数精度}{91}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}图像质量}{92}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}程序软件}{92}{subsection.5.5.4}
-\contentsline {section}{\numberline {5.6}实验结果}{92}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}运行时间}{92}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}参数精度}{92}{subsection.5.6.2}
-\contentsline {subsection}{\numberline {5.6.3}图像质量}{94}{subsection.5.6.3}
-\contentsline {section}{\numberline {5.7}实验分析}{99}{section.5.7}
-\contentsline {section}{\numberline {5.8}本章小结}{99}{section.5.8}
-\contentsline {chapter}{\numberline {6\hspace {.3em}}总结与展望}{101}{chapter.6}
-\contentsline {section}{\numberline {6.1}本文工作的总结}{101}{section.6.1}
-\contentsline {section}{\numberline {6.2}下一步一些展望}{102}{section.6.2}
-\contentsline {chapter}{致\quad \quad 谢}{119}{chapter*.55}
-\contentsline {chapter}{附\quad \quad 录}{121}{chapter*.56}
+\contentsline {section}{\numberline {5.1}MRF重建参数图的主要问题}{85}{section.5.1}
+\contentsline {section}{\numberline {5.2}基于GPU的MRF重建}{86}{section.5.2}
+\contentsline {section}{\numberline {5.3}snapMRF程序设计与单元测试}{87}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}snapMRF程序流程与难点}{87}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}snapMRF核函数的功能}{89}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}单元测试}{90}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}数值实验数据与评价方法}{92}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}程序运行时间}{92}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}体模数据参数精度}{92}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}活体人脑数据}{93}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}数值实验结果}{93}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}程序运行时间}{93}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}体模数据的重建参数图}{95}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}活体人脑数据的重建参数图}{95}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}数值实验分析}{101}{section.5.6}
+\contentsline {section}{\numberline {5.7}本章小结}{101}{section.5.7}
+\contentsline {chapter}{\numberline {6\hspace {.3em}}总结与展望}{103}{chapter.6}
+\contentsline {section}{\numberline {6.1}本文工作总结}{103}{section.6.1}
+\contentsline {section}{\numberline {6.2}下一步一些展望}{104}{section.6.2}
+\contentsline {chapter}{致\quad \quad 谢}{121}{chapter*.57}
+\contentsline {chapter}{附\quad \quad 录}{123}{chapter*.58}

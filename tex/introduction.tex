@@ -48,7 +48,7 @@ MRI利用核磁共振现象来实现高对比度成像，它可以非侵入式�
 
 MR成像过程通常被建模为二维或三维空间的Fourier编码，即首先从图像的Fourier域（通常称为k-space）中采样，再通过算法将图像重建出来。详细的MR成像原理请参考第\ref{chap:pre}章。为了准确地重建图像，采样率需要达到Nyquist采样定理\cite{Nyquist}的要求。所以，MRI的成像速度通常很慢，尤其是dMRI和三维MRI，这对成像设备和病人都是很大的负担。因此如何提高MR成像速度和质量，一直是研究人员最关心的问题。
 
-加速MR成像通常的思路是在不降低图像质量的前提下，减少获取的k-space数据，从而达到加速成像的效果。但由于下采样时，采样率没有达到Nyquist采样定理的要求，通过简单的Fourier补零重建的图像（称为Zerofilled图像）会出现下采样伪影，而消除伪影主要有以下三个策略。第一种策略是使得生成的伪影与图像非相干或者在视觉上不明显\cite{Tsai,Marseille,Greiser}，但这些方法所得到的重建图像通常信噪比低。第二种策略是利用k-space中数据的冗余性，比如部分傅里叶成像\cite{McGibney}（partial-Fourier）和平行成像（parallel MRI, pMRI）。pMRI是目前在临床上应用比较成功的一大类加速方法，它是一种以空间换时间的成像策略。具体来说，pMRI通过多个成像线圈接收信号，而每个线圈都在k-space进行下采样，最后通过算法将所有线圈接收到的数据还原出来。经典的pMRI方法有SENSE（sensitivity encoding）\cite{sense}，SMASH（simultaneous acquisition of apatial harmonics）\cite{smash}，GRAPPA（generalized autocalibrating partially parallel acquisitions）\cite{grappa}等。第三种策略是利用图像在空间域或者时间域上的冗余性，如UNFOLD\cite{Madore}和k-t BLAST/SNESE\cite{Tsao}等。可以看出，以上方法的共同点是假设MR图像中存在着冗余性，并且可以利用这些冗余性来降低采样率，以达到加速成像的目的。
+加速MR成像通常的思路是在不降低图像质量的前提下，减少获取的k-space数据，从而达到加速成像的效果。但由于下采样时，采样率没有达到Nyquist采样定理的要求，通过简单的Fourier补零重建的图像（称为Zerofilled图像）会出现下采样伪影，而消除伪影主要有以下三个策略。第一种策略是使得生成的伪影与图像非相干或者在视觉上不明显\cite{Tsai,Marseille,Greiser}，但这些方法所得到的重建图像通常信噪比低。第二种策略是利用k-space中数据的冗余性，比如部分傅里叶成像\cite{McGibney}（partial-Fourier）和平行成像（parallel MRI, pMRI）。pMRI是目前在临床上应用比较成功的一大类加速方法，它是一种以空间换时间的成像策略。具体来说，pMRI通过多个成像线圈接收信号，而每个线圈都在k-space进行下采样，最后通过算法将所有线圈接收到的数据还原出来。经典的pMRI方法有SENSE（sensitivity encoding）\cite{sense}，SMASH（simultaneous acquisition of spatial harmonics）\cite{smash}，GRAPPA（generalized autocalibrating partially parallel acquisitions）\cite{grappa}等。第三种策略是利用图像在空间域或者时间域上的冗余性，如UNFOLD\cite{Madore}和k-t BLAST/SNESE\cite{Tsao}等。可以看出，以上方法的共同点是假设MR图像中存在着冗余性，并且可以利用这些冗余性来降低采样率，以达到加速成像的目的。
 
 2005年，Candès，Tao，Romberg\cite{candes2004near,candes2006compressive,candes2006quantitative,candes2006stable}和Donoho\cite{Donoho2006Compressed}等人提出了压缩感知（compressed sensing）理论。压缩感知是一种新的采样理论，可以加速信号的采集与重建。根据传统Nyquist采样定理\cite{Nyquist}，当采样率达到信号最高频率两倍以上的时，信号才可以被精确地重建出来。我们称满足Nyquist采用定理的采样方式成为全采样。当对信号进行均匀下采样时，采集到的信号会出现相干伪影，使用传统的重建方法很难将其去除。而压缩感知理论突破了Nyquist定理对高采样率要求的限制，可以用很少的数据来精确地重建信号。压缩感知理论有三个主要部分，分别为稀疏性、非相干下采样和非线性重建算法。具体来说，首先假设信号在某个变换域稀疏，对信号进行非相干下采样，然后通过非线性重建算法即可以高概率地将信号重建出来。因此，压缩感知理论自诞生以来就被应用在MR成像中，可以显著地提高成像速度和质量，并成为了快速MR成像的主流方法。本论文研究的重点之一即为压缩感知在MRI中的应用，我们将在第\ref{sec:cs}和\ref{sec:csmri}小节介绍基于压缩感知的MR成像的研究现状。
 
@@ -99,7 +99,7 @@ $$\sigma_s(x)_p=\mathrm{inf}_{z\in \Sigma_s}\|x-z\|_p.$$
 \end{equation}
 $l_1$优化问题也被称为基追踪(basic pursuit\cite{bp})和P1问题。
 
-为了保证压缩感知重建的精确性和鲁棒性，测量矩阵$A$需要满足特定的性质。压缩感知理论目前给出的性质有三个，它们分别为零空间性质（null space property，NSP），等距约束性（restricted isometry property, RIP）和非相干性（incoherence）。其中零空间性质是$l_1$优化分析中的基本性质，其定义为：
+为了保证压缩感知重建的精确性和鲁棒性，采样矩阵$A$需要满足特定的性质。压缩感知理论目前给出的性质有三个，它们分别为零空间性质（null space property，NSP），等距约束性（restricted isometry property, RIP）和非相干性（incoherence）。其中零空间性质是$l_1$优化分析中的基本性质，其定义为：
 
 \noindent\textbf{定义 1.2.2.1} 称矩阵$A\in \mathbb{C}^{M\times N}$满足$s$-零空间性质，如果
 $$\|\eta_\mathcal{O}\|_1\leq \gamma\|\eta_{\mathcal{O}^c}\|_1$$
@@ -109,7 +109,7 @@ $$\|\eta_\mathcal{O}\|_1\leq \gamma\|\eta_{\mathcal{O}^c}\|_1$$
 
 可以看出，零空间性质实际上等价于$l_1$稀疏重建。虽然NSP有着很好的性质，但在实际中很难判断一个采样矩阵是否满足零空间性质。而等距约束性更加容易处理，并且对噪声有鲁棒性。其定义如下：
 
-\noindent\textbf{定义 1.2.2.3} 称测量矩阵$A\in \mathbb{C}^{M\times N}$具有$s$-等距约束性，如果存在最小的常数$0\leq\delta_s<0$使得
+\noindent\textbf{定义 1.2.2.3} 称采样矩阵$A\in \mathbb{C}^{M\times N}$具有$s$-等距约束性，如果存在最小的常数$0\leq\delta_s<0$使得
 \begin{equation}
 	(1-\delta_s)\|x\|_2^2\leq \|Ax\|_2^2\leq (1+\delta_s)\|x\|^2_2
 \end{equation}
@@ -121,7 +121,7 @@ $$\|\eta_\mathcal{O}\|_1\leq \gamma\|\eta_{\mathcal{O}^c}\|_1$$
 $$\|\hat{x}-x\|_2\leq c_0s^{-1/2}\sigma_s(x)_1+c_1\epsilon,$$
 其中$c_0$和$c_1$是与$\delta_{2s}$有关的大于零的常数。
 
-虽然等距约束性在理论上给出了测量矩阵测量矩阵$A$需要满足的条件，但是在实际应用中，等距约束性不容易计算，因此很难验证一个采样矩阵是否具有等距约束性。非相干性则给采样矩阵的验证提供了简单有效的方法，其定义为：
+虽然等距约束性在理论上给出了采样矩阵$A$需要满足的条件，但是在实际应用中，等距约束性不容易计算，因此很难验证一个采样矩阵是否具有等距约束性。非相干性则给采样矩阵的验证提供了简单有效的方法，其定义为：
 
 \noindent\textbf{定义 1.2.2.5} 
 矩阵$A$的列相干性为$A$中任意不同两列$a_i$与$a_j$内积的最大值:
@@ -130,7 +130,7 @@ $$\|\hat{x}-x\|_2\leq c_0s^{-1/2}\sigma_s(x)_1+c_1\epsilon,$$
 \end{equation}
 可以看出，矩阵列相干性的范围是$\mu(A)\in [\sqrt{\frac{N-M}{M(N-1)}},1]$。
 
-压缩感知理论表明，当测量矩阵$A$的列相干性接近于1时，压缩感知只需要$O(s\mathrm{log}N)$次测量就可以很大概率恢复出原信号。
+压缩感知理论表明，当采样矩阵$A$的列相干性接近于1时，压缩感知只需要$O(s\mathrm{log}N)$次测量就可以很大概率恢复出原信号。
 
 \subsection{非线性重建算法}
 在实际计算中，我们一般将问题（\ref{equ:l1}）转化成更容易处理的无约束问题求解，模型变为：
@@ -260,7 +260,7 @@ Primal-Dual\cite{pd}算法是近年来比较热门的一阶算法，收敛速度
 \label{sec:csmri}
 MR成像是从Fourier域（也称为k-space）采样并重建数据的过程。由于MR成像的固有时间长，如何加快成像速度一直是研究人员关心的话题。压缩感知理论为从欠采样数据中精确重建出MR图像提供了理论基础和算法框架。压缩感知理论表明，在假设MR图像在某个变换域稀疏的前提下，当采样矩阵满足等距约束性或者非相干性条件时\cite{Donoho2006Compressed}，利用非线性重建算法可以大概率将图像精确地重建出来。压缩感知理论和MR成像有着天然的契合。为了使得压缩感知理论能够应用于MR成像，我们首先需要为MR图像找到合适的稀疏表示，并且采样矩阵也需要跟MR的成像域，即Fourier域非相干。在这一节中，我们重点回顾压缩感知在MR成像中的应用，MR成像原理请见第\ref{chap:pre}章。
 
-\subsection{稀疏性}
+\subsection{MR图像的稀疏性}
 \label{sec:sparsity}
 一般来说，医学图像是分片光滑的，因此在合适的稀疏变化下，医学图像通常展现出稀疏性或可压缩性。对于MR图像而言，其稀疏性或者说冗余性主要体现在三个方面。
 
@@ -293,7 +293,7 @@ MR成像是从Fourier域（也称为k-space）采样并重建数据的过程。�
 
 综上所述，MR图像的稀疏性主要体现在空间、时间和线圈上。因此需要根据具体问题，在不同的维度上选择不同的稀疏变换。
 
-\subsection{采样模式}
+\subsection{MRI采样模式}
 在压缩感知理论中，采样模式起着关键的作用。一般来说，采样矩阵需要满足等距约束性或者非相干性。对于MR而言，其采样模式也收到物理方面的限制。从第\ref{sec:mrimodel}节中我们知道，MR的采样模式是通过调整梯度场的大小和方向来实现的，因此我们希望采样轨迹是光滑的。因此，虽然随机矩阵在理论上可以保证足够的非相干性，但是无法应用到MR成像中。在一般的二维MR成像中，采样的策略一般是只保证一个方向的自由度，即在数据读取方向（readout）方向上进行全采样，而在相位编码（phase encoding）方向上进行随机采样，以增加采样矩阵的非相干性。
 
 压缩感知MR重建有以下四种常见的采样模式，如图\ref{fig:mask}所示。其中图\ref{fig:mask}（a）是Cartesian采样模式，被广泛地应用于临床中。由于其采样点均在Cartesian网格点上，重建过程十分简便，通过快速Fourier变换与逆变换即可实现图像域和频率域的转化。在图\ref{fig:mask}（a）中，k-space的中间部分进行了全采样，而外围部分则随机选取了几条采样线。这是因为k-space的中心区域是MR图像的低频部分，保留着图像的卡通信息；而外围是MR图像的高频部分，保留着图像的轮廓信息和噪声。虽然Cartesian采样计算简便，但其能达到的非相干性很低，这限制了它在压缩感知重建中的表现。
@@ -337,7 +337,7 @@ MR成像是从Fourier域（也称为k-space）采样并重建数据的过程。�
 
 综上所述，压缩感知MR重建的采样矩阵既需要满足非相干性，也需要考虑MR的物理限制。对于二维MR成像，主要的采样模式有Cartesian采样、径向采样和螺旋采样；而对于动态MR成像和三维MR成像，冗余性体现在多个维度上，采样矩阵的设计有着更多的自由度。一般的思路是在根据不同的问题，在不同的维度上选择不同的采样模式。
 
-\subsection{重建模型}
+\subsection{MR图像的重建模型}
 \label{sec:models}
 在这一小节，我们介绍压缩感知MR成像的经典模型，更详细的综述请参考文献\cite{ravishankar2019image,ye2019compressed}。我们知道，MR的数据获取发生在k-space中，即Fourier域中。则MR成像的采样矩阵$A\in \mathbb{C}^{M\times N}$，$M<<N$可以写成
 \begin{equation}
@@ -702,10 +702,10 @@ MRF流程示意图。此图来自文献\cite{mrfreview}。
 \label{fig:mrf}
 \end{figure}
 
-首先我们应该选取对所需参数敏感的MR序列对信号进行采样，并且序列的参数，如偏转角（flip angle），重复时间（repetition time, $T_R$）需要随着时间随机变动，使得组织在MR序列中产生指纹状的信号演化。其次，字典中包含着不同参数的组织在该MR序列中的模拟演化。最后，模式识别算法用来比较每个像素指纹和字典中原子的匹配度，重建参数图。
+首先我们应该选取对所需参数敏感的MR序列对信号进行采样，并且序列的参数，如偏转角（flip angle），重复时间（repetition time, $T_\mathrm{R}$）需要随着时间随机变动，使得组织在MR序列中产生指纹状的信号演化。其次，字典中包含着不同参数的组织在该MR序列中的模拟演化。最后，模式识别算法用来比较每个像素指纹和字典中原子的匹配度，重建参数图。
 
 \subsection{信号获取}
-信号获取是MRF的第一步，我们首先需要根据具体问题，选择合适的MR序列进行信号采集。关于MR成像以及序列请参考第\ref{chap:pre}章。MR序列的选取需要满足以下三个方面。第一，选取的MR序列需要对我们所研究的参数敏感，如$T_1$，$T_2$等。第二，在数据采集过程中，采集参数如偏转角，重复时间等需要连续随机变化。第三，每隔$T_R$时刻，使用伪随机下采样进行信号采集。图\ref{fig:fa}展示了偏转角（a）和重复时间（b）随时间变化的例子。这样做的目的是使不同参数的组织可以产生独特的信号演化，我们称之为指纹，即每个指纹中包含着不同组织的参数信息，以便在后面进行参数图重建。图\ref{fig:mrfimg}是某一$T_R$时刻的体模和活体人脑的指纹图像。可以看出由于高度的下采样，图像中存在着感强烈的伪影。MRF重建的目标即是从指纹图像中重建出参数图。
+信号获取是MRF的第一步，我们首先需要根据具体问题，选择合适的MR序列进行信号采集。关于MR成像以及序列请参考第\ref{chap:pre}章。MR序列的选取需要满足以下三个方面。第一，选取的MR序列需要对我们所研究的参数敏感，如$T_1$，$T_2$等。第二，在数据采集过程中，采集参数如偏转角，重复时间等需要连续随机变化。第三，每隔$T_\mathrm{R}$时刻，使用伪随机下采样进行信号采集。图\ref{fig:fa}展示了偏转角（a）和重复时间（b）随时间变化的例子。这样做的目的是使不同参数的组织可以产生独特的信号演化，我们称之为指纹，即每个指纹中包含着不同组织的参数信息，以便在后面进行参数图重建。图\ref{fig:mrfimg}是某一$T_\mathrm{R}$时刻的体模和活体人脑的指纹图像。可以看出由于高度的下采样，图像中存在着感强烈的伪影。MRF重建的目标即是从指纹图像中重建出参数图。
 
 \begin{figure}[htbp]
 \centering
@@ -733,7 +733,7 @@ MRF流程示意图。此图来自文献\cite{mrfreview}。
 \label{fig:mrfimg}
 \end{figure}
 
-目前常用的MRF序列主要有两种。Ma\cite{mrf}在MRF的第一篇文章中使用了平衡稳态自由进动序列（balanced steady state free precession, bSSFP\cite{ussfp}），因为目前对bSSFP序列的研究最充分。bSSFP对$T_1$，$T_2$和$B_0$敏感，并且具有高信噪比、高扫描效率的性质。对于MRF来说，bSSFP是一个适合的序列。另一种常用的序列为FISP序列，或者称为非平衡稳态自由进动序列（unbalanced steady state free precession, uSSFP）。这个序列的特点是在每个$T_R$结束之前，加上了一个非平衡的梯度场。Jiang\cite{jiang}等首先将uSSFP序列应用到了MRF上uSSFP序列有助于消除带状伪影，但是其只对$T_1$和$T_2$敏感，对$B_0$不敏感，因此不能获得$B_0$的参数图。其他种类序列的应用请参考文献\cite{joint,quest}。
+目前常用的MRF序列主要有两种。Ma\cite{mrf}在MRF的第一篇文章中使用了平衡稳态自由进动序列（balanced steady state free precession, bSSFP\cite{ussfp}），因为目前对bSSFP序列的研究最充分。bSSFP对$T_1$，$T_2$和$B_0$敏感，并且具有高信噪比、高扫描效率的性质。对于MRF来说，bSSFP是一个适合的序列。另一种常用的序列为FISP序列，或者称为非平衡稳态自由进动序列（unbalanced steady state free precession, uSSFP）。这个序列的特点是在每个$T_\mathrm{R}$结束之前，加上了一个非平衡的梯度场。Jiang\cite{jiang}等首先将uSSFP序列应用到了MRF上uSSFP序列有助于消除带状伪影，但是其只对$T_1$和$T_2$敏感，对$B_0$不敏感，因此不能获得$B_0$的参数图。其他种类序列的应用请参考文献\cite{joint,quest}。
 
 \subsection{字典生成}
 MRF字典中包含了不同参数的组织在MR序列中的模拟信号演化，字典中的每一个原子都包含着一组组织参数。因此，MRF的精度取决于生成字典所用的模型的精度和字典的大小。如果字典过小，则会导致重建参数图结果不精确；如果字典过大，生成字典和之后的匹配算法所需的时间就会增多。因此，需要在字典大小和重建速度之间寻找平衡。一般来说，对于一个给定的MRF序列来说，字典只需要生成一次，并且在之后的应用中保持不变。需要指出的是，MRF的字典和字典学习中的字典是不同的。MRF中字典的原子是组织的时间演化曲线，字典学习中字典的原子是基于图像块的特征。
@@ -800,7 +800,7 @@ Ma在\cite{mrf}使用了模板匹配（template matching）的方法来重建参
 
 第四章，针对胸部DCE-MRI图像，我们比较了5种不同的时间方向的稀疏项，并对重建结果进行了定量分析。这5种稀疏项分别为Fourier变换、Haar小波变换、二阶TGV和核范数。所有模型均使用FISTA快速算法进行求解。实验结果表明，核范数可以得到最高的信噪比，而TV/二阶TGV可以得到最精确地定量分析。因此，对于胸部DCE-MRI, 选择TV/二阶TGV作为稀疏项可以更好地重建病灶部分，而选择核范数则可以提高图像的整体信噪比。
 
-第五章，针对MRF字典生成与匹配速度慢的问题，我们使用图形处理单元来进行字典生成和模板匹配，并开发了一款开源软件snapMRF。snapMRF可以快速并准确地重建参数图，并且适用于不同的 MRF序列。相比于其他MRF开源软件，snapMRF的字典生成速度提高了10--1000倍, 字典匹配速度提高了10--100倍。
+第五章，针对MRF字典生成与匹配速度慢的问题，我们使用图形处理单元来进行字典生成和模板匹配，并开发了一款开源程序snapMRF。snapMRF可以快速并准确地重建参数图，并且适用于不同的 MRF序列。相比于其他MRF开源程序，snapMRF的字典生成速度提高了10--1000倍, 字典匹配速度提高了10--100倍。
 
 
 
