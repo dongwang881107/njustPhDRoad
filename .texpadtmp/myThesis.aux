@@ -56,7 +56,7 @@
 \citation{smash}
 \citation{grappa}
 \citation{Madore}
-\citation{Tsao}
+\citation{Jeffrey2003k}
 \citation{candes2004near,candes2006compressive,candes2006quantitative,candes2006stable}
 \citation{Donoho2006Compressed}
 \citation{Nyquist}
@@ -86,9 +86,9 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}非线性重建算法}{6}{subsection.1.2.3}}
 \newlabel{equ:unconstraint}{{1.8}{6}{非线性重建算法}{equation.1.2.8}{}}
 \newlabel{equ:admm}{{1.9}{6}{非线性重建算法}{equation.1.2.9}{}}
+\newlabel{equ:admm2}{{1.10}{6}{非线性重建算法}{equation.1.2.10}{}}
 \citation{powell1977restart}
 \citation{fista}
-\newlabel{equ:admm2}{{1.10}{7}{非线性重建算法}{equation.1.2.10}{}}
 \newlabel{equ:admm3}{{1.11}{7}{非线性重建算法}{equation.1.2.11}{}}
 \newlabel{equ:admmu}{{1.12}{7}{非线性重建算法}{equation.1.2.12}{}}
 \newlabel{equ:admmx}{{1.13}{7}{非线性重建算法}{equation.1.2.13}{}}
@@ -116,21 +116,20 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}MR图像的稀疏性}{9}{subsection.1.3.1}}
 \newlabel{sec:sparsity}{{1.3.1}{9}{MR图像的稀疏性}{subsection.1.3.1}{}}
 \citation{lustig2006}
+\citation{sense}
+\citation{grappa}
+\citation{block2007undersampled}
+\citation{liang2009accelerating}
+\citation{igrasp,focuss}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces 体模图像稀疏性举例。\relax }}{10}{figure.caption.7}}
 \newlabel{fig:wandtv}{{1.4}{10}{体模图像稀疏性举例。\relax }{figure.caption.7}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {体模图像}}}{10}{figure.caption.7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {一阶Haar小波变换}}}{10}{figure.caption.7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$x$方向的有限差分}}}{10}{figure.caption.7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$y$方向的有限差分}}}{10}{figure.caption.7}}
-\citation{sense}
-\citation{grappa}
-\citation{block2007undersampled}
-\citation{liang2009accelerating}
-\citation{igrasp,focuss}
 \citation{block2007undersampled,glover1992projection}
 \citation{meyer1992fast}
 \citation{gai1996correction}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}MRI采样模式}{11}{subsection.1.3.2}}
 \citation{Sajan2011Accelerated}
 \citation{smith2012}
 \citation{Sajan2011Accelerated}
@@ -138,6 +137,7 @@
 \citation{kressler2007three}
 \citation{karampinos2009high}
 \citation{santos2006single}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}MR采样模式}{11}{subsection.1.3.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces MRI中常用的采样模式\relax }}{12}{figure.caption.8}}
 \newlabel{fig:mask}{{1.5}{12}{MRI中常用的采样模式\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Cartesian采样}}}{12}{figure.caption.8}}
@@ -147,10 +147,8 @@
 \citation{ravishankar2019image,ye2019compressed}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces 动态MRI中常用的采样模式。\relax }}{13}{figure.caption.9}}
 \newlabel{fig:maskdynamic}{{1.6}{13}{动态MRI中常用的采样模式。\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {动态Cartesian采样}}}{13}{figure.caption.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {动态伪径向采样（一帧）}}}{13}{figure.caption.9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}MR图像的重建模型}{13}{subsection.1.3.3}}
-\newlabel{sec:models}{{1.3.3}{13}{MR图像的重建模型}{subsection.1.3.3}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {动态伪径向采样（一帧）}}}{13}{figure.caption.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {动态Cartesian采样}}}{13}{figure.caption.9}}
 \citation{lustig2006}
 \citation{tvcmri}
 \citation{Yang2010A}
@@ -158,9 +156,10 @@
 \citation{bredies2010total}
 \citation{infimaltgv}
 \citation{tgv}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}MR图像的重建模型}{14}{subsection.1.3.3}}
+\newlabel{sec:models}{{1.3.3}{14}{MR图像的重建模型}{subsection.1.3.3}{}}
 \newlabel{equ:sampling}{{1.20}{14}{MR图像的重建模型}{equation.1.3.20}{}}
 \newlabel{equ:wandtv}{{1.22}{14}{MR图像的重建模型}{equation.1.3.22}{}}
-\newlabel{equ:tgv1}{{1.23}{14}{MR图像的重建模型}{equation.1.3.23}{}}
 \citation{stankovic2003haar}
 \citation{candes2000curvelets}
 \citation{do2005contourlet}
@@ -168,10 +167,11 @@
 \citation{qu2010combined,qu2010iterative}
 \citation{infimaltgv}
 \citation{tree,chen2014exploiting}
+\newlabel{equ:tgv1}{{1.23}{15}{MR图像的重建模型}{equation.1.3.23}{}}
+\newlabel{equ:shearlet}{{1.26}{15}{MR图像的重建模型}{equation.1.3.26}{}}
 \citation{peyre2008non,lou2010image,gilboa2008nonlocal}
 \citation{akccakaya2011low}
 \citation{liang2011sensitivity}
-\newlabel{equ:shearlet}{{1.26}{15}{MR图像的重建模型}{equation.1.3.26}{}}
 \citation{liu2017mri}
 \citation{qu2014magnetic}
 \citation{dabov2007image}
@@ -181,7 +181,6 @@
 \citation{ksvd,mairal2010online,rubinstein2009double}
 \citation{ksvd}
 \citation{ravishankar2017efficient}
-\newlabel{equ:dictlearning}{{1.33}{17}{MR图像的重建模型}{equation.1.3.33}{}}
 \citation{bruckstein2009sparse}
 \citation{ravishankar2015efficient}
 \citation{ravishankar2015efficient}
@@ -196,6 +195,7 @@
 \citation{gregor2010learning}
 \citation{beck2009fast}
 \citation{varnet}
+\newlabel{equ:dictlearning}{{1.33}{18}{MR图像的重建模型}{equation.1.3.33}{}}
 \newlabel{equ:soup}{{1.34}{18}{MR图像的重建模型}{equation.1.3.34}{}}
 \newlabel{equ:slmri}{{1.37}{18}{MR图像的重建模型}{equation.1.3.37}{}}
 \citation{admmnet}
@@ -205,34 +205,34 @@
 \citation{han2019k,lee2019k}
 \citation{ye2019compressed}
 \citation{ye2019compressed}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}动态MR图像的重建模型}{19}{subsection.1.3.4}}
-\newlabel{sec:dmri}{{1.3.4}{19}{动态MR图像的重建模型}{subsection.1.3.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces 基于深度学习的MR重建。此图来自文献\cite  {ye2019compressed}。\relax }}{20}{figure.caption.10}}
 \newlabel{fig:deepmri}{{1.7}{20}{基于深度学习的MR重建。此图来自文献\cite {ye2019compressed}。\relax }{figure.caption.10}{}}
 \citation{lustig2006}
 \citation{Jeffrey2003k}
 \citation{focuss,jung2007improved}
-\citation{igrasp}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}动态MR图像的重建模型}{21}{subsection.1.3.4}}
+\newlabel{sec:dmri}{{1.3.4}{21}{动态MR图像的重建模型}{subsection.1.3.4}{}}
 \newlabel{equ:dynamic}{{1.40}{21}{动态MR图像的重建模型}{equation.1.3.40}{}}
 \newlabel{equ:dunconstraint}{{1.41}{21}{动态MR图像的重建模型}{equation.1.3.41}{}}
 \newlabel{equ:focuss}{{1.43}{21}{动态MR图像的重建模型}{equation.1.3.43}{}}
+\citation{igrasp}
 \citation{candes2009exact}
 \citation{zhao2012image,Sajan2011Accelerated}
 \citation{Sajan2011Accelerated}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces 动态图像的低秩性。\relax }}{22}{figure.caption.11}}
-\newlabel{fig:lowrank}{{1.8}{22}{动态图像的低秩性。\relax }{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {动态MR图像的Casorati矩阵}}}{22}{figure.caption.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {奇异值大小的变化}}}{22}{figure.caption.11}}
 \citation{lpluss}
 \citation{rpca}
-\citation{tremoulheac}
-\citation{infimaltgv}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces 动态图像的低秩性。\relax }}{23}{figure.caption.11}}
+\newlabel{fig:lowrank}{{1.8}{23}{动态图像的低秩性。\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {动态MR图像的Casorati矩阵}}}{23}{figure.caption.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {奇异值大小的变化}}}{23}{figure.caption.11}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces 动态图像的低秩稀疏分解（一帧）。\relax }}{24}{figure.caption.12}}
 \newlabel{fig:l+s}{{1.9}{24}{动态图像的低秩稀疏分解（一帧）。\relax }{figure.caption.12}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {原图像}}}{24}{figure.caption.12}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {低秩部分}}}{24}{figure.caption.12}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {稀疏部分}}}{24}{figure.caption.12}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {奇异值大小对比}}}{24}{figure.caption.12}}
+\citation{tremoulheac}
+\citation{infimaltgv}
 \citation{shin2014calibrationless}
 \citation{haldar2013low}
 \citation{jin2016general,lee2016acceleration}
@@ -252,12 +252,12 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.5}本节小结}{27}{subsection.1.3.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}磁共振指纹的研究现状}{27}{section.1.4}}
 \newlabel{sec:mrf}{{1.4}{27}{磁共振指纹的研究现状}{section.1.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces  MRF流程示意图。此图来自文献\cite  {mrfreview}。 \relax }}{27}{figure.caption.13}}
-\newlabel{fig:mrf}{{1.10}{27}{MRF流程示意图。此图来自文献\cite {mrfreview}。 \relax }{figure.caption.13}{}}
 \citation{mrf}
 \citation{ussfp}
 \citation{jiang}
 \citation{joint,quest}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces  MRF流程示意图。此图来自文献\cite  {mrfreview}。 \relax }}{28}{figure.caption.13}}
+\newlabel{fig:mrf}{{1.10}{28}{MRF流程示意图。此图来自文献\cite {mrfreview}。 \relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}信号获取}{28}{subsection.1.4.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces 偏转角（a）和重复时间（b）随时间的变化。\relax }}{28}{figure.caption.14}}
 \newlabel{fig:fa}{{1.11}{28}{偏转角（a）和重复时间（b）随时间的变化。\relax }{figure.caption.14}{}}
@@ -315,41 +315,40 @@
 \newlabel{fig:gradient}{{2.4}{37}{MR梯度场。此图来自于文献\cite {sprawls2000magnetic}。\relax }{figure.caption.21}{}}
 \newlabel{equ:mri}{{2.8}{38}{MRI的物理原理和数学模型}{equation.2.1.8}{}}
 \newlabel{equ:mrinoise}{{2.9}{38}{MRI的物理原理和数学模型}{equation.2.1.9}{}}
+\citation{bloch}
 \newlabel{equ:linear}{{2.10}{39}{MRI的物理原理和数学模型}{equation.2.1.10}{}}
 \newlabel{equ:matrix}{{2.12}{39}{MRI的物理原理和数学模型}{equation.2.1.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}MR采样轨迹}{39}{subsection.2.1.2}}
-\newlabel{equ:ls}{{2.13}{39}{MR采样轨迹}{equation.2.1.13}{}}
-\newlabel{equ:lss}{{2.14}{39}{MR采样轨迹}{equation.2.1.14}{}}
-\citation{bloch}
+\newlabel{equ:ls}{{2.13}{39}{MRI的物理原理和数学模型}{equation.2.1.13}{}}
+\newlabel{equ:lss}{{2.14}{39}{MRI的物理原理和数学模型}{equation.2.1.14}{}}
 \citation{haidekker2013medical}
 \citation{haidekker2013medical}
 \citation{haidekker2013medical}
 \citation{haidekker2013medical}
 \citation{haidekker2013medical}
 \citation{haidekker2013medical}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}MR成像序列}{40}{subsection.2.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}MR成像序列}{40}{subsection.2.1.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces 横向驰豫（a）与纵向驰豫（b）。此图来自文献\cite  {haidekker2013medical}。\relax }}{40}{figure.caption.22}}
 \newlabel{fig:t1t2}{{2.5}{40}{横向驰豫（a）与纵向驰豫（b）。此图来自文献\cite {haidekker2013medical}。\relax }{figure.caption.22}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {横向驰豫}}}{40}{figure.caption.22}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {纵向驰豫}}}{40}{figure.caption.22}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces 自旋回波序列。此图来自文献\cite  {haidekker2013medical}。\relax }}{41}{figure.caption.23}}
 \newlabel{fig:se}{{2.6}{41}{自旋回波序列。此图来自文献\cite {haidekker2013medical}。\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}本节小结}{41}{subsection.2.1.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces 梯度回波序列。此图来自文献\cite  {haidekker2013medical}。\relax }}{41}{figure.caption.24}}
+\newlabel{fig:ge}{{2.7}{41}{梯度回波序列。此图来自文献\cite {haidekker2013medical}。\relax }{figure.caption.24}{}}
 \citation{weigel}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces 梯度回波序列。此图来自文献\cite  {haidekker2013medical}。\relax }}{42}{figure.caption.24}}
-\newlabel{fig:ge}{{2.7}{42}{梯度回波序列。此图来自文献\cite {haidekker2013medical}。\relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}本节小结}{42}{subsection.2.1.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}扩展相图}{42}{section.2.2}}
 \newlabel{sec:epg}{{2.2}{42}{扩展相图}{section.2.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}配置状态矩阵}{42}{subsection.2.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}分区状态方法}{43}{subsection.2.2.2}}
 \newlabel{equ:alpha}{{2.23}{43}{分区状态方法}{equation.2.2.23}{}}
 \newlabel{equ:phi}{{2.24}{43}{分区状态方法}{equation.2.2.24}{}}
-\newlabel{equ:transition}{{2.25}{44}{分区状态方法}{equation.2.2.25}{}}
+\newlabel{equ:transition}{{2.25}{43}{分区状态方法}{equation.2.2.25}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}其他因素的作用和最终模型}{44}{subsection.2.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}本节小结}{45}{subsection.2.2.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}本章总结}{45}{section.2.3}}
 \citation{Yankeelov2009}
-\citation{van1993,Jeffrey2003k,Tsao}
+\citation{van1993,Jeffrey2003k}
 \citation{Candes2006Robust}
 \citation{Donoho2006Compressed}
 \citation{lustig2006,zhaobo,Sajan2011Accelerated,dmrics,kalman,lpluss,han}
@@ -361,6 +360,7 @@
 \@writefile{lof}{\addvspace {10.0pt}}
 \@writefile{lot}{\addvspace {10.0pt}}
 \newlabel{chap:tgvlr}{{3}{47}{动态MR图像的低秩和稀疏分解的高阶变分模型和算法}{chapter.3}{}}
+\citation{Sajan2011Accelerated}
 \citation{lpluss}
 \citation{tremoulheac}
 \citation{infimaltgv}
@@ -384,8 +384,8 @@
 \newlabel{equ:dual}{{3.13}{54}{离散化模型}{equation.3.2.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Primal-Dual算法及收敛条件}{54}{subsection.3.2.2}}
 \newlabel{equ:saddle}{{3.14}{54}{Primal-Dual算法及收敛条件}{equation.3.2.14}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces TGV和低秩分解模型的Primal-Dual算法。\relax }}{55}{algorithm.5}}
-\newlabel{alg:proposed}{{5}{55}{TGV和低秩分解模型的Primal-Dual算法。\relax }{algorithm.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces 二阶时空TGV和低秩分解模型的Primal-Dual算法。\relax }}{55}{algorithm.5}}
+\newlabel{alg:proposed}{{5}{55}{二阶时空TGV和低秩分解模型的Primal-Dual算法。\relax }{algorithm.5}{}}
 \citation{segars2002study,sharif2007adaptive}
 \citation{li}
 \citation{Sajan2011Accelerated}
@@ -393,8 +393,8 @@
 \citation{lpluss}
 \citation{infimaltgv}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}数值实验数据与评价方法}{56}{section.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}实验数据}{56}{subsection.3.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}评价方法}{56}{subsection.3.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}数值实验数据}{56}{subsection.3.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}采样模式与评价方法}{56}{subsection.3.3.2}}
 \citation{ssim}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 文章使用的动态采样模式（一帧）。\relax }}{57}{figure.caption.25}}
 \newlabel{fig:mask3}{{3.1}{57}{文章使用的动态采样模式（一帧）。\relax }{figure.caption.25}{}}
@@ -428,7 +428,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}本章小结}{67}{section.3.5}}
 \citation{Yankeelov2009}
 \citation{van1993}
-\citation{Hong2010k}
+\citation{focuss}
 \citation{Jeffrey2003k}
 \citation{Donoho2006Compressed,Candes2006Robust}
 \citation{smith2013}
@@ -464,25 +464,24 @@
 \newlabel{equ:proxl1}{{4.10}{72}{FISTA快速算法}{equation.4.2.10}{}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces 稀疏重建的FISTA算法\relax }}{73}{algorithm.6}}
 \newlabel{alg:qetsr}{{6}{73}{稀疏重建的FISTA算法\relax }{algorithm.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}模型参数选择}{73}{subsection.4.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}模型参数的选择}{73}{subsection.4.2.2}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces 各个模型所使用的参数\relax }}{73}{table.caption.38}}
 \newlabel{tab:params4}{{4.1}{73}{各个模型所使用的参数\relax }{table.caption.38}{}}
 \citation{xia}
 \citation{tofts}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}数值实验数据与评价方法}{74}{section.4.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}实验数据}{74}{subsection.4.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}评估方法}{74}{subsection.4.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}数值实验数据}{74}{subsection.4.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}采样模式与评价方法}{74}{subsection.4.3.2}}
 \citation{Smith2015}
-\citation{qetsr}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在$x$方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。\relax }}{75}{figure.caption.39}}
-\newlabel{fig:mask1}{{4.1}{75}{Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的2维采样模式通过左图的一列在$x$方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。\relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的二维采样模式通过左图的一列在$x$方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。\relax }}{75}{figure.caption.39}}
+\newlabel{fig:mask1}{{4.1}{75}{Cartesian采样模式的例子。左图显示的是所有帧的采样模式，右图显示的是某一帧的采样模式。右图的二维采样模式通过左图的一列在$x$方向上重复得到。在每一帧图像上，中心的低维区域进行全采样，而外围的高维区域进行随机采样。整体的下采样在4.5左右。\relax }{figure.caption.39}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}数值实验结果}{75}{section.4.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}重建图像质量}{75}{subsection.4.4.1}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces 200个Cartesian采样模式重建的均值SER与CCC\relax }}{76}{table.caption.40}}
 \newlabel{tab:result}{{4.2}{76}{200个Cartesian采样模式重建的均值SER与CCC\relax }{table.caption.40}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}定量参数精度}{76}{subsection.4.4.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces  第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、Zerofilled、WT、FT、TV、TGV$_{\alpha }^2$和NN的重建图像，第二行是相应的与全采样之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha ^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。 \relax }}{77}{figure.caption.41}}
-\newlabel{fig:recon}{{4.2}{77}{第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、Zerofilled、WT、FT、TV、TGV$_{\alpha }^2$和NN的重建图像，第二行是相应的与全采样之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha ^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。 \relax }{figure.caption.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces  第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、Zerofilled、WT、FT、TV、TGV$_{\alpha }^2$和NN的重建图像，第二行是相应的与全采样图像之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha ^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。 \relax }}{77}{figure.caption.41}}
+\newlabel{fig:recon}{{4.2}{77}{第一个Cartesian采样模式的重建结果。（a）第105帧；（b）第1帧。在每一个子图中，第一行显示的分别是全采样、Zerofilled、WT、FT、TV、TGV$_{\alpha }^2$和NN的重建图像，第二行是相应的与全采样图像之间的差值图像。为了使得差值图像有更好的视觉效果，我们将每一张差值图像的像素值都放大了10倍。图中的红色的箭头显示，在视觉上TV和TGV$_\alpha ^2$模型重建肿瘤的效果是最好的，而在NN去除背景伪影方面表现最好。 \relax }{figure.caption.41}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces  重建图像SER的箱型图。除了TV和TGV$_\alpha ^2$之间，所有结果在统计学上都有显著差异。从箱型图中可以看出，NN的平均SER最高（29.1），而WT的SER最低（21.8）。 \relax }}{78}{figure.caption.42}}
 \newlabel{fig:boxplot}{{4.3}{78}{重建图像SER的箱型图。除了TV和TGV$_\alpha ^2$之间，所有结果在统计学上都有显著差异。从箱型图中可以看出，NN的平均SER最高（29.1），而WT的SER最低（21.8）。 \relax }{figure.caption.42}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces  $K^\mathrm  {trans}$和$v_\mathrm  {e}$参数肿瘤部分放大后的图像。第一行从左到右依次显示了全采样、Zerofilled、WT、FT、TV和TGV$_{\alpha }^2$的$K^\mathrm  {trans}$图像；第二行是相应的$v_\mathrm  {e}$图像。在视觉上，TV和TGV$_{\alpha }^2$与全采样的参数图像最接近。 \relax }}{78}{figure.caption.43}}
@@ -542,16 +541,15 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}程序运行时间}{92}{subsection.5.4.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}体模数据参数精度}{92}{subsection.5.4.2}}
 \citation{pipe_spiral_2014}
-\citation{snapMRF}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3}活体人脑数据}{93}{subsection.5.4.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.5}数值实验结果}{93}{section.5.5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}程序运行时间}{93}{subsection.5.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}体模数据的重建参数图}{93}{subsection.5.5.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces 字典生成和模板匹配运行时间比较。（上）snapMRF与EPG-X；（下）snapMRF与PnP-MRF。注意曲线为对数尺度。运行时间随着字典大小线性变化，说明了有效的并行化。在我们的例子中，对于240$\times $240个体素的指纹数据，模板匹配的时间比字典生成少得多。\relax }}{94}{figure.caption.50}}
 \newlabel{fig:time}{{5.2}{94}{字典生成和模板匹配运行时间比较。（上）snapMRF与EPG-X；（下）snapMRF与PnP-MRF。注意曲线为对数尺度。运行时间随着字典大小线性变化，说明了有效的并行化。在我们的例子中，对于240$\times $240个体素的指纹数据，模板匹配的时间比字典生成少得多。\relax }{figure.caption.50}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}体模数据的重建参数图}{95}{subsection.5.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}活体人脑数据的重建参数图}{95}{subsection.5.5.3}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces snapMRF与EPG-X在字典生成和模板匹配上运行时间的比较\relax }}{95}{table.caption.51}}
 \newlabel{tab:time}{{5.3}{95}{snapMRF与EPG-X在字典生成和模板匹配上运行时间的比较\relax }{table.caption.51}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}活体人脑数据的重建参数图}{95}{subsection.5.5.3}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces snapMRF与EPG-X在体模数据上MRF生成$T_1$参数图的准确性比较。表中的第一列为$T_1$的真实值。snapMRF可以生成相当精确的$T_1$值，即使用了未经优化的序列和字典。\relax }}{96}{table.caption.52}}
 \newlabel{tab:t1}{{5.4}{96}{snapMRF与EPG-X在体模数据上MRF生成$T_1$参数图的准确性比较。表中的第一列为$T_1$的真实值。snapMRF可以生成相当精确的$T_1$值，即使用了未经优化的序列和字典。\relax }{table.caption.52}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces snapMRF与EPG-X在体模数据上MRF生成$T_2$参数图的准确性比较。表中的第一列为$T_2$的真实值。snapMRF可以生成相当精确的$T_2$值，即使用了未经优化的序列和字典。\relax }}{97}{table.caption.53}}
@@ -563,14 +561,14 @@
 \citation{Ma_B1_MRF}
 \citation{Hamilton}
 \citation{tron}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}数值实验分析}{101}{section.5.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}本章小结}{101}{section.5.7}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6\hspace  {.3em}}总结与展望}{103}{chapter.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}数值实验分析}{100}{section.5.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}本章小结}{100}{section.5.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6\hspace  {.3em}}总结与展望}{101}{chapter.6}}
 \@writefile{lof}{\addvspace {10.0pt}}
 \@writefile{lot}{\addvspace {10.0pt}}
-\newlabel{chap:future}{{6}{103}{总结与展望}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}本文工作总结}{103}{section.6.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}下一步一些展望}{104}{section.6.2}}
+\newlabel{chap:future}{{6}{101}{总结与展望}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}本文工作总结}{101}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}下一步一些展望}{102}{section.6.2}}
 \bibdata{bib/myRefs.bib}
 \bibcite{mrireview}{{1}{2004}{{俎栋林}}{{}}}
 \bibcite{Yankeelov2009}{{2}{2009}{{Yankeelov and Gore}}{{}}}
@@ -584,7 +582,7 @@
 \bibcite{smash}{{10}{1997}{{Sodickson and J.~Manning}}{{}}}
 \bibcite{grappa}{{11}{2002}{{Griswold et al.}}{{}}}
 \bibcite{Madore}{{12}{1999}{{Madore et al.}}{{}}}
-\bibcite{Tsao}{{13}{2003}{{Tsao et al.}}{{}}}
+\bibcite{Jeffrey2003k}{{13}{2003}{{Jeffrey et al.}}{{}}}
 \bibcite{candes2004near}{{14}{2004}{{Cand{\`e}s and Tao}}{{}}}
 \bibcite{candes2006compressive}{{15}{2006}{{Cand{\`e}s {\em  et~al.}}}{{}}}
 \bibcite{candes2006quantitative}{{16}{2006}{{Cand{\`e}s and Romberg}}{{}}}
@@ -681,100 +679,96 @@
 \bibcite{gupta2018cnn}{{107}{2018}{{Gupta et al.}}{{}}}
 \bibcite{han2019k}{{108}{2018}{{Han and Ye}}{{}}}
 \bibcite{lee2019k}{{109}{2019}{{Lee et al.}}{{}}}
-\bibcite{Jeffrey2003k}{{110}{2003}{{Jeffrey et al.}}{{}}}
-\bibcite{jung2007improved}{{111}{2007}{{Jung et al.}}{{}}}
-\bibcite{candes2009exact}{{112}{2009}{{Cand{\`e}s and Recht}}{{}}}
-\bibcite{zhao2012image}{{113}{2012}{{Zhao et al.}}{{}}}
-\bibcite{lpluss}{{114}{2015}{{Ricardo et al.}}{{}}}
-\bibcite{rpca}{{115}{2011}{{Cand{\`e}s et al.}}{{}}}
-\bibcite{tremoulheac}{{116}{2014}{{Tr{\'e}moulh{\'e}ac et al.}}{{}}}
-\bibcite{shin2014calibrationless}{{117}{2014}{{Shin et al.}}{{}}}
-\bibcite{haldar2013low}{{118}{2013}{{Haldar}}{{}}}
-\bibcite{jin2016general}{{119}{2016}{{Jin et al.}}{{}}}
-\bibcite{lee2016acceleration}{{120}{2016}{{Lee et al.}}{{}}}
-\bibcite{ongie2016off}{{121}{2016}{{Ongie and Jacob}}{{}}}
-\bibcite{lingala2013blind}{{122}{2013}{{Lingala and Jacob}}{{}}}
-\bibcite{wang2013compressed}{{123}{2013}{{Wang and Ying}}{{}}}
-\bibcite{caballero2014dictionary}{{124}{2014}{{Caballero et al.}}{{}}}
-\bibcite{schlemper2017deep}{{125}{2017}{{Schlemper et al.}}{{}}}
-\bibcite{qin2018convolutional}{{126}{2018}{{Qin et al.}}{{}}}
-\bibcite{wang2018dimension}{{127}{2018}{{Wang et al.}}{{}}}
-\bibcite{ke2019crdn}{{128}{2019}{{Ke et al.}}{{}}}
-\bibcite{mrfreview}{{129}{2017}{{Panda et al.}}{{}}}
-\bibcite{ussfp}{{130}{1993}{{D~Elster}}{{}}}
-\bibcite{jiang}{{131}{2015}{{Jiang et al.}}{{}}}
-\bibcite{joint}{{132}{2016}{{Rieger et al.}}{{}}}
-\bibcite{quest}{{133}{2016}{{Jiang et al.}}{{}}}
-\bibcite{weigel}{{134}{2015}{{Weigel}}{{}}}
-\bibcite{groupingmrf}{{135}{2015}{{Cauley et al.}}{{}}}
-\bibcite{svdmrf}{{136}{2017}{{Yang et al.}}{{}}}
-\bibcite{davies2014compressed}{{137}{2014}{{Davies et al.}}{{}}}
-\bibcite{cline2017air}{{138}{2017}{{Cline et al.}}{{}}}
-\bibcite{multiscale}{{139}{2016}{{Pierre et al.}}{{}}}
-\bibcite{wang2016magnetic}{{140}{2016}{{Wang et al.}}{{}}}
-\bibcite{zhao2016maximum}{{141}{2016}{{Zhao et al.}}{{}}}
-\bibcite{cohen2018mr}{{142}{2018}{{Cohen et al.}}{{}}}
-\bibcite{hoppe2017deep}{{143}{2017}{{Hoppe et al.}}{{}}}
-\bibcite{balsiger2018magnetic}{{144}{2018}{{Balsiger et al.}}{{}}}
-\bibcite{2009nmr}{{145}{2009}{{乔梁 and 涂光忠}}{{}}}
-\bibcite{haacke1999magnetic}{{146}{1999}{{Haacke et al.}}{{}}}
-\bibcite{sprawls2000magnetic}{{147}{2000}{{Sprawls}}{{}}}
-\bibcite{bloch}{{148}{1946}{{Bloch}}{{}}}
-\bibcite{haidekker2013medical}{{149}{2013}{{Haidekker}}{{}}}
-\bibcite{van1993}{{150}{1993}{{van Vaals et al.}}{{}}}
-\bibcite{Candes2006Robust}{{151}{2006}{{Cand{\`e}s et al.}}{{}}}
-\bibcite{zhaobo}{{152}{2012}{{Zhao et al.}}{{}}}
-\bibcite{dmrics}{{153}{2008}{{Gamper et al.}}{{}}}
-\bibcite{kalman}{{154}{2009}{{Qiu et al.}}{{}}}
-\bibcite{han}{{155}{2012}{{Han et al.}}{{}}}
-\bibcite{Lustig2008Compressed}{{156}{2008}{{Lustig et al.}}{{}}}
-\bibcite{segars2002study}{{157}{2002}{{Segars and Tsui}}{{}}}
-\bibcite{sharif2007adaptive}{{158}{2007}{{Sharif and Bresler}}{{}}}
-\bibcite{li}{{159}{2015}{{Li et al.}}{{}}}
-\bibcite{ssim}{{160}{2004}{{Wang et al.}}{{}}}
-\bibcite{Hong2010k}{{161}{2010}{{Hong et al.}}{{}}}
-\bibcite{smith2013}{{162}{2013}{{Smith et al.}}{{}}}
-\bibcite{chen}{{163}{2010}{{Chen et al.}}{{}}}
-\bibcite{ji2008}{{164}{2008}{{Ji and Lang}}{{}}}
-\bibcite{smith2011}{{165}{2011}{{Smith et al.}}{{}}}
-\bibcite{Lustig2010Sparse}{{166}{2010}{{Lustig et al.}}{{}}}
-\bibcite{rof}{{167}{1992}{{I.~Rudin et al.}}{{}}}
-\bibcite{xia}{{168}{2014}{{Li et al.}}{{}}}
-\bibcite{tofts}{{169}{1999}{{Tofts et al.}}{{}}}
-\bibcite{Smith2015}{{170}{2015}{{Smith et al.}}{{}}}
-\bibcite{qetsr}{{171}{2017}{{Wang}}{{}}}
-\bibcite{esr}{{172}{2015}{{European Society of Radiology (ESR)}}{{}}}
-\bibcite{bipin_mehta_magnetic_2019}{{173}{2019}{{Bipin~Mehta et al.}}{{}}}
-\bibcite{malik_extended_2018}{{174}{2018}{{Malik et al.}}{{}}}
-\bibcite{gpu}{{175}{2017}{{Després and Jia}}{{}}}
-\bibcite{biguri2016tigre}{{176}{2016}{{Biguri et al.}}{{}}}
-\bibcite{palenstijn2011performance}{{177}{2011}{{Palenstijn et al.}}{{}}}
-\bibcite{Knoll}{{178}{2010}{{Knoll et al.}}{{}}}
-\bibcite{Sorensen}{{179}{2008}{{S{\o }rensen et al.}}{{}}}
-\bibcite{tron}{{180}{2019}{{Smith et al.}}{{}}}
-\bibcite{Eklund2014BROCCOLI}{{181}{2014}{{Eklund et al.}}{{}}}
-\bibcite{Xanthis2014MRISIMUL}{{182}{2014}{{Xanthis et al.}}{{}}}
-\bibcite{Jung2013GPU}{{183}{2013}{{Jung~Woo et al.}}{{}}}
-\bibcite{Yakang2010Real}{{184}{2010}{{Yakang et al.}}{{}}}
-\bibcite{Garcia2016Accelerated}{{185}{2016}{{Garcia et al.}}{{}}}
-\bibcite{Cui2013Distributed}{{186}{2013}{{Cui et al.}}{{}}}
-\bibcite{vasilevsy_repro_2013}{{187}{2013}{{Vasilevsky et al.}}{{}}}
-\bibcite{osc_repro_2015}{{188}{2015}{{Open Science Collaboration}}{{}}}
-\bibcite{collins_repro_2014}{{189}{2014}{{Collins and Tabak}}{{}}}
-\bibcite{begley_repro_2015}{{190}{2015}{{Begley and Ioannidis}}{{}}}
-\bibcite{RawArray}{{191}{2018}{{Smith, David S.}}{{}}}
-\bibcite{web}{{192}{2019}{{Hargreaves, B.}}{{}}}
-\bibcite{keenan_comparison_2016}{{193}{2016}{{Keenan et al.}}{{}}}
-\bibcite{pipe_spiral_2014}{{194}{2014}{{Pipe and Zwart}}{{}}}
-\bibcite{bart}{{195}{2015}{{Uecker et al.}}{{}}}
-\bibcite{zwart_sdc_2012}{{196}{2012}{{Zwart et al.}}{{}}}
-\bibcite{cloos2016multiparametric}{{197}{2016}{{Cloos et al.}}{{}}}
-\bibcite{snapMRF}{{198}{2019}{{Wang, Dong and Ostenson, Jason and Smith, David S.}}{{}}}
-\bibcite{Ma_B1_MRF}{{199}{2017}{{Ma et al.}}{{}}}
-\bibcite{Hamilton}{{200}{2015}{{Hamilton et al.}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{致\quad \quad 谢}{121}{chapter*.57}}
+\bibcite{jung2007improved}{{110}{2007}{{Jung et al.}}{{}}}
+\bibcite{candes2009exact}{{111}{2009}{{Cand{\`e}s and Recht}}{{}}}
+\bibcite{zhao2012image}{{112}{2012}{{Zhao et al.}}{{}}}
+\bibcite{lpluss}{{113}{2015}{{Ricardo et al.}}{{}}}
+\bibcite{rpca}{{114}{2011}{{Cand{\`e}s et al.}}{{}}}
+\bibcite{tremoulheac}{{115}{2014}{{Tr{\'e}moulh{\'e}ac et al.}}{{}}}
+\bibcite{shin2014calibrationless}{{116}{2014}{{Shin et al.}}{{}}}
+\bibcite{haldar2013low}{{117}{2013}{{Haldar}}{{}}}
+\bibcite{jin2016general}{{118}{2016}{{Jin et al.}}{{}}}
+\bibcite{lee2016acceleration}{{119}{2016}{{Lee et al.}}{{}}}
+\bibcite{ongie2016off}{{120}{2016}{{Ongie and Jacob}}{{}}}
+\bibcite{lingala2013blind}{{121}{2013}{{Lingala and Jacob}}{{}}}
+\bibcite{wang2013compressed}{{122}{2013}{{Wang and Ying}}{{}}}
+\bibcite{caballero2014dictionary}{{123}{2014}{{Caballero et al.}}{{}}}
+\bibcite{schlemper2017deep}{{124}{2017}{{Schlemper et al.}}{{}}}
+\bibcite{qin2018convolutional}{{125}{2018}{{Qin et al.}}{{}}}
+\bibcite{wang2018dimension}{{126}{2018}{{Wang et al.}}{{}}}
+\bibcite{ke2019crdn}{{127}{2019}{{Ke et al.}}{{}}}
+\bibcite{mrfreview}{{128}{2017}{{Panda et al.}}{{}}}
+\bibcite{ussfp}{{129}{1993}{{D~Elster}}{{}}}
+\bibcite{jiang}{{130}{2015}{{Jiang et al.}}{{}}}
+\bibcite{joint}{{131}{2016}{{Rieger et al.}}{{}}}
+\bibcite{quest}{{132}{2016}{{Jiang et al.}}{{}}}
+\bibcite{weigel}{{133}{2015}{{Weigel}}{{}}}
+\bibcite{groupingmrf}{{134}{2015}{{Cauley et al.}}{{}}}
+\bibcite{svdmrf}{{135}{2017}{{Yang et al.}}{{}}}
+\bibcite{davies2014compressed}{{136}{2014}{{Davies et al.}}{{}}}
+\bibcite{cline2017air}{{137}{2017}{{Cline et al.}}{{}}}
+\bibcite{multiscale}{{138}{2016}{{Pierre et al.}}{{}}}
+\bibcite{wang2016magnetic}{{139}{2016}{{Wang et al.}}{{}}}
+\bibcite{zhao2016maximum}{{140}{2016}{{Zhao et al.}}{{}}}
+\bibcite{cohen2018mr}{{141}{2018}{{Cohen et al.}}{{}}}
+\bibcite{hoppe2017deep}{{142}{2017}{{Hoppe et al.}}{{}}}
+\bibcite{balsiger2018magnetic}{{143}{2018}{{Balsiger et al.}}{{}}}
+\bibcite{2009nmr}{{144}{2009}{{乔梁 and 涂光忠}}{{}}}
+\bibcite{haacke1999magnetic}{{145}{1999}{{Haacke et al.}}{{}}}
+\bibcite{sprawls2000magnetic}{{146}{2000}{{Sprawls}}{{}}}
+\bibcite{bloch}{{147}{1946}{{Bloch}}{{}}}
+\bibcite{haidekker2013medical}{{148}{2013}{{Haidekker}}{{}}}
+\bibcite{van1993}{{149}{1993}{{van Vaals et al.}}{{}}}
+\bibcite{Candes2006Robust}{{150}{2006}{{Cand{\`e}s et al.}}{{}}}
+\bibcite{zhaobo}{{151}{2012}{{Zhao et al.}}{{}}}
+\bibcite{dmrics}{{152}{2008}{{Gamper et al.}}{{}}}
+\bibcite{kalman}{{153}{2009}{{Qiu et al.}}{{}}}
+\bibcite{han}{{154}{2012}{{Han et al.}}{{}}}
+\bibcite{Lustig2008Compressed}{{155}{2008}{{Lustig et al.}}{{}}}
+\bibcite{segars2002study}{{156}{2002}{{Segars and Tsui}}{{}}}
+\bibcite{sharif2007adaptive}{{157}{2007}{{Sharif and Bresler}}{{}}}
+\bibcite{li}{{158}{2015}{{Li et al.}}{{}}}
+\bibcite{ssim}{{159}{2004}{{Wang et al.}}{{}}}
+\bibcite{smith2013}{{160}{2013}{{Smith et al.}}{{}}}
+\bibcite{chen}{{161}{2010}{{Chen et al.}}{{}}}
+\bibcite{ji2008}{{162}{2008}{{Ji and Lang}}{{}}}
+\bibcite{smith2011}{{163}{2011}{{Smith et al.}}{{}}}
+\bibcite{Lustig2010Sparse}{{164}{2010}{{Lustig et al.}}{{}}}
+\bibcite{rof}{{165}{1992}{{I.~Rudin et al.}}{{}}}
+\bibcite{xia}{{166}{2014}{{Li et al.}}{{}}}
+\bibcite{tofts}{{167}{1999}{{Tofts et al.}}{{}}}
+\bibcite{Smith2015}{{168}{2015}{{Smith et al.}}{{}}}
+\bibcite{esr}{{169}{2015}{{European Society of Radiology (ESR)}}{{}}}
+\bibcite{bipin_mehta_magnetic_2019}{{170}{2019}{{Bipin~Mehta et al.}}{{}}}
+\bibcite{malik_extended_2018}{{171}{2018}{{Malik et al.}}{{}}}
+\bibcite{gpu}{{172}{2017}{{Després and Jia}}{{}}}
+\bibcite{biguri2016tigre}{{173}{2016}{{Biguri et al.}}{{}}}
+\bibcite{palenstijn2011performance}{{174}{2011}{{Palenstijn et al.}}{{}}}
+\bibcite{Knoll}{{175}{2010}{{Knoll et al.}}{{}}}
+\bibcite{Sorensen}{{176}{2008}{{S{\o }rensen et al.}}{{}}}
+\bibcite{tron}{{177}{2019}{{Smith et al.}}{{}}}
+\bibcite{Eklund2014BROCCOLI}{{178}{2014}{{Eklund et al.}}{{}}}
+\bibcite{Xanthis2014MRISIMUL}{{179}{2014}{{Xanthis et al.}}{{}}}
+\bibcite{Jung2013GPU}{{180}{2013}{{Jung~Woo et al.}}{{}}}
+\bibcite{Yakang2010Real}{{181}{2010}{{Yakang et al.}}{{}}}
+\bibcite{Garcia2016Accelerated}{{182}{2016}{{Garcia et al.}}{{}}}
+\bibcite{Cui2013Distributed}{{183}{2013}{{Cui et al.}}{{}}}
+\bibcite{vasilevsy_repro_2013}{{184}{2013}{{Vasilevsky et al.}}{{}}}
+\bibcite{osc_repro_2015}{{185}{2015}{{Collaboration}}{{}}}
+\bibcite{collins_repro_2014}{{186}{2014}{{Collins and Tabak}}{{}}}
+\bibcite{begley_repro_2015}{{187}{2015}{{Begley and Ioannidis}}{{}}}
+\bibcite{RawArray}{{188}{2018}{{Smith, David S.}}{{}}}
+\bibcite{web}{{189}{2019}{{Hargreaves, B.}}{{}}}
+\bibcite{keenan_comparison_2016}{{190}{2016}{{Keenan et al.}}{{}}}
+\bibcite{pipe_spiral_2014}{{191}{2014}{{Pipe and Zwart}}{{}}}
+\bibcite{bart}{{192}{2015}{{Uecker et al.}}{{}}}
+\bibcite{zwart_sdc_2012}{{193}{2012}{{Zwart et al.}}{{}}}
+\bibcite{cloos2016multiparametric}{{194}{2016}{{Cloos et al.}}{{}}}
+\bibcite{Ma_B1_MRF}{{195}{2017}{{Ma et al.}}{{}}}
+\bibcite{Hamilton}{{196}{2015}{{Hamilton et al.}}{{}}}
+\@writefile{toc}{\contentsline {chapter}{致\quad \quad 谢}{119}{chapter*.57}}
 \@writefile{lof}{\addvspace {10.0pt}}
 \@writefile{lot}{\addvspace {10.0pt}}
-\@writefile{toc}{\contentsline {chapter}{附\quad \quad 录}{123}{chapter*.58}}
+\@writefile{toc}{\contentsline {chapter}{附\quad \quad 录}{121}{chapter*.58}}
 \@writefile{lof}{\addvspace {10.0pt}}
 \@writefile{lot}{\addvspace {10.0pt}}
