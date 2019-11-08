@@ -177,7 +177,8 @@ SSFP & [0,$\pi$/3] & $0\rightarrow\cdots$  & 100,200 & 20,40 & [3.5,7.5] & 16\\
 
 在本组数值实验中，我们从视觉上比较snapMRF与EPG-X生成参数图的好坏。与体模数据类似，我们也比较四种情形重建的参数图，即固定$T_\mathrm{R}$ EPG-X，固定$T_\mathrm{R}$ snapMRF，变化$T_\mathrm{R}$ snapMRF，变化$T_\mathrm{R}$ snapMRF加$B_1^+$校正。在所有比较中，我们均将字典大小选为100,000左右。不含$B_1^+$校正时，$T_1$的值从100 ms 到4000 ms，增量为10 ms，$T_2$的值从20 ms 到2000 ms，增量为5.5 ms，最终字典大小为108,056。当考虑$B_1^+$校正时，$T_1$的值从100 ms 到4000 ms，增量为20 ms，$T_2$的值从20 ms 到2000 ms，增量为14.5 ms，$B_1^+$的值从0.8到1.2，增量为0.1，最终字典的大小为102,830。
 
-所有程序均在dual 10-core Intel Xeon E5-2630 2.20 GHz的CPU, 256 GB内存和Nvidia TITAN V的GPU的工作站上运行。snapMRF详细程序请参考网址\url{https://github.com/chixindebaoyu/snapMRF}，版本为\texttt{v0.0.1}。
+所有程序均在dual 10-core Intel Xeon E5-2630 2.20 GHz的CPU, 256 GB内存和Nvidia TITAN V的GPU的工作站上运行。
+%snapMRF详细程序请参考网址\url{https://github.com/chixindebaoyu/snapMRF}，版本为\texttt{v0.0.1}。
 
 \section{数值实验结果}
 \subsection{程序运行时间}

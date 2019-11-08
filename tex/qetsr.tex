@@ -183,7 +183,8 @@ NN & 0.3 & 40 & - & - & -\\
 
 为了从视觉上直观地评估重建图像时间剖面的准确性，我们计算了重建图像肿瘤区域的时间曲线相对于全采样图像之间的差异。我们首先手动将肿瘤区域分割出来，形成一个掩膜，并应用于所有重建图像。我们也分别计算了全采样图像和重建图像肿瘤区域内\kt 和\Ve 的平均值，并用Bland-Altman图来显示其一致性。
 
-重建程序全部使用MATLAB语言编写，DCE-MRI的参数分析使用Julia语言的\texttt{DCEMRI.jl}\cite{Smith2015}工具包运行。所有数值实验均在双核Xeon E5-2665 2.40 GHz，20 GB内存的工作站上运行，MATLAB版本为2015b (Mathworks, Natick, MA)，Julia版本为0.4.3。程序已经开源，详细程序请参考网址\url{https://github.com/chixindebaoyu/qetsr}。
+重建程序全部使用MATLAB语言编写，DCE-MRI的参数分析使用Julia语言的\texttt{DCEMRI.jl}\cite{Smith2015}工具包运行。所有数值实验均在双核Xeon E5-2665 2.40 GHz，20 GB内存的工作站上运行，MATLAB版本为2015b (Mathworks, Natick, MA)，Julia版本为0.4.3。
+%程序已经开源，详细程序请参考网址\url{https://github.com/chixindebaoyu/qetsr}。
 
 \section{数值实验结果}
 \subsection{重建图像质量}

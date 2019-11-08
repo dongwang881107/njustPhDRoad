@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  2 NOV 2019 23:45
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  8 NOV 2019 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1751,21 +1751,21 @@ LaTeX Info: Redefining \nameref on input line 31.
 *************************************************
 File: img/logo/njust.eps Graphic file (type eps)
 <img/logo/njust.eps>
-LaTeX Font Info:    Try loading font information for U+msa on input line 41.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 41.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 41.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 45.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 41.
+(Font)              size <10.95> substituted on input line 45.
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -1801,7 +1801,7 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
 .................................................
 
 LaTeX Font Warning: Font shape `TU/STKaiti(0)/bx/n' undefined
-(Font)              using `TU/STKaiti(0)/m/n' instead on input line 41.
+(Font)              using `TU/STKaiti(0)/m/n' instead on input line 45.
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -1843,7 +1843,7 @@ LaTeX Font Warning: Font shape `TU/STKaiti(0)/bx/n' undefined
 *************************************************
 
 LaTeX Font Warning: Font shape `TU/STHeiti(0)/bx/n' undefined
-(Font)              using `TU/STHeiti(0)/m/n' instead on input line 41.
+(Font)              using `TU/STHeiti(0)/m/n' instead on input line 45.
 
 *************************************************
 * ctex warning: "deprecated-command"
@@ -1859,7 +1859,7 @@ LaTeX Font Warning: Font shape `TU/STHeiti(0)/bx/n' undefined
 *************************************************
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 41.
+(Font)              size <8> substituted on input line 45.
 
 *************************************************
 * ctex warning: "deprecated-command"
@@ -1908,15 +1908,15 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
 ]
 
 LaTeX Font Warning: Font shape `TU/STSong(1)/bx/n' undefined
-(Font)              using `TU/STSong(1)/m/n' instead on input line 41.
+(Font)              using `TU/STSong(1)/m/n' instead on input line 45.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <22.08249> not available
-(Font)              size <20.74> substituted on input line 41.
+(Font)              size <20.74> substituted on input line 45.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 41.
+(Font)              size <17.28> substituted on input line 45.
 
 [3
 
@@ -1927,11 +1927,11 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16.06> not available
 ]
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <18.06749> not available
-(Font)              size <17.28> substituted on input line 43.
+(Font)              size <17.28> substituted on input line 47.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 43.
+(Font)              size <14.4> substituted on input line 47.
 
 [5
 
@@ -2144,7 +2144,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
 
-Overfull \hbox (5.21143pt too wide) in paragraph at lines 300--301
+Overfull \hbox (5.21143pt too wide) in paragraph at lines 300--302
 []\TU/STSong(0)/m/n/12.045 我 们 将 提 出 的 模 型 和 最 前 沿 的 模 型 进 行 比 较，|  它 们 分 别 是 \TU/lmr/m/n/12.045 kt-SLR[][][][][]$[]$, kt-RPCA[][][][][]$[]$,
  []
 
@@ -2333,10 +2333,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 29180 strings out of 492970
- 592583 string characters out of 6133937
+ 29163 strings out of 492970
+ 591525 string characters out of 6133937
  679057 words of memory out of 5000000
- 32625 multiletter control sequences out of 15000+600000
+ 32608 multiletter control sequences out of 15000+600000
  563159 words of font info for 207 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,17n,77p,10541b,907s stack positions out of 5000i,500n,10000p,200000b,80000s
