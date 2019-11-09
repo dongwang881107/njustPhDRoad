@@ -56,8 +56,6 @@ You can't pop an empty literal stack for entry Jeffrey2003k
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry candes2004near
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
-You can't pop an empty literal stack for entry candes2004near
-while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry candes2006compressive
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You can't pop an empty literal stack for entry candes2006compressive
@@ -480,24 +478,24 @@ You can't pop an empty literal stack for entry Hamilton
 while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
 You've used 196 entries,
             6754 wiz_defined-function locations,
-            2245 strings with 45297 characters,
-and the built_in function-call counts, 74193 in all, are:
-= -- 6944
+            2247 strings with 45325 characters,
+and the built_in function-call counts, 74492 in all, are:
+= -- 6998
 > -- 2578
 < -- 66
 + -- 1402
 - -- 600
-* -- 5837
-:= -- 10518
+* -- 5870
+:= -- 10547
 add.period$ -- 609
 call.type$ -- 196
 change.case$ -- 196
 chr.to.int$ -- 190
 cite$ -- 198
-duplicate$ -- 3115
-empty$ -- 8394
+duplicate$ -- 3117
+empty$ -- 8419
 format.name$ -- 1069
-if$ -- 17265
+if$ -- 17321
 int.to.chr$ -- 7
 int.to.str$ -- 197
 missing$ -- 204
@@ -507,16 +505,16 @@ pop$ -- 1438
 preamble$ -- 1
 purify$ -- 196
 quote$ -- 0
-skip$ -- 2503
+skip$ -- 2500
 stack$ -- 0
-substring$ -- 4848
+substring$ -- 4939
 swap$ -- 208
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 772
 warning$ -- 2
-while$ -- 479
+while$ -- 491
 width$ -- 0
 write$ -- 2760
-(There were 244 error messages)
+(There were 243 error messages)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  8 NOV 2019 17:17
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  10 NOV 2019 00:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2013,9 +2013,12 @@ Overfull \hbox (2.99277pt too wide) in paragraph at lines 53--54
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3] [4] [5] [6]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 185.
- [7] [8]
+ [3]
+Missing character: There is no ， in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no 且 in font [lmroman12-regular]:mapping=tex-text;!
+ [4] [5] [6]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 187.
+ [7] [8] [9]
 File: img/intro/phantom.png Graphic file (type bmp)
 <img/intro/phantom.png>
 File: img/intro/wavelet.png Graphic file (type bmp)
@@ -2024,7 +2027,7 @@ File: img/intro/tvx.png Graphic file (type bmp)
 <img/intro/tvx.png>
 File: img/intro/tvy.png Graphic file (type bmp)
 <img/intro/tvy.png>
- [9] [10]
+ [10] [11]
 File: img/intro/cartesian.png Graphic file (type bmp)
 <img/intro/cartesian.png>
 File: img/intro/radial.png Graphic file (type bmp)
@@ -2033,7 +2036,7 @@ File: img/intro/spiral.png Graphic file (type bmp)
 <img/intro/spiral.png>
 File: img/intro/vd.png Graphic file (type bmp)
 <img/intro/vd.png>
- [11] [12]
+ [12]
 File: img/intro/pradial.eps Graphic file (type eps)
 <img/intro/pradial.eps>
 File: img/intro/dynamic.eps Graphic file (type eps)
@@ -2041,6 +2044,9 @@ File: img/intro/dynamic.eps Graphic file (type eps)
  [13] [14] [15] [16] [17] [18]
 File: img/intro/deepmri.png Graphic file (type bmp)
 <img/intro/deepmri.png>
+
+Underfull \vbox (badness 4913) has occurred while \output is active []
+
  [19] [20] [21]
 File: img/intro/casorati.eps Graphic file (type eps)
 <img/intro/casorati.eps>
@@ -2058,9 +2064,6 @@ File: img/intro/compare.eps Graphic file (type eps)
  [23] [24] [25] [26]
 File: img/intro/mrf.png Graphic file (type bmp)
 <img/intro/mrf.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [27]
 File: img/intro/fa.eps Graphic file (type eps)
 <img/intro/fa.eps>
@@ -2070,16 +2073,19 @@ File: img/intro/phantom.eps Graphic file (type eps)
 <img/intro/phantom.eps>
 File: img/intro/brain.eps Graphic file (type eps)
 <img/intro/brain.eps>
+
+Underfull \vbox (badness 1831) has occurred while \output is active []
+
  [28]
 File: img/intro/atoms.eps Graphic file (type eps)
 <img/intro/atoms.eps>
 
-Underfull \vbox (badness 3343) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29] [30]
+ [29]
 File: img/intro/mrfmap.eps Graphic file (type eps)
 <img/intro/mrfmap.eps>
- [31] [32]) (./tex/preliminaries.tex [33] [34
+ [30] [31] [32]) (./tex/preliminaries.tex [33] [34
 
 ]
 2
@@ -2145,7 +2151,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .................................................
 
 Overfull \hbox (5.21143pt too wide) in paragraph at lines 300--302
-[]\TU/STSong(0)/m/n/12.045 我 们 将 提 出 的 模 型 和 最 前 沿 的 模 型 进 行 比 较，|  它 们 分 别 是 \TU/lmr/m/n/12.045 kt-SLR[][][][][]$[]$, kt-RPCA[][][][][]$[]$,
+[]\TU/STSong(0)/m/n/12.045 我 们 将 提 出 的 模 型 和 最 前 沿 的 模 型 进 行 比 较，|  它 们 分 别 为 \TU/lmr/m/n/12.045 kt-SLR[][][][][]$[]$, kt-RPCA[][][][][]$[]$,
  []
 
 File: img/intro/pradial.eps Graphic file (type eps)
@@ -2178,6 +2184,9 @@ Underfull \vbox (badness 3019) has occurred while \output is active []
 [69] [70] [71] [72] [73]
 File: img/qetsr/figure1.eps Graphic file (type eps)
 <img/qetsr/figure1.eps>
+
+Underfull \vbox (badness 1142) has occurred while \output is active []
+
  [74] (./tables/table_qetsr_result.tex) [75]
 File: img/qetsr/figure2.eps Graphic file (type eps)
 <img/qetsr/figure2.eps>
@@ -2199,6 +2208,9 @@ File: img/qetsr/figure7.eps Graphic file (type eps)
 [85] [86]
 File: img/snapmrf/snapMRF.png Graphic file (type bmp)
 <img/snapmrf/snapMRF.png>
+
+Underfull \vbox (badness 4193) has occurred while \output is active []
+
  [87]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2333,10 +2345,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 29163 strings out of 492970
- 591525 string characters out of 6133937
- 679057 words of memory out of 5000000
- 32608 multiletter control sequences out of 15000+600000
+ 29176 strings out of 492970
+ 592402 string characters out of 6133937
+ 679100 words of memory out of 5000000
+ 32621 multiletter control sequences out of 15000+600000
  563159 words of font info for 207 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,17n,77p,10541b,907s stack positions out of 5000i,500n,10000p,200000b,80000s

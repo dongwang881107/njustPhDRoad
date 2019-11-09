@@ -1,11 +1,11 @@
 
 \chapter{动态MR图像的低秩和稀疏分解的高阶变分模型和算法}
 \label{chap:tgvlr}
-动态MRI是MR成像中的一个重要的技术，并且在医学临床中有着广泛的应用，比如心脏电影成像、磁共振动态对比增强（DCE-MRI）\cite{Yankeelov2009}等，其目的是可视化形态学或者对比度随时间的变化。然而，传统dMRI方法成像速度慢，信噪比低，并且很难在空间分辨率和时间分辨率之间取得平衡 \cite{van1993, Jeffrey2003k}。动态MRI重建中最重要的问题是如何平衡时间和空间分辨率，这是由于其数据采集速度慢所决定的。在对动态MR图像进行采样时，如果在每一帧图像上采集了更多的数据，那么在同样的时间内，我们就只能获得更少帧数的数据，造成图像时间分辨率的降低；反之，如果我们保证了时间分辨率，尽可能多的在每一帧图像上都采集数据，那么必然造成在每一帧图像上采集数据的减少，造成空间分辨率的降低。因此，动态MRI的时间分辨率和空间分辨率之间的平衡很难把握。
+动态MRI是MR成像中的重要的技术，在医学临床中有着广泛的应用，比如心脏电影成像、磁共振动态对比增强（DCE-MRI）\cite{Yankeelov2009}等，其目的是可视化形态学或者对比度随时间的变化。然而，传统dMRI方法成像速度慢，信噪比低，并且很难在空间分辨率和时间分辨率之间取得平衡\cite{van1993, Jeffrey2003k}。动态MRI重建中最重要的问题是如何平衡时间和空间分辨率，这是由于其数据采集速度慢所决定的。在对动态MR图像进行采样时，如果在每一帧图像上采集了更多的数据，那么在同样的时间内，我们就只能获得更少帧数的数据，造成图像时间分辨率的降低；反之，如果我们保证了时间分辨率，尽可能多的在每一帧图像上都采集数据，那么必然造成在每一帧图像上采集数据的减少，造成空间分辨率的降低。因此，动态MRI的时间分辨率和空间分辨率之间的平衡很难把握。
 
-压缩感知理论\cite{Candes2006Robust}\cite{Donoho2006Compressed}在过去十年中一直是图像处理领域的一个热门话题，并被广泛应用于图像处理领域，尤其是动态MRI\cite{lustig2006,zhaobo,Sajan2011Accelerated,dmrics,kalman,lpluss,han}领域。压缩感知理论证明，我们可以从欠采样的Fourier数据中（通常被称为k-space数据）准确地重建出动态MR图像，这可以显著地减少扫描时间\cite{lustig2006, Lustig2008Compressed}。因此，压缩感知理论可以在加速动态MR成像的同时保证重建图像的时间和空间分辨率。
+压缩感知理论\cite{Candes2006Robust}\cite{Donoho2006Compressed}在过去十年中一直是图像处理领域的一个热门话题，并被广泛应用于图像处理领域，尤其是动态MRI\cite{lustig2006,zhaobo,Sajan2011Accelerated,dmrics,kalman,lpluss,han}领域。压缩感知理论证明，我们可以从下采样的Fourier数据中（通常被称为k-space数据）准确地重建出动态MR图像，这可以显著地减少扫描时间\cite{lustig2006, Lustig2008Compressed}。因此，压缩感知理论可以在加速动态MR成像的同时保证重建图像的时间和空间分辨率。
 
-目前压缩感知在动态MRI\cite{zhaobo,Sajan2011Accelerated,dmrics,kalman,lpluss} 中已经有广泛的应用，我们在小节\ref{sec:cs}中已经有所介绍。这里我们再来回顾一下压缩感知重建动态MR的模型。记动态MR图像为$X\in \mathbb{C}^{N_1\times N_2\times d}$，这里动态图像$X$有$d$帧图像，每帧图像的维度为$N_1\times N_2$。则动态MR成像相过程当于在噪声的干扰下，在k-space中进行动态采样
+目前压缩感知在动态MRI\cite{zhaobo,Sajan2011Accelerated,dmrics,kalman,lpluss} 中已经有广泛的应用，我们在小节\ref{sec:cs}中已经有所介绍。这里我们再来回顾一下压缩感知重建动态MR的模型。记动态MR图像为$X\in \mathbb{C}^{N_1\times N_2\times d}$，这里动态图像$X$有$d$帧图像，每帧图像的维度为$N_1\times N_2$。则动态MR成像相过程当于在噪声的干扰下，在kt-space中进行动态采样
 $$B=AX+\epsilon,$$
 其中$A=\mathcal{M}\cdot\mathcal{F}$是采样算子，$\mathcal{F}$是作用在每一帧图像上的二维Fourier变换算子，$\mathcal{M}$是作用在每一帧图像上的二维采样模式，$\epsilon$是加性高斯白噪声。于是基于压缩感知的动态MR重建模型可以表示为：
 \beq
@@ -21,7 +21,7 @@ $$B=AX+\epsilon,$$
 \beq
 \min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2+\alpha||\nabla_t X||_1,
 \eeq
-其中$\nabla_t$是时间方向的梯度算子。iGrasp在图像时间方向的稀疏性占主导地位时表现很好。但是对于绝大多数动态MR图像来说，空间分辨率和时间分辨率都是十分重要的——高空间分辨率可以帮助医生更好地从视觉上理解图像，而高的时间分辨率在进行图像的量化分析时十分必要。因此仅仅利用时间方向的稀疏变换是不足的。
+其中$\nabla_t$是时间方向的梯度算子。iGrasp在图像时间方向的稀疏性占主导地位时表现很好。但是对于绝大多数动态MR图像来说，空间分辨率和时间分辨率都是十分重要的——高空间分辨率可以帮助医生更好地从视觉上理解图像，而高时间分辨率在进行图像的量化分析时十分必要。因此仅仅利用时间方向的稀疏变换是不足的。
 
 第二种策略是在模型中考虑动态图像的低秩性，目的是找到一个既稀疏又低秩的解。在这类方法中，动态MR图像通常需要写成二维矩阵形式，矩阵的每一行对应一个像素点，矩阵的每一列对应一帧图像。我们称这种形式的矩阵为Casorati矩阵，其维度为$N_1N_2\times d$。由于动态图像帧与帧之间有着很强的相关性，Casorati矩阵通常可以认为是低秩的。kt-SLR模型\cite{Sajan2011Accelerated}不仅利用时间和空间方向的梯度算子，也利用了非凸的Schatten $p$-拟范数。其模型为：
 \beq
@@ -45,7 +45,7 @@ $$
 \beq
 \min_{L,S}\frac{1}{2}||A(L+S)-B||_\mathrm{F}^2 + \alpha||\mathcal{F}_tS||_1 + \beta\|L\|_*.
 \eeq
-但与模型iGrasp一样，L+S与kt-RPCA也仅仅利用了时间方向的稀疏变换。此外，由于模型kt-RPCA中使用了时间方向的Fourier变换，它只在心脏数据中有效果。Schloegl等 \cite{infimaltgv}提出了卷积下确界TGV泛函（infimal convolution TGV，ICTGV），其定义为：
+但与模型iGrasp一样，L+S与kt-RPCA也仅仅利用了时间方向的稀疏变换。此外，由于模型kt-RPCA中使用了时间方向的Fourier变换，它只在心脏数据中有效果。Schloegl等 \cite{infimaltgv}提出了卷积下确界TGV泛函ICTGV，其定义为：
 \beq
 \mathrm{ICTGV}_{\alpha, \beta}^2(X) = \inf_{X=X_1+X_2}\mathrm{TGV}_{\alpha_1}^2(X_1) + \beta\mathrm{TGV}_{\alpha_2}^2(X_2),
 \eeq
@@ -53,13 +53,13 @@ $$
 \beq
 \min_{X}\frac{1}{2}||AX-B||_\mathrm{F}^2 + \mathrm{ICTGV}_{\alpha, \beta}^2(X).
 \eeq
-TGV泛函的概念在文献\cite{bredies2010total}中首次提出，是经典TV泛函的推广。TGV泛函中含有高阶导数项，可以更好地表示图像中的光滑区域，因此可以有效地抑制阶梯效应。虽然模型ICTGV中没有明确地将图像分解为低秩部分和稀疏部分，但是ICTGV可以自适应地将动态图像分解为两个部分，一部分包含更多时间正则项，而另一部分包含更多动态变化。因此我们也将ICTGV归入图像分解的方法。ICTGV可以最优地平衡时间和空间正则项，并且在心脏电影和心脏造影图像上表现良好，但其在胸部DCE-MRI上的表现是未知的。
+TGV泛函的概念在文献\cite{bredies2010total}中首次提出，是经典TV泛函的推广。TGV泛函中含有高阶导数项，可以更好地表示图像中的光滑区域，因此可以有效地抑制阶梯效应。虽然模型ICTGV中没有明确地将图像分解为低秩部分和稀疏部分，但是ICTGV可以自适应地将动态图像分解为两个部分，一部分包含更多时间正则项，而另一部分包含更多动态变化信息。因此我们也将ICTGV归入图像分解的方法。ICTGV可以最优地平衡时间和空间正则项，并且在心脏电影和心脏造影图像上表现良好，但其在胸部DCE-MRI上的表现是未知的。
 
 综上所述，以上针对动态MR图像的压缩感知重建模型要么会导致阶梯效应，要么只利用了时间稀疏变换。为了提高重建质量，抑制重建图像中的阶梯效应，并且利用图像分解模型的思想，我们提出了利用二阶时空TGV泛函来约束稀疏部分，利用核范数来约束低秩部分的新模型。具体来说，我们利用核范数来建模时间高度相关的背景，利用二阶时空TGV来刻画背景之上的动态信息。
 
 \section{模型的提出}
 \subsection{低秩矩阵补全}
-最近几年，低秩矩阵补全算法被广泛应用于动态MR图像重建中。其主要的想法是将动态MR图像看成一个时空矩阵，矩阵的每一行对应动态图像的一个像素点，矩阵的每一列对应动态图像的一帧。在文献\cite{rpca}中，Candès等建立了低秩和稀疏分解模型的数学基础，即鲁棒主成分分析（robust principe component analysis，RPCA）。给定一个Casorati矩阵$X\in \mathbb{C}^{N_1N_2\times d}$，RPCA描述了以下优化问题：
+最近几年，低秩矩阵补全算法被广泛应用于动态MR图像重建中。其主要的想法是将动态MR图像看成一个时空矩阵，矩阵的每一行对应动态图像的一个像素点，矩阵的每一列对应动态图像的一帧。在文献\cite{rpca}中，Candès等建立了低秩和稀疏分解模型的数学基础，即RPCA。给定一个Casorati矩阵$X\in \mathbb{C}^{N_1N_2\times d}$，RPCA描述了以下优化问题：
 \beq
 \min_{L,S} \|L\|_*+\alpha\|S\|_1, \quad s.t.\quad X=L+S.
 \label{equ:lpluss}
@@ -189,7 +189,7 @@ w\in W: \quad &\|w\|_1 = \sum_{(i,j,k)\in\Omega}({w_1}_{i,j,k}^2+{w_2}_{i,j,k}^2
 \end{aligned}
 \end{equation*}
 
-接下来，我们给出模型(\ref{equ:proposed})的离散格式。假设采样矩阵$A: U \rightarrow Y$，$Y$为有限维度的Hilbert空间，并且为离散形式。则模型(\ref{equ:proposed})可以写成：
+接下来，我们给出模型（\ref{equ:proposed}）的离散格式。假设采样矩阵$A: U \rightarrow Y$，$Y$为有限维度的Hilbert空间，并且为离散形式。则模型（\ref{equ:proposed}）可以写成：
 \beq
 \begin{aligned}
 	\min_{(S,w,L)\in U\times V\times U} \alpha_1 \|\nabla_3 S-w\|_1&+\alpha_0\|\mathcal{E}(w)\|_1+\beta\|L\|_*\\
@@ -294,10 +294,10 @@ $$\|\mathcal{K}\|^2\leq \frac{2\|A\|^2+25+\sqrt{(2\|A\|^2-1)^2+48}}{2}.$$
 
 \section{数值实验数据与评价方法}
 \subsection{数值实验数据}
-我们回顾性地将提出的模型应用在三组不同的动态MR数据集中。第一组数据为生理学改进非均匀心脏躯干数值体模（physiologically improved non uniform cardiac torso，PINCAT），图像维度为$128\times 128\times 50$。第二组数据为活体心脏灌注MR数据（in vivo cardiac perfusion），图像维度为$190\times 90\times 70$ 。这两组数据也被应用在模型kt-SLR中，选择它们是为了更公平地和其他模型进行比较。有关数据集的详细信息，请参考文献\cite{segars2002study, sharif2007adaptive}。第三组数据是活体胸部DCE-MRI数据。这些数据都来自于不同的病人，并经过了机构审查委员会的批准。这组数据使用了Philips公司的Achieve 3T扫描仪通过破坏性梯度回波序列（spoiled gradient recalled echo, SPGRE）获取，重复时间$T_\mathrm{R}$为4.33 ms，回波时间$T_\mathrm{E}$为2.12 ms，偏转角为$12^\circ$。采集所得的数据为线圈组合复值数据，维度为$192\times 192\times 10\times 105$，其中相位编码和频率编码均为192，切片数量为10，帧数为105。空间分辨率为$1.33$ mm $\times$ 1.33 mm $\times$ 5 mm，视野大小为256 mm $\times$ 256 mm $\times$ 50 mm。更详细的成像细节请参考文献\cite{li}。我们将这个数据记作Breast1。另外两个胸部数据是在同样的协议不同的成像参数下采集得到的，维度为$192\times 192\times 20\times 25$。我们将这两个数据分别记作Breast2和Breast3。注意，与Breast1不同，Breast2和Breast3只有实值的幅度（magnitude）数据。为了简化计算，我们只关注通过肿瘤中心的切片。对于Breast1，中心切片为第6个；对于Breast2和Breast3，中心切片为第10个。最终数据的维度分别为$192\times 192\times 105$和$192\times 192\times 25$。
+我们回顾性地将提出的模型应用在三组不同的动态MR数据集中。第一组数据为生理学改进非均匀心脏躯干数值体模（physiologically improved non uniform cardiac torso，PINCAT），图像维度为$128\times 128\times 50$。第二组数据为活体心脏灌注MR数据（in vivo cardiac perfusion），图像维度为$190\times 90\times 70$ 。这两组数据也被应用在模型kt-SLR中，选择它们是为了更公平地和其他模型进行比较。有关数据集的详细信息，请参考文献\cite{segars2002study, sharif2007adaptive}。第三组数据是活体胸部DCE-MRI数据。这些数据都来自于不同的病人，并经过了机构审查委员会的批准。这组数据使用了Philips公司的Achieve 3T扫描仪通过破坏性梯度回波序列（spoiled gradient recalled echo, SPGRE）获取，重复时间$T_\mathrm{R}$为4.33 ms，回波时间$T_\mathrm{E}$为2.12 ms，偏转角为$12^\circ$。采集所得的数据为线圈组合复值数据，维度为$192\times 192\times 10\times 105$，其中相位编码和频率编码均为192，切片数量为10，帧数为105。空间分辨率为$1.33$ mm $\times$ 1.33 mm $\times$ 5 mm，视野大小为256 mm $\times$ 256 mm $\times$ 50 mm。更详细的成像细节请参考文献\cite{li}。我们将这个数据记作Breast1。另外两个胸部数据是在同样的协议不同的成像参数下采集得到的，维度为$192\times 192\times 20\times 25$。我们将这两个数据分别记作Breast2和Breast3。注意，与Breast1不同，Breast2和Breast3只有实值的幅值（magnitude）数据。为了简化计算，我们只关注通过肿瘤中心的切片。对于Breast1，中心切片为第6个；对于Breast2和Breast3，中心切片为第10个。最终数据的维度分别为$192\times 192\times 105$和$192\times 192\times 25$。
 
 \subsection{采样模式与评价方法}
-我们将提出的模型和最前沿的模型进行比较，它们分别是kt-SLR\footnote{\url{http://user.engineering.uiowa.edu/~jcb/Software/ktslr_matlab/Software.html}} \cite{Sajan2011Accelerated}, kt-RPCA\footnote{\url{http://agsp.org/bt/ktrpca/}} \cite{tremoulheac}, L+S\footnote{\url{http://cai2r.net/resources/software}} \cite{lpluss} and ICTGV\footnote{\url{https://github.com/IMTtugraz/AVIONIC}} \cite{infimaltgv}。以上模型的程序都使用MATLAB编写，并且全部开源。所有数值实验程序均在双核Xeon E5-2630 2.2 GHz CPU，128GB内存和NVIDIA TITAN RTX GPU的工作站上运行，MATLAB的版本为2018a。为了加速MATLAB程序，我们也使用CUDA C语言在GPU上实现提出的模型，并且比较了MATLAB和CUDA的运行时间。
+我们将提出的模型和最前沿的模型进行比较，它们分别为kt-SLR\footnote{\url{http://user.engineering.uiowa.edu/~jcb/Software/ktslr_matlab/Software.html}} \cite{Sajan2011Accelerated}, kt-RPCA\footnote{\url{http://agsp.org/bt/ktrpca/}} \cite{tremoulheac}, L+S\footnote{\url{http://cai2r.net/resources/software}} \cite{lpluss} and ICTGV\footnote{\url{https://github.com/IMTtugraz/AVIONIC}} \cite{infimaltgv}。以上模型的程序都使用MATLAB编写，并且全部开源。所有数值实验程序均在双核Xeon E5-2630 2.2 GHz CPU，128GB内存和NVIDIA TITAN RTX GPU的工作站上运行，MATLAB的版本为2018a。为了加速MATLAB程序，我们也使用CUDA C语言在GPU上实现提出的模型，并且比较了MATLAB和CUDA的运行时间。
 %目前MATLAB版本和CUDA版本的程序均已开源，详细程序请参考网址\url{https://github.com/chixindebaoyu/tgvnn}。
 
 我们选取了两种不同的采样模式进行数值试验，并应用到所有模型中。图\ref{fig:mask3}展示了数值实验中使用的采样模式，其中图\ref{fig:mask3}（a）是伪径向采样模式。在每一帧图像上，我们均匀地选取一些径向采样线，并使得帧与帧之间的采样线随机转动一个角度以增加非相干性。伪径向采样是动态MR重建数值试验中常用的采样模式，其采样点均在Cartesian网格上，直接使用快速Fourier变换即可实现频率域到图像域的转化，计算快速简便。在所有数值实验中，如非特别说明，我们均使用32条采样线来保证数值实验的一致性。伪径向采样的总加速因子为6.6，这里的总加速因子为k-space中所有点的个数与k-space采样点个数的比值。为了测试提出的模型在不同采样模式下的表现，我们也选取了Cartesian采样模式进行试验，如图\ref{fig:mask3}（b）所示。Cartesian采样模式是临床MR成像最常用的采样模式。在每一帧图像上，我们对低频区域进行全采样，对高频区域进行随进采样。具体来说，我们在k-space中选取中心窗口大小为20的区域作为低频区域，而在外围的高频区域，我们随机选择一些相位编码线来增加非相干性，使得总体来说外围的每一条相位编码线被选取的次数相同，并且帧与帧之间达到最大的正交性。Cartesian采样的总加速因子为5.1。

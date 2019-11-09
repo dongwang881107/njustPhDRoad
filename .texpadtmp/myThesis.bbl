@@ -77,18 +77,18 @@ Jeffrey T, Peter B, Pruessmann K~P.
   spatiotemporal correlations.[J].
 \newblock Magnetic Resonance in Medicine, 2003, 50(5):1031–1042.
 
-\bibitem[Cand{\`e}s and Tao(2004)]{candes2004near}
-Cand{\`e}s E, Tao T.
-\newblock Near optimal signal recovery from random projections: Universal
+\bibitem[Cand{\`e}s and Tao(2006)]{candes2004near}
+Cand{\`e}s E~J, Tao T.
+\newblock Near-optimal signal recovery from random projections: Universal
   encoding strategies?[J].
-\newblock arXiv, 2004:0410542.
+\newblock IEEE transactions on information theory, 2006, 52(12):5406--5425.
 
 \bibitem[Cand{\`e}s {\em et~al.}(2006)]{candes2006compressive}
 Cand{\`e}s E~J, et al.
 \newblock
 \newblock Compressive sampling[C]//Proceedings of the International Congress of
   Mathematicians.
-\newblock Madrid, Spain: EMS, 2006，3:1433--1452.
+\newblock Madrid, Spain: EMS, 2006:1433--1452.
 
 \bibitem[Cand{\`e}s and Romberg(2006)]{candes2006quantitative}
 Cand{\`e}s E~J, Romberg J.
@@ -113,7 +113,7 @@ Golbabaee M, Vandergheynst P.
 \newblock
 \newblock Hyperspectral image compressed sensing via low-rank and joint-sparse
   matrix recovery[C]//2012 IEEE International Conference on Acoustics, Speech
-  and Signal Processing (ICASSP).
+  and Signal Processing.
 \newblock Kyoto, Japan: IEEE, 2012:2741--2744.
 
 \bibitem[Quinsac et al.(2010)]{quinsac2010compressed}
@@ -133,7 +133,7 @@ Lustig M, Santos J~M, Donoho D~L, et al.
 \newblock
 \newblock kt SPARSE: High frame rate dynamic MRI exploiting spatio-temporal
   sparsity[C]//Proceedings of the 13th Annual Meeting of ISMRM.
-\newblock Seattle, WA, USA: ISMRM, 2006，2420.
+\newblock Seattle, WA, USA: ISMRM, 2006:2420.
 
 \bibitem[Wright et al.(2008)]{wright2008robust}
 Wright J, Yang A~Y, Ganesh A, et al.
@@ -180,7 +180,7 @@ Chen S, Donoho D.
 \newblock
 \newblock Basis pursuit[C]//Proceedings of 1994 28th Asilomar Conference on
   Signals, Systems and Computers.
-\newblock Pacific Grove, CA, USA: IEEE, 1994，1:41--44.
+\newblock Pacific Grove, CA, USA: IEEE, 1994:41--44.
 
 \bibitem[H.~Bauschke and Combettes(2011)]{proximal}
 H.~Bauschke H, Combettes P.
@@ -345,8 +345,8 @@ Kressler B, Spincemaille P, Nguyen T~D, et al.
 \bibitem[Karampinos et al.(2009)]{karampinos2009high}
 Karampinos D~C, Van A~T, Olivero W~C, et al.
 \newblock High-resolution diffusion tensor imaging of the human pons with a
-  reduced field-of-view, multishot, variable-density, spiral acquisition at 3
-  T[J].
+  reduced field-of-view, multishot, variable-density, spiral acquisition at
+  3T[J].
 \newblock Magnetic Resonance in Medicine, 2009, 62(4):1007--1016.
 
 \bibitem[Santos et al.(2006)]{santos2006single}
@@ -670,7 +670,7 @@ Ricardo O, Emmanuel C, Sodickson D~K.
 \bibitem[Cand{\`e}s et al.(2011)]{rpca}
 Cand{\`e}s E~J, Li X, Ma Y, et al.
 \newblock Robust principal component analysis?[J].
-\newblock Journal of the ACM (JACM), 2011, 58(3):1--37.
+\newblock Journal of the ACM, 2011, 58(3):1--37.
 
 \bibitem[Tr{\'e}moulh{\'e}ac et al.(2014)]{tremoulheac}
 Tr{\'e}moulh{\'e}ac B, Dikaios N, Atkinson D, et al.
@@ -989,7 +989,7 @@ Tofts P, Brix G, L.~Buckley D, et al.
 Smith D, Li X, Arlinghaus L, et al.
 \newblock DCEMRI.jl: A fast, validated, open source toolkit for dynamic
   contrast enhanced MRI analysis[J].
-\newblock PeerJ, 2015, 3:e909.
+\newblock PeerJ, 2015, 3(909):1--19.
 
 \bibitem[{European Society of Radiology (ESR)}(2015)]{esr}
 {European Society of Radiology (ESR)}.
@@ -1048,7 +1048,7 @@ Smith D~S, Sengupta S, Smith S~A, et al.
 Eklund A, Dufort P, Villani M, et al.
 \newblock BROCCOLI: Software for fast fMRI analysis on many-core CPUs and
   GPUs[J].
-\newblock Frontiers in Neuroinformatics, 2014, 8:24.
+\newblock Frontiers in Neuroinformatics, 2014, 8(24):1--19.
 
 \bibitem[Xanthis et al.(2014)]{Xanthis2014MRISIMUL}
 Xanthis C~G, Venetis I~E, Chalkias A~V, et al.
@@ -1066,7 +1066,7 @@ Yakang D, Jie T, Di D, et al.
 \newblock Real-time visualized freehand 3D ultrasound reconstruction based on
   GPU[J].
 \newblock IEEE Transactions on Information Technology in Biomedicine, 2010,
-  14(6):1338.
+  14(6):1338--1345.
 
 \bibitem[Garcia et al.(2016)]{Garcia2016Accelerated}
 Garcia M~P, Bert J, Benoit D, et al.
@@ -1083,7 +1083,7 @@ Cui J, Pratx G, Meng B, et al.
 Vasilevsky N~A, Brush M~H, Paddock H, et al.
 \newblock On the reproducibility of science: unique identification of research
   resources in the biomedical literature[J].
-\newblock PeerJ, 2013, 1:e148.
+\newblock PeerJ, 2013, 1(148):1--22.
 
 \bibitem[Collaboration(2015)]{osc_repro_2015}
 Collaboration O~S.
@@ -1132,7 +1132,7 @@ Uecker M, Ong F, Tamir J~I, et al.
 \newblock
 \newblock Berkeley advanced reconstruction toolbox[C]//Proceedings of ISMRM
   23rd Annual Meeting.
-\newblock Toronto, Ontario, Canada: ISMRM, 2015，23:2486.
+\newblock Toronto, Ontario, Canada: ISMRM, 2015:2486.
 
 \bibitem[Zwart et al.(2012)]{zwart_sdc_2012}
 Zwart N~R, Johnson K~O, Pipe J~G.
@@ -1143,7 +1143,7 @@ Zwart N~R, Johnson K~O, Pipe J~G.
 \bibitem[Cloos et al.(2016)]{cloos2016multiparametric}
 Cloos M~A, Knoll F, Zhao T, et al.
 \newblock Multiparametric imaging with heterogeneous radiofrequency fields[J].
-\newblock Nature communications, 2016, 7(12445).
+\newblock Nature communications, 2016, 7(12445):1--10.
 
 \bibitem[Ma et al.(2017)]{Ma_B1_MRF}
 Ma D, Coppo S, Chen Y, et al.
@@ -1155,6 +1155,6 @@ Ma D, Coppo S, Chen Y, et al.
 Hamilton J~I, Griswold M~A, Seiberlich N.
 \newblock MR Fingerprinting with chemical exchange ({MRF-X}) to quantify
   subvoxel {T1} and extracellular volume fraction[J].
-\newblock Journal of Cardiovascular Magnetic Resonance, 2015, 17(1):W35.
+\newblock Journal of Cardiovascular Magnetic Resonance, 2015, 17(35):1--3.
 
 \end{thebibliography}
