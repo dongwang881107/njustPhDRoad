@@ -1,4 +1,4 @@
-\chapter{基于GPU的实时磁共振指纹的字典生成和匹配}
+\chapter{基于GPU的实时MRF字典生成与参数图重建}
 \label{chap:snapMRF}
 磁共振指纹（MRF）是定量MRI技术的新方法，可以在单次扫描中同时获得多个组织参数\cite{mrf,esr,bipin_mehta_magnetic_2019}，因此MRF有着加速MR成像的潜力。MRF主要包括三个部分，分别为信号采集、字典生成和模式识别。其中信号采集的速度取决于MR自身扫描的速度，而字典生成和模式识别则取决于算法和硬件。因此一个快速开源的MRF重建程序可以增加MRF临床应用的可行性和准确率。
 
@@ -26,15 +26,15 @@ MRF重建参数图的一个重要过程是生成包含不同组织参数模拟�
 
 最近几年，图形处理单元（GPU）逐渐成为加速科学计算的主流方法，并在医学成像领域有着广泛的应用，详细的综述请参考文献\cite{gpu}。GPU中集成了大规模并行计算单元，在允许计算复杂模型的同时，保持合理的执行时间。GPU有以下两个主要特点：第一，与传统CPU芯片不同，GPU中用于浮点运算的空间要远远多于指令分配，因此具有强大的科学计算潜力；第二，可编程的特性，即用户可以通过应用程序接口直接在GPU上进行编程，体现了很好的交互能力。这两个特点奠定了GPU并行计算的基石。目前应用最广泛的应用程序接口是Nvidia公司的CUDA框架，其提供的编程能力在显著地发展，程序的复杂度也在慢慢地减少。基于CUDA框架的GPU编程需要注意以下三点。第一，需要对GPU硬件有足够的了解，这样才能充分发挥GPU的潜力。第二，合理地为程序中的变量分配显存，使得线程尽量可以访问连续的显存空间，这样可以大大减少线程访问显存的时间。第三，避免条件竞争的发生，即避免不同线程同时写入同一显存位置，从而造成不确定的结果。简而言之，GPU编程是一个根据使用的硬件不断调试和优化的过程，其通常能够使得程序运算速度提高10--100倍。
 
-目前，GPU并行计算已经被广泛地应用于医学成像领域，如CT\cite{biguri2016tigre,palenstijn2011performance}、MRI\cite{Knoll,Sorensen,tron,Eklund2014BROCCOLI,Xanthis2014MRISIMUL}、US\cite{Jung2013GPU,Yakang2010Real}、PET\cite{Garcia2016Accelerated,Cui2013Distributed}等。但是据我们所知，目前没有程序在CUDA的框架下，利用GPU来实现MRF的字典生成和模板匹配。另外，也有一些文献中也表明了对缺少科学研究的可重复性的担忧\cite{vasilevsy_repro_2013,osc_repro_2015,collins_repro_2014,begley_repro_2015}。针对以上问题，我们开发了一款基于GPU的开源MRF重建程序snapMRF，用于并行计算字典生成和模板匹配。snapMRF将字典生成和模板匹配全部放在GPU上并行计算，并且给出了一系列单元测试来保证程序的可靠性和准确性。snapMRF既可以用Bloch方程也可以用EPG模型来进行字典生成，保证了程序的普适性。
+目前，GPU并行计算已经被广泛地应用于医学成像领域，如CT\cite{biguri2016tigre,palenstijn2011performance}、MRI\cite{Knoll,Sorensen,tron,Eklund2014BROCCOLI,Xanthis2014MRISIMUL}、US\cite{Jung2013GPU,Yakang2010Real}、PET\cite{Garcia2016Accelerated,Cui2013Distributed}等。但是据我们所知，目前没有程序在CUDA的框架下，利用GPU来实现MRF的字典生成和模板匹配。另外，也有一些文献中也表明了对缺少科学研究的可重复性的担忧\cite{vasilevsy_repro_2013,collins_repro_2014,begley_repro_2015}。针对以上问题，我们开发了一款基于GPU的开源MRF重建程序snapMRF，用于并行计算字典生成和模板匹配。snapMRF将字典生成和模板匹配全部放在GPU上并行计算，并且给出了一系列单元测试来保证程序的可靠性和准确性。snapMRF既可以用Bloch方程也可以用EPG模型来进行字典生成，保证了程序的普适性。
 
 \section{snapMRF程序设计与单元测试}
-\subsection{snapMRF程序流程与难点}
-snapMRF实现MRF重建参数图的过程一共可以分为5个步骤，其中前两个步骤为指纹数据与成像参数的输入，后面的两个步骤为字典的生成与匹配，最后一个步骤为结果的输出，如图\ref{fig:snapmrf}所示。这样的设计框架由GPU计算的原理所决定的。一般来说，利用GPU进行并行计算需要首先将数据从主机（host）拷贝到设备（device）上，在设备上进行计算之后，再将处理之后的数据从设备拷贝回主机上进行存储或其他处理。这样做是为了尽可能避免数据在主机和设备之间进行多次拷贝，减少时间消耗。注意下面变量前面的 * 表示C语言中的向量指针，其中主机向量指针以字母\texttt{h}开头，设备向量指针以字母\texttt{d}开头。
+\subsection{snapMRF程序流程}
+snapMRF实现MRF重建参数图的过程总体一共可以分为5个步骤，如图\ref{fig:snapmrf}所示。其中前两个步骤为指纹数据与成像参数的输入，后面的两个步骤为字典的生成与匹配，最后一个步骤为结果的输出。这样的设计框架由GPU计算的原理所决定的。一般来说，利用GPU进行并行计算需要首先将数据从主机（host）拷贝到设备（device）上，在设备上进行计算之后，再将处理之后的数据从设备拷贝回主机上进行存储或其他处理。这样做是为了尽可能避免数据在主机和设备之间进行多次拷贝，减少时间消耗。snapMRF并行计算的部分主要发生字典生成和匹配两部分，下面我们进行详细的介绍。注意下面变量前面的 * 表示C语言中的向量指针，其中主机向量指针以字母\texttt{h}开头，设备向量指针以字母\texttt{d}开头。
 \begin{figure}
 \centering
- \includegraphics[width=1\textwidth]{img/snapmrf/snapMRF.png}
-\caption{snapMRF流程图。}
+ \includegraphics[width=0.5\textwidth]{img/snapmrf/snapMRF.png}
+\caption{snapMRF程序流程图。}
 \label{fig:snapmrf}
 \end{figure}
 
@@ -50,8 +50,6 @@ snapMRF实现MRF重建参数图的过程一共可以分为5个步骤，其中前
 \item \textbf{保存结果}。将字典元素\texttt{*d\_atoms}和参数图\texttt{*d\_maps}从GPU拷贝回CPU，并存储成为RawArray格式。释放内存。
 
 \end{itemize}
-
-从以上步骤可以看出，snapMRF程序设计中的难点和创新主要有以下几点。第一，确定多维向量指针在显存中的储存结构，其目的是保证线程可以连续地访问显存空间。我们需要确定一个指标变化的优先级，即多维向量指针指标变化的快慢。对于包含时间维度的向量指针，如\texttt{*d\_atoms}、\texttt{*d\_mrf}、\texttt{*d\_img}等，我们选取时间维度优先，即时间方向的指标变化最快。对于包含参数维度的向量指针，如\texttt{*d\_maps}、\texttt{*d\_params}等，我们选取参数维度优先，即参数方向的指标变化最快。第二，计算多维向量在显存中对应的一维指标。字典、指纹等数据虽然为多维数据，但其在显存中的储存和访问只能是一维线性的。因此，多维数据的指标和其在显存中的一维指标需要一一对应起来。这一点至关重要，因为一旦指标计算错误，最后的结果会变得无法预测且这种错误很难被发现。第三，管理显存。为了使得GPU的显存得到充分的利用，我们需要时刻注意剩余显存的大小，在不超过显存上限的前提下，最大限度的利用显存。snapMRF中，在进行字典匹配之前，我们首先释放了\texttt{*d\_w}的显存，并且计算了此时剩余显存的大小，然后根据剩余显存的大小来为后面的数据分配显存。第四，snapMRF中主机与设备之间的数据拷贝只发生两次，分别为将MR成像序列和指纹数据从CPU拷贝到GPU和将计算结果从GPU拷贝到CPU，其余所有计算均在GPU上进行，最大限度地减少了数据拷贝的时间开销。
 
 \subsection{snapMRF核函数的功能}
 在Nvidia的计算框架CUDA中，将在GPU上并行计算的特殊函数称为核函数（kernel），将该函数运行的一个实例称为一个线程（thread）。因此GPU并行计算编程的一个原则是将复杂的算法分解，使得算法的每一小步都可以在GPU上通过核函数并行运行。我们下边简单介绍snapMRF中核函数的主要功能，如表\ref{tab:kernel}所示。
@@ -99,6 +97,51 @@ snapMRF实现MRF重建参数图的过程一共可以分为5个步骤，其中前
 \end{center}
 \label{tab:kernel}
 \end{table}
+
+因此，结合流程图\ref{fig:snapmrf}和如上核函数的功能，snapMRF字典生成与匹配的详细流程如算法\ref{alg:snapMRF}所示。
+\begin{algorithm}
+	\caption{snapMRF生成字典与匹配详细流程。}
+	\label{alg:snapMRF}
+	\begin{algorithmic}
+		\INDSTATE[-1.25] \textbf{输入：}\texttt{*d\_mrf}，\texttt{*d\_params}，\texttt{*d\_img}
+		\INDSTATE[-1.25] \textbf{输出：}\texttt{*d\_atoms}，\texttt{*d\_maps}
+		\STATE 01：从CSV文件中读取MRF序列信息，存入\texttt{*d\_mrf}；
+		\STATE 02：从命令行输入字典参数信息，存入\texttt{*d\_params}；
+		\STATE 03：初始化状态矩阵\texttt{*d\_w}；
+		\STATE 04：\textbf{迭代}：从第1个时刻到第$L$个时刻，并行计算所有体素的信号
+		\STATE 05：\qquad 使用函数\texttt{fill\_transition\_matrix()}构造转移矩阵$T$；
+		\STATE 06：\qquad 使用函数\texttt{apply\_rf\_pulse()}将射频场作用在\texttt{*d\_w}上；
+		\STATE 07：\qquad 使用函数\texttt{decay\_signal()}将$T_1$和$T_2$衰减作用在\texttt{*d\_w}上；
+		\STATE 08：\qquad 使用函数\texttt{save\_atoms()}将原子的信号保存在\texttt{*d\_atoms}中；
+		\STATE 09：\qquad 使用函数\texttt{dephase\_gradients()}将梯度场作用在\texttt{*d\_w}上；
+		\STATE 10：\qquad 使用函数\texttt{decay\_signal()}将$T_1$和$T_2$衰减作用在\texttt{*d\_w}上；
+		\STATE 11：\textbf{终止迭代}；
+		\STATE 12：释放\texttt{*d\_w}；
+		\STATE 13：从RawArray文件中读取指纹数据，存入\texttt{*d\_img}；
+		\STATE 14：计算剩余显存大小，并根据剩余显存，将\texttt{*d\_img}分为$G$组；
+		\STATE 15：\textbf{迭代}：从第1组到第$G$组，在每一组内并行计算所有体素的参数
+		\STATE 16：\qquad 使用函数\texttt{MRF\_minimatch()}进行匹配；
+		\STATE 17：\qquad 使用函数\texttt{generate\_maps()}生成参数图；
+		\STATE 18：\textbf{终止迭代}；
+		\STATE 19：将\texttt{*d\_atoms}和\texttt{*d\_maps}保存为RawArray文件；
+		\STATE 20：释放所有显存和内存。
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{snapMRF并行计算的难点与创新}
+在这一小节，我们讨论snapMRF程序设计中遇到的难点。一般来说，为了能够在GPU上进行并行计算，我们需要认真考虑以下两个方面。一方面是内存合并（memory coalescence），其包括排列所需处理的数据，使得给定组内的线程可以访问连续的显存位置。这样做可以加快线程访问显存的速度，节省计算的时间。另一方面是在GPU进行并行计算时要避免条件竞争（race condition），其意思为两个或多个的线程同时写入同一个显存位置，造成不可预测的结果。为了实现以上两点，在snapMRF程序设计中，我们遇到了以下几方面挑战：
+
+第一，确定多维向量指针在显存中的储存结构，比如指纹数据\texttt{*d\_img}、字典\texttt{*d\_atoms}、成像参数\texttt{*d\_params}等。这意味着我们需要确定一个指标变化的优先级，即多维向量指针指标变化的快慢。在snapMRF中，我们的处理方式如下：对于包含时间维度的向量指针，如\texttt{*d\_atoms}、\texttt{*d\_mrf}、\texttt{*d\_img}等，我们选取时间维度优先，即时间方向的指标变化最快。对于包含参数维度的向量指针，如\texttt{*d\_maps}、\texttt{*d\_params}等，我们选取参数维度优先，即参数方向的指标变化最快。这样处理的原因是数据通常是在时间或者参数方向上连续变化的。
+
+第二，计算多维向量在显存中对应的一维指标。字典、指纹等数据虽然为多维数据，但其在显存中的储存和访问只能是一维线性的。因此，多维数据的指标和其在显存中的一维指标需要一一对应起来。这个过程并不容易且至关重要，因为一旦指标计算错误，最后的结果会变得无法预测且这种错误很难被发现。
+
+第三，将EPG算法生成字典的过程分裂为小的GPU核函数。如第\ref{sec:epg}小节所述，EPG算法包含了多个作用矩阵，如转移矩阵$T$、衰减矩阵$E$、平移矩阵$H$等。在snapMRF中，我们将EPG算法以作用矩阵为最小单位分成了多个GPU核函数，即每个作用矩阵对应一个核函数，这样使得程度有了更好的可读性。
+
+第四，确定一个合适的并行方案。由于EPG模型模拟了信号随着时间的演化，因此在snapMRF中，并行是相对于字典中原子而言的。即在进行字典生成时，在每一个时间点，并行计算所有原子的信号演化，这个过程一直持续到所有时间点计算完成为止。在进行字典匹配时，并行是相对于指纹数据的体素而言。即在进行字典匹配时，并行计算所有体素的参数并生成参数图。
+
+第五，管理显存。为了使得GPU的显存得到充分的利用，我们需要时刻注意剩余显存的大小，在不超过显存上限的前提下，最大限度的利用显存。snapMRF中，在进行字典匹配之前，我们首先释放了\texttt{*d\_w}的显存，并且计算了此时剩余显存的大小，然后根据剩余显存的大小来为后面的数据分配显存。换而言之，我们将根据剩余的显存，将指纹数据均匀地分成了几组，在组内进行字典匹配。这样做的原因是字典和指纹数据通常需要占据很大的显存，因此通常没有足够的显存同时计算所有的体素参数图。
+	
+第六，避免数据在GPU与CPU之间多次拷贝。snapMRF中主机与设备之间的数据拷贝只发生两次，分别为将MR成像序列和指纹数据从CPU拷贝到GPU和将计算结果从GPU拷贝到CPU，其余所有计算均在GPU上进行，最大限度地减少了数据拷贝的时间开销。
 
 \subsection{单元测试}
 单元测试是简单的情形的测试，目的是为验证和确保程序的正确性。单元测试的正常结果是全部通过。如果有一个或者多个单元测试失败，那么意味着程序或者算法有错误。snapMRF中给出了8组单元测试，每组单元测试对应一个简单序列的字典生成或者模板匹配，并与其相对应的解析解进行比较。所有的单元测试都包含在源文件\texttt{test.cu}中。Table \ref{tab:unittest}显示了不同序列所用到的参数。单元测试共使用了6个不同的序列，每个序列都有不同的参数。$[a,b]$意思是参数是在区间$a$与$b$中随机选择。为了简化计算，对于所有的序列，$B_0=0$并且$B_1=1$。序列的详细信息请参考文献\cite{weigel}和\cite{web}。
@@ -156,17 +199,12 @@ SSFP & [0,$\pi$/3] & $0\rightarrow\cdots$  & 100,200 & 20,40 & [3.5,7.5] & 16\\
 \section{数值实验数据与评价方法}
 我们进行了三组数值实验，用于比较snapMRF与其他MRF开源程序，如EPG-X和PnP-MRF。数值实验所使用的数据以及评价方法如下。
 
-\subsection{程序运行时间}
-为了比较程序的运行时间，我们使用32通道的头部线圈对MRI系统体模 \cite{keenan_comparison_2016}（HPD, Boulder, Colorado） 在3.0 T（Philips Ingenia, Philips Healthcare, The Netherlands）进行冠状成像。体模在单个切片上成像，通过一系列不同MnCl$_2$浓度的对比度球得到不同的$T_1$和$T_2$值。体模的温度为20$^{\circ}$。k-space数据使用32倍均匀螺旋下采样获得\cite{pipe_spiral_2014}。图像的视野大小，平面内分辨率、平面外分辨率和螺旋采集时间分别为240 mm $\times$ 240 mm，1 mm $\times$ 1 mm，10 mm和4.9 ms。原始MRF数据使用BART\cite{bart}进行网格化和线圈组合重建，并且使用BART中的eSPIRIT估计线圈灵敏度图。样本密度使用\cite{zwart_sdc_2012}校正。重建后指纹数据的维度为$1000 \times 240 \times 240$。
+\subsection{体模数据}
+我们使用32通道的头部线圈对MRI系统体模 \cite{keenan_comparison_2016}（HPD, Boulder, Colorado） 在3.0 T（Philips Ingenia, Philips Healthcare, The Netherlands）进行冠状成像。体模在单个切片上成像，通过一系列不同MnCl$_2$浓度的对比度球得到不同的$T_1$和$T_2$值。体模的温度为20$^{\circ}$。k-space数据使用32倍均匀螺旋下采样获得\cite{pipe_spiral_2014}。图像的视野大小，平面内分辨率、平面外分辨率和螺旋采集时间分别为240 mm $\times$ 240 mm，1 mm $\times$ 1 mm，10 mm和4.9 ms。原始指纹数据使用BART\cite{bart}进行网格化和线圈组合重建，并且使用BART中的eSPIRIT估计线圈灵敏度图。样本密度使用\cite{zwart_sdc_2012}校正。重建后指纹数据的维度为$1000 \times 240 \times 240$。体模数据所使用的MRF序列改变自将uSSFP用于MRF的第一篇文章\cite{jiang}。在这个序列中，绝热反转时间为40 ms，射频场为sinc-gauss型脉冲信号，并将时间带宽乘以10以最小化切片轮廓中$B_1^+$的异质性。重复时间$T_\mathrm{R}$和偏转角$\alpha$是变化的，其中$T_\mathrm{R}\in [16,18.7]$，$\alpha \in [0,60]$。回波时间$T_\mathrm{E}$固定在4.65 ms，总的扫描时间为17.5 s。
 
-体模数据所使用的MRF序列改变自将uSSFP用于MRF的第一篇文章\cite{jiang}。在这个序列中，绝热反转时间为40 ms，射频场为sinc-gauss型脉冲信号，并将时间带宽乘以10以最小化切片轮廓中$B_1^+$的异质性。重复时间$T_\mathrm{R}$和偏转角$\alpha$是变化的，其中$T_\mathrm{R}\in [16,18.7]$，$\alpha \in [0,60]$。回波时间$T_\mathrm{E}$固定在4.65 ms，总的扫描时间为17.5 s。
+为了比较程序的运行时间，我们将$T_1$的值设置为100 ms到3000 ms之间，$T_2$的值设置为20 ms到2000 ms之间。为了研究运行时间与字典大小的关系，我们选择了10组不同数目组合的$T_1$和$T_2$，共形成10个大小不同的字典。我们将snapMRF的运行时间与EPG-X\cite{malik_extended_2018}和PnP-MRF\cite{cloos2016multiparametric}比较，并画出运行时间随字典大小变化曲线。
 
-为了比较程序的运行时间，$T_1$的值设置为100 ms到3000 ms之间，$T_2$的值设置为20 ms到2000 ms之间。为了研究运行时间与字典大小的关系，我们选择了10组不同数目组合的$T_1$和$T_2$，共形成10个大小不同的字典。我们将snapMRF的运行时间与EPG-X\cite{malik_extended_2018}和PnP-MRF\cite{cloos2016multiparametric}比较，并画出运行时间随字典大小变化曲线。
-
-\subsection{体模数据参数精度}
-为了评估参数精度，我们比较了snapMRF与EPG-X生成$T_1$和$T_2$参数图的精度。在这组数值实验中，我们依然使用上一组数值试验中使用的体模数据。但是由于EPG-X只能处理固定$T_\mathrm{R}$的序列，我们使用固定$T_\mathrm{R}$的MRF序列对同样的体模数据进行成像。具体来说，$T_\mathrm{R}$固定在16 ms，其他参数均与上一组实验相同。原始MRF数据的重建也与上一组实验相同，最终重建后指纹的数据为$1500 \times 240 \times 240$。
-
-为了对比snapMRF与EPG-X，我们首先比较二者在固定$T_\mathrm{R}$序列上重建参数图的精度。其次，我们比较snapMRF在固定$T_\mathrm{R}$和变化$T_\mathrm{R}$序列上表现的差异。最后我们研究$B_1^+$校正对参数图精度的影响。在所有比较中，我们均将字典大小选为100,000左右。不含$B_1^+$校正时，$T_1$的值从50 ms 到2500 ms，增量为5 ms，$T_2$的值从5 ms 到600 ms，增量为2.5 ms，最终字典大小为105,028。当考虑$B_1^+$校正时，$T_1$的值从50 ms 到2500 ms，增量为5 ms，$T_2$的值从5 ms 到600 ms，增量为2.5 ms，$B_1^+$的值从0.8到1.2，增量为0.1，最终字典的大小为105,655。参数图的精度使用相对误差来度量：
+为了评估参数精度，我们比较了snapMRF与EPG-X生成$T_1$和$T_2$参数图的精度。在这组数值对比实验中，我们依然使用了体模数据。但是由于EPG-X只能处理固定$T_\mathrm{R}$的序列，我们使用固定$T_\mathrm{R}$的MRF序列对同样的体模数据进行成像。具体来说，$T_\mathrm{R}$固定在16 ms，其他参数均与上一组实验相同。原始指纹数据的重建也与上一组实验相同，最终重建后指纹的数据为$1500 \times 240 \times 240$。为了对比snapMRF与EPG-X，我们首先比较二者在固定$T_\mathrm{R}$序列上重建参数图的精度。其次，我们比较snapMRF在固定$T_\mathrm{R}$和变化$T_\mathrm{R}$序列上表现的差异。最后我们研究$B_1^+$校正对参数图精度的影响。在所有比较中，我们均将字典大小选为100,000左右。不含$B_1^+$校正时，$T_1$的值从50 ms 到2500 ms，增量为5 ms，$T_2$的值从5 ms 到600 ms，增量为2.5 ms，最终字典大小为105,028。当考虑$B_1^+$校正时，$T_1$的值从50 ms 到2500 ms，增量为5 ms，$T_2$的值从5 ms 到600 ms，增量为2.5 ms，$B_1^+$的值从0.8到1.2，增量为0.1，最终字典的大小为105,655。参数图的精度使用相对误差来度量：
 \begin{equation}
 	\mathrm{err} = \frac{\|T_\mathrm{m}-T_\mathrm{gt}\|_2}{\|T_\mathrm{gt}\|_2}\times 100\%,
 \end{equation}
@@ -177,8 +215,7 @@ SSFP & [0,$\pi$/3] & $0\rightarrow\cdots$  & 100,200 & 20,40 & [3.5,7.5] & 16\\
 
 在本组数值实验中，我们从视觉上比较snapMRF与EPG-X生成参数图的好坏。与体模数据类似，我们也比较四种情形重建的参数图，即固定$T_\mathrm{R}$ EPG-X，固定$T_\mathrm{R}$ snapMRF，变化$T_\mathrm{R}$ snapMRF，变化$T_\mathrm{R}$ snapMRF加$B_1^+$校正。在所有比较中，我们均将字典大小选为100,000左右。不含$B_1^+$校正时，$T_1$的值从100 ms 到4000 ms，增量为10 ms，$T_2$的值从20 ms 到2000 ms，增量为5.5 ms，最终字典大小为108,056。当考虑$B_1^+$校正时，$T_1$的值从100 ms 到4000 ms，增量为20 ms，$T_2$的值从20 ms 到2000 ms，增量为14.5 ms，$B_1^+$的值从0.8到1.2，增量为0.1，最终字典的大小为102,830。
 
-所有程序均在dual 10-core Intel Xeon E5-2630 2.20 GHz的CPU, 256 GB内存和Nvidia TITAN V的GPU的工作站上运行。
-%snapMRF详细程序请参考网址\url{https://github.com/chixindebaoyu/snapMRF}，版本为\texttt{v0.0.1}。
+所有程序均在dual 10-core Intel Xeon E5-2630 2.20 GHz的CPU, 256 GB内存和Nvidia TITAN V的GPU的工作站上运行。snapMRF详细程序请参考网址\url{https://github.com/chixindebaoyu/snapMRF}，版本为\texttt{v0.0.1}。
 
 \section{数值实验结果}
 \subsection{程序运行时间}
@@ -277,7 +314,7 @@ snapMRF和EPG-X字典生成和模板匹配的运行时间在表\ref{tab:time}中
 \section{数值实验分析}
 在本文中，我们基于MRF字典生成与模板匹配运行时间慢的缺点，推出了一款新的基于GPU的程序snapMRF，用于MRF字典生成与模板匹配。snapMRF可以快速并准确地生成参数图，当字典较小时，可以达到实时效果。与其他开源的程序相比，字典生成的速度提高了100--1000倍，模板匹配的速度提高了10--100倍。snapMRF的另一个优势是它适用于不同类型的MRF序列，包括在MRF中经常使用的变化$T_\mathrm{R}$序列与$B_1^+$校正。
 
-snapMRF可以达到神经网络的推断速度，并且运行时间与序列的选择无关。而且，如果研究人员仍然希望通过训练神经网络来进行参数图的重建，snapMRF可以用来进行训练集，即字典的生成。另外，snapMRF的快速度可以用来减少多个经历不同$B_1^+$振幅的位置的计算时间。这适用于图像射频场的变化，也适用于切片轮廓\cite{Ma_B1_MRF}的变化。
+对于基于数学模型和神经网络的MRF重建方法，利用snapMRF可以在不降低重建参数精度的情况下提高整体的计算效率。一方面数学模型通常需要预生成字典，而这一过程在CPU上十分耗时。snapMRF可以实现100--1000倍的加速，因此提高了重建的效率。另一方面，snapMRF可以达到神经网络的推断速度，并且运行时间与序列的选择无关。而且，如果研究人员仍然希望通过训练神经网络来进行参数图的重建，snapMRF可以用来进行训练集，即字典的生成。另外，snapMRF的快速度可以用来减少多个经历不同$B_1^+$振幅的位置的计算时间。这适用于图像射频场的变化，也适用于切片轮廓\cite{Ma_B1_MRF}的变化。
 
 snapMRF中选择了EPG模型来进行字典的生成，主要原因除了EPG可以表征失相场这个特征之外，EPG模型可以比较方便的加入其它因素的影响，比如化学位移（chemical shift）、磁化转移（magnetization transfer）\cite{Hamilton}、运动、扩散等。目前snapMRF可以实现的使用变化$T_\mathrm{R}$序列对$B_1^+$效应进行建模。之后我们会把前面提到因素加入到snapMRF中。
 

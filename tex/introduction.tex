@@ -2,13 +2,7 @@
 \label{chap:introduction}
 
 \section{研究背景和意义}
-核磁共振成像\cite{mrireview}（magnetic resonance imaging, MRI）是医学临床上常用的成像方法，如图\ref{fig:mri}所示。
-\begin{figure}[htbp]
-\centerline{\includegraphics[width=0.7\textwidth]{img/intro/mri.jpg}}
-\caption{MR成像设备。}
-\label{fig:mri}
-\end{figure}
-MRI利用核磁共振现象来实现高对比度成像，它可以非侵入式地获取人体内部组织的信息，被广泛地应用于指导病灶检测、诊断与治疗。MRI在医学临床和研究中有很多不同的分类方式，根据图像是否含有时间维度，可以将MR图像分为静态MR图像和动态MR图像（dynamic MRI，简称dMRI）。常见的动态MRI有心脏电影成像（cardiac cine）、心脏灌注成像（cardiac perfusion）、磁共振动态对比增强（dynamic contrast enhanced MRI，简称DCE-MRI）、功能核磁共振成像（function MRI，简称fMRI）等，如图\ref{fig:dynamic}所示。
+核磁共振成像\cite{mrireview}（magnetic resonance imaging，简称MRI）是医学临床上常用的成像方法，其利用核磁共振现象来实现高对比度成像，可以非侵入式地获取人体内部组织的信息，被广泛地应用于指导病灶检测、诊断与治疗。MRI在医学临床和研究中有很多不同的分类方式，根据图像是否含有时间维度，可以将MR图像分为静态MR图像和动态MR图像（dynamic MRI，简称dMRI）。常见的动态MRI有心脏电影成像（cardiac cine）、心脏灌注成像（cardiac perfusion）、磁共振动态对比增强（dynamic contrast enhanced MRI，简称DCE-MRI）、功能核磁共振成像（function MRI，简称fMRI）等，如图\ref{fig:dynamic}所示。
 \begin{figure}[htbp]
 \centering
 \subfigure[心脏电影（一帧）]{
@@ -44,13 +38,48 @@ MRI利用核磁共振现象来实现高对比度成像，它可以非侵入式�
 \caption{定性MR图像与定量MR图像。}
 \label{fig:qvsq}
 \end{figure}
-定性MR图像是医学临床诊断中最常用到的类型，如$T_1$加权图像和$T_2$加权图像等，其对比度的来源分别为组织$T_1$和$T_2$的差异。但其像素值大小只是反映了$T_1$和$T_2$大小，并不是$T_1$和$T_2$本身。通过定性MR图像进行的诊断主要依靠医生的主观认识，缺乏定量指标。而定量MRI不仅能够提供组织的基本结构，也能获得组织的定量参数，从而减少了主观性，从客观定量的角度研究人体组织，达到帮助诊断与评估治疗的作用。DCE-MRI\cite{Yankeelov2009}是定量MRI的重要应用，被成功应用在胸部肿瘤定量分析以及脑灌注成像中。DCE-MRI是通过注入对比剂引起的信号改变以评估组织灌注以及为血管通透性，常见的量化参数有体积转移常数\kt 和血管外细胞体积分数\Ve 等。我们将在第\ref{chap:qetsr}章中介绍并讨论胸部DCE-MRI的重建。磁共振指纹\cite{mrf}（magnetic resonance fingerprinting，简称MRF）是近年来qMRI中的研究热点，可以在单次采集中同时获得多个组织参数，并且重建的定量参数图有很高的信噪比。MRF重建的过程主要包括预定义字典的生成、信号采集和模式识别三个部分。具体来说，给定一个MR序列，首先使用数学模型生成一个包含不同参数的组织体素在该MR序列中随时间演化的字典，然后将采集到的信号与字典中的原子进行匹配，从而获得该体素的组织参数。我们将在第\ref{sec:mrf}小节介绍MRF的研究现状。
+定性MR图像是医学临床诊断中最常用到的类型，如$T_1$加权图像和$T_2$加权图像等，其对比度的来源分别为组织参数$T_1$和$T_2$的差异。但定性MR图像的像素值大小只是反映了$T_1$和$T_2$大小，并不是$T_1$和$T_2$本身。通过定性MR图像进行的诊断主要依靠医生的主观认识，缺乏定量指标。而定量MRI不仅能够提供组织的基本结构，也能获得组织的定量参数，从而减少了主观性，从客观定量的角度研究人体组织，达到帮助诊断与评估治疗的作用。DCE-MRI\cite{Yankeelov2009}是定量MRI的重要应用，被成功应用在胸部肿瘤定量分析以及脑灌注成像中。DCE-MRI是通过注入对比剂引起的信号改变以评估组织灌注以及为血管通透性，常见的量化参数有体积转移常数\kt 和血管外细胞体积分数\Ve 等。我们将在第\ref{chap:qetsr}章中介绍并讨论胸部DCE-MRI的重建模型和定量分析。磁共振指纹\cite{mrf}（magnetic resonance fingerprinting，简称MRF）是近年来qMRI中的研究热点，如图\ref{fig:brainandmaps}所示。MRF可以在单次采集中同时获得多个组织参数，并且重建的定量参数图有很高的信噪比。MRF重建的过程主要包括预定义字典的生成、信号采集和模式识别三个部分。具体来说，给定一个MR序列，首先使用数学模型生成一个包含不同参数的组织体素在该MR序列中随时间演化的字典，然后将采集到的信号与字典中的原子进行匹配，从而获得该体素的组织参数。我们将在第\ref{sec:mrf}小节介绍MRF的研究现状。
+\begin{figure}[htbp]
+\centering
+\subfigure[活体人脑指纹图像（一帧）]{
+\includegraphics[width=2.5in]{img/intro/braincolor.eps}
+}
+\subfigure[$T_1$参数图]{
+\includegraphics[width=2.5in]{img/intro/braint1.eps}
+}
 
-MR成像过程通常被建模为二维或三维空间的Fourier编码，即首先从图像的Fourier域（通常称为k-space）中采样，再通过算法将图像重建出来。详细的MR成像原理请参考第\ref{chap:pre}章。为了准确地重建图像，采样率需要达到Nyquist采样定理\cite{Nyquist}的要求。所以，MRI的成像速度通常很慢，尤其是dMRI和三维MRI，这对成像设备和病人都是很大的负担。因此如何提高MR成像速度和质量，一直是研究人员最关心的问题。
+\subfigure[$T_2$参数图]{
+\includegraphics[width=2.5in]{img/intro/braint2.eps}
+}
+\subfigure[质子密度参数图]{
+\includegraphics[width=2.5in]{img/intro/brainpd.eps}
+}
+\centering
+\caption{活体人脑MRF图像与重建参数图。}
+\label{fig:brainandmaps}
+\end{figure}
 
-加速MR成像通常的思路是在不降低图像质量的前提下，减少获取的k-space数据，从而达到加速成像的效果。但由于下采样时，采样率没有达到Nyquist采样定理的要求，通过简单的Fourier补零重建的图像（称为Zerofilled图像）会出现下采样伪影，而消除伪影主要有以下三个策略。第一种策略是使得生成的伪影与图像非相干或者在视觉上不明显\cite{Tsai,Marseille,Greiser}，但这些方法所得到的重建图像通常信噪比低。第二种策略是利用k-space中数据的冗余性，比如部分傅里叶成像\cite{McGibney}（partial-Fourier）和平行成像（parallel MRI，简称pMRI）。pMRI是目前在临床上应用比较成功的一大类加速方法，它是一种以空间换时间的成像策略。具体来说，pMRI通过多个成像线圈接收信号，并且每个线圈都在k-space进行下采样，最后通过算法将所有线圈接收到的数据还原出来，得到重建图像。经典的pMRI方法有SENSE（sensitivity encoding）\cite{sense}，SMASH（simultaneous acquisition of spatial harmonics）\cite{smash}，GRAPPA（generalized autocalibrating partially parallel acquisitions）\cite{grappa}等。第三种策略是利用图像在空间域或者时间域上的冗余性，如UNFOLD\cite{Madore}和k-t BLAST/SNESE\cite{Jeffrey2003k}等。可以看出，以上方法的共同点是假设MR图像中存在着冗余性，并且可以利用这些冗余性来降低采样率，以达到加速成像的目的。
+MR成像过程通常被建模为二维或三维空间的Fourier编码，即首先从图像的Fourier域（通常称为k-space）中采样，再通过算法将图像重建出来。详细的MR成像原理请参考第\ref{chap:pre}章。为了精确地重建图像，采样率需要达到Nyquist采样定理\cite{Nyquist}的要求，即当采样率达到信号最高频率两倍以上时，信号才可以被精确地重建出来。此外，由于受到物理和生理上的限制，MR成像时需要在k-space中进行多次采样。所以，MR成像速度通常很慢，尤其是dMRI，这对成像设备和病人都是很大的负担。因此，如何在保证MR图像质量的前提下提高MR成像速度，一直是研究人员所关心的问题。目前，加速MR成像通常的思路是减少采样数据，即在k-space空间中进行下采样，从而达到加速成像的效果。但由于在下采样时，采样率没有达到Nyquist采样定理的要求，通过简单的Fourier补零重建的图像（称为Zerofilled图像）会出现下采样伪影，如图\ref{fig:phantomandzf}所示。例如，当对图像进行均匀下采样时，Zerofilled图像中会出现相干伪影，使用传统的重建方法很难将其去除。
+\begin{figure}[htbp]
+\centering
+\subfigure[体模图像]{
+\includegraphics[width=2.5in]{img/intro/phantom1.eps}
+}
+\subfigure[k-space图像（对数尺度）]{
+\includegraphics[width=2.5in]{img/intro/phantomfourier.eps}
+}
 
-2005年，Candès，Tao，Romberg\cite{candes2004near,candes2006compressive,candes2006quantitative,candes2006stable}和Donoho\cite{Donoho2006Compressed}等人提出了压缩感知（compressed sensing）理论。压缩感知是一种新的采样理论，可以加速信号的采集与重建。根据传统Nyquist采样定理\cite{Nyquist}，当采样率达到信号最高频率两倍以上时，信号才可以被精确地重建出来。我们称满足Nyquist采用定理的采样方式为全采样。当对信号进行均匀下采样时，采集到的信号中会出现相干伪影，使用传统的重建方法很难将其去除。而压缩感知理论突破了Nyquist定理对高采样率要求的限制，可以用很少的数据来精确地重建信号。压缩感知理论有三个主要部分，分别为稀疏性、非相干下采样和非线性重建算法。具体来说，首先假设信号在某个变换域内稀疏，对信号进行非相干下采样，然后通过非线性重建算法即可以高概率地将信号重建出来。因此，压缩感知理论自诞生以来就被应用在MR成像中，可以显著地提高成像速度和质量，并成为了快速MR成像的主流方法。本论文研究的重点之一即为压缩感知在MRI中的应用，我们将在第\ref{sec:cs}和\ref{sec:csmri}小节介绍基于压缩感知MR成像的研究现状。
+\subfigure[Zerofilled图像（均匀下采样）]{
+\includegraphics[width=2.5in]{img/intro/zfuniform.eps}
+}
+\subfigure[Zerofilled图像（随机下采样）]{
+\includegraphics[width=2.5in]{img/intro/zfrandom.eps}
+}
+\centering
+\caption{体模图像与Zerofilled图像。}
+\label{fig:phantomandzf}
+\end{figure}
+压缩感知\cite{candes2004near,candes2006compressive,candes2006quantitative,candes2006stable,Donoho2006Compressed}是近些年来一种新兴的采样理论，可以加速信号的采集与重建。压缩感知有三个主要部分，分别为稀疏性、非相干下采样和非线性重建算法。具体来说，首先假设信号在某个变换域内稀疏，对信号进行非相干下采样，然后通过非线性重建算法即可以高概率地将信号重建出来。压缩感知理论突破了Nyquist定理对高采样率要求的限制，可以用很少的数据来精确地重建信号。因此，压缩感知理论自诞生以来就被应用在MR成像中，可以显著地提高成像速度和质量，并逐渐成为快速MR成像的主流方法。本论文研究的重点之一即为压缩感知在MR成像中的应用，我们将在第\ref{sec:cs}和\ref{sec:csmri}小节介绍基于压缩感知MR成像的研究现状。
 
 \section{压缩感知的基本理论}
 \label{sec:cs}
@@ -105,7 +134,7 @@ $l_1$优化问题也被称为基追踪（basis pursuit\cite{bp}）或者P1问题
 $$\|\eta_\mathcal{O}\|_1\leq \gamma\|\eta_{\mathcal{O}^c}\|_1$$
 对于所有集合$\mathcal{O}\subset\{1,...,N\},\#\mathcal{O}\leq s$和所有$\eta\in \mathrm{ker}A=\{x|Ax=0\}$均成立。其中，$\eta_\mathcal{O}$为下标与集合$\mathcal{O}$中元素一致的向量，$\mathcal{O}^c$为集合$\mathcal{O}$的补集，$\#\mathcal{O}$为集合$\mathcal{O}$中元素的个数，$\gamma\in (0,1)$为常数。以下定理保证了P1问题解的存在性。
 
-\noindent\textbf{定理 1.2.2.2} 假设$A\in \mathbb{C}^{M\times N}$满足$s$-零空间性质。令$x\in \mathbb{C}^N$，$b=Ax$并且$\hat{x}$是P1问题的解。那么如果$x$是$s$-稀疏的，则$\hat{x}=x$。
+\noindent\textbf{定理 1.2.2.2} \cite{eldar2012compressed} 假设$A\in \mathbb{C}^{M\times N}$满足$s$-零空间性质。令$x\in \mathbb{C}^N$，$b=Ax$并且$\hat{x}$是P1问题的解。那么如果$x$是$s$-稀疏的，则$\hat{x}=x$。
 
 可以看出，零空间性质实际上等价于$l_1$稀疏重建。虽然NSP有着很好的性质，但在实际中很难判断一个采样矩阵是否满足零空间性质。而等距约束性更加容易处理，并且对噪声有鲁棒性。其定义如下：
 
@@ -117,7 +146,7 @@ $$\|\eta_\mathcal{O}\|_1\leq \gamma\|\eta_{\mathcal{O}^c}\|_1$$
 
 矩阵的等距约束性本质上要求矩阵$A$的所有$M\times s$子矩阵接近等距，即稀疏信号从高维空间向低维空间投影时的距离保持不变。从等距约束性可以推导出一些充分条件保证压缩感知可以求解P1问题。比如，在没有噪声干扰的情况下，如果$\delta_{2s}<1$，P0问题有唯一的$s$-稀疏解存在；如果$\delta_{2s}<\sqrt{2}-1$，P1问题的解等价于P0问题的解。当有噪声存在时，以下定理保证了P1问题解的存在性。
 
-\noindent\textbf{定理 1.2.2.4} 假设$\delta_{2s}<\sqrt{2}-1$，则P1问题的解满足
+\noindent\textbf{定理 1.2.2.4} \cite{eldar2012compressed} 假设$\delta_{2s}<\sqrt{2}-1$，则P1问题的解满足
 $$\|\hat{x}-x\|_2\leq c_0s^{-1/2}\sigma_s(x)_1+c_1\epsilon,$$
 其中$c_0$和$c_1$是与$\delta_{2s}$有关的大于零的常数。
 
@@ -289,9 +318,9 @@ MR成像是从Fourier域（也称为k-space）中采样并重建图像的过程�
 \end{figure}
 
 
-第二，时间上的冗余性。对于动态MR图像而言，其稀疏性不仅体现在空间方向上，也体现在时间方向上。动态MRI是MRI的重要应用之一，主要的应用有心脏电影成像、磁共振动态对比增强、功能磁共振成像等。动态MR常用的稀疏表示有Fourier变换、核范数、有限差分、字典学习等。比如，Lustig\cite{lustig2006}将一维Fourier变换作为时间方向上的稀疏变换，并将模型应用在心脏电影成像中。其想法是，心脏作着周期性的运动，而Fourier变换可以稀疏化具有周期性的信号。但是在实际应用中，心脏的运动并不具有完美的周期性，Fourier变换不是最优的选择。因此，基于数据的方法，比如主成分分析、字典学习等可能是更好的选择。简而言之，对于动态MR图像而言，其稀疏变换的选择是十分重要而且困难的。我们将在第\ref{sec:dmri}小节详细介绍动态MR图像的压缩感知模型。
+第二，时间上的冗余性。对于动态MR图像而言，其稀疏性不仅体现在空间方向上，也体现在时间方向上。动态MRI是MRI的重要应用之一，主要的应用有心脏电影成像、磁共振动态对比增强、功能磁共振成像等。动态MR常用的稀疏表示有Fourier变换、核范数、有限差分、字典学习等。比如，Lustig\cite{lustig2006}将一维Fourier变换作为时间方向上的稀疏变换，并将模型应用在心脏电影成像中。其想法是，心脏做着周期性的运动，而Fourier变换可以稀疏化具有周期性的信号。但是在实际应用中，心脏的运动并不具有完美的周期性，Fourier变换不是最优的选择。因此，基于数据的方法，比如主成分分析、字典学习等可能是更好的选择。简而言之，对于动态MR图像而言，其稀疏变换的选择是十分重要而且困难的。我们将在第\ref{sec:dmri}小节详细介绍动态MR图像的压缩感知模型。
 
-第三，线圈上的冗余性。平行成像是MRI中的重要应用，也是最早与压缩感知理论结合的应用之一。平行成像使用多组线圈对同一目标从不同的空间位置进行数据采集，再通过算法将不同线圈的数据合成为最终的图像。由于每个线圈对目标的空间感受性（sensitivity）不同，线圈所采集到的数据之间有着很大的冗余性，我们称之为线圈上的冗余性。平行成像的常用方法有SENSE\cite{sense}和GRAPPA\cite{grappa}。其中SENSE利用了图像空间域的冗余性，而GRAPPA利用了Fourier域的信息。压缩感知与平行成像相结合是目前MR成像领域研究的热点之一。在静态成像上，Block等\cite{block2007undersampled}将全变差的思想应用到平行成像上，而Liang\cite{liang2009accelerating}等则给出了更一般形式的SENSE。在动态成像上，文献\cite{igrasp,focuss}最早结合了平行成像与动态MR成像。
+第三，线圈上的冗余性。平行成像是MRI中的重要应用，也是最早与压缩感知理论结合的应用之一。平行成像使用多组线圈对同一目标从不同的空间位置进行数据采集，再通过算法将不同线圈的数据合成为最终的图像。由于每个线圈对目标的空间感受性（sensitivity）不同，线圈所采集到的数据之间有着很大的冗余性，我们称之为线圈上的冗余性。平行成像的常用方法有SENSE\cite{sense}，SMASH\cite{smash}，GRAPPA\cite{grappa}等。其中SENSE利用了图像空间域的冗余性，而GRAPPA利用了Fourier域的信息。压缩感知与平行成像相结合是目前MR成像领域研究的热点之一。在静态成像上，Block等\cite{block2007undersampled}将全变差的思想应用到平行成像上，而Liang\cite{liang2009accelerating}等则给出了更一般形式的SENSE。在动态成像上，文献\cite{igrasp,focuss}最早结合了平行成像与动态MR成像。
 
 综上所述，MR图像的稀疏性主要体现在空间、时间和线圈上。因此需要根据具体问题，在不同的维度上选择不同的稀疏变换。
 
@@ -782,7 +811,12 @@ Ma等\cite{mrf}使用了模板匹配（template matching）的方法来重建参
 本节主要回顾了磁共振指纹的研究现状。磁共振指纹有三个部分，分别为数据采集、字典生成和模式识别。目前磁共振指纹的瓶颈在于字典生成和匹配的速度慢，使用降维、压缩感知或者深度学习的方法会使得参数图的精度下降。因此，如何在保证参数图精度的前提下提高MRF的重建速度是临床上亟待解决的问题。
 
 \section{本文的主要研究内容和章节安排}
-加快MR成像速度一直是临床中十分重要的问题，而基于压缩感知理论的MR成像有着很好的重建效果，并且具有完善的理论分析。MRF是新的量化MRI的方法，可以在单次扫描中同时得到多个组织参数。本文讨论的重点是基于压缩感知的动态MR图像的重建和基于GPU的MRF字典生成与参数图重建。
+加快MR成像速度一直是临床中十分重要的问题，而基于压缩感知理论的MR成像有着很好的重建效果，并且具有完善的理论分析。MRF是新的量化MRI的方法，可以在单次扫描中同时得到多个组织参数。本文讨论的重点是基于压缩感知的动态MR图像的重建和基于GPU的MRF字典生成与参数图重建。全文章节安排的逻辑示意图如图\ref{fig:plan}所示。
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=1\textwidth]{img/intro/chapters.png}}
+\caption{全文章节安排逻辑示意图。}
+\label{fig:plan}
+\end{figure}
 
 第二章，我们首先简单回顾MR成像的基本概念，包括射频场、梯度场、驰豫、k-space和MR序列等。这些内容与MR重建有着密切的联系，了解MR的成像过程可以更深入理解基于压缩感知的MR重建模型与MRF采样和匹配的过程。最后我们给出了EPG模型的数学推导过程，这对有助于我们理解MRF字典的生成和第五章的程序设计。
 
@@ -792,7 +826,7 @@ Ma等\cite{mrf}使用了模板匹配（template matching）的方法来重建参
 
 第五章，针对MRF字典生成与匹配速度慢的问题，我们使用图形处理单元来进行字典生成和模板匹配，并开发了一款开源程序snapMRF。snapMRF将所有计算全部放在GPU上进行，可以快速并准确地重建参数图，并且适用于不同的MR序列。相比于其他MRF开源程序，snapMRF的字典生成速度提高了10--1000倍, 字典匹配速度提高了10--100倍。我们也给出了六种不同MR序列的单元测试，保证了程序的准确性。
 
-
+第六章，我们对本文的工作进行了总结并给出了下一步工作展望。
 
 
 

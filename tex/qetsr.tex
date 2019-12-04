@@ -1,4 +1,4 @@
-\chapter{胸部DCE-MRI压缩感知模型中时间稀疏项的量化评估}
+\chapter{胸部DCE-MRI压缩感知重建模型中时间稀疏正则项的量化评估}
 \label{chap:qetsr}
 磁共振动态对比增强涉及注入顺磁对比剂期间和之后连续采集$T_1$加权MR图像\cite{Yankeelov2009}。对比剂通过改变组织固有的驰豫率来增加不同组织之间的对比度。在序列图像中，每个图像体素都会产生一个强度时间曲线，可以用于估计生理参数，例如体积转移常数\kt 和血管外细胞体积分数\Ve 等。高时间分辨率和高空间分辨率都有利于DCE-MRI, 高时间分辨率有利于精确地定量分析，而高空间分辨率有助于医生的临床阅读。但是，对重复高信噪比图像的要求限制了传统数据采集方法同时提高时间和空间分辨率。
 
@@ -183,8 +183,7 @@ NN & 0.3 & 40 & - & - & -\\
 
 为了从视觉上直观地评估重建图像时间剖面的准确性，我们计算了重建图像肿瘤区域的时间曲线相对于全采样图像之间的差异。我们首先手动将肿瘤区域分割出来，形成一个掩膜，并应用于所有重建图像。我们也分别计算了全采样图像和重建图像肿瘤区域内\kt 和\Ve 的平均值，并用Bland-Altman图来显示其一致性。
 
-重建程序全部使用MATLAB语言编写，DCE-MRI的参数分析使用Julia语言的\texttt{DCEMRI.jl}\cite{Smith2015}工具包运行。所有数值实验均在双核Xeon E5-2665 2.40 GHz，20 GB内存的工作站上运行，MATLAB版本为2015b (Mathworks, Natick, MA)，Julia版本为0.4.3。
-%程序已经开源，详细程序请参考网址\url{https://github.com/chixindebaoyu/qetsr}。
+重建程序全部使用MATLAB语言编写，DCE-MRI的参数分析使用Julia语言的\texttt{DCEMRI.jl}\cite{Smith2015}工具包运行。所有数值实验均在双核Xeon E5-2665 2.40 GHz，20 GB内存的工作站上运行，MATLAB版本为2015b (Mathworks, Natick, MA)，Julia版本为0.4.3。程序已经开源，详细程序请参考网址\url{https://github.com/chixindebaoyu/qetsr}。
 
 \section{数值实验结果}
 \subsection{重建图像质量}

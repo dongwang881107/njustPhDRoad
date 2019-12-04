@@ -1,4 +1,4 @@
-\begin{thebibliography}{196}
+\begin{thebibliography}{191}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -25,57 +25,6 @@ Ma D, Gulani V, Seiberlich N, et al.
 Shannon C.
 \newblock Communication in the presence of noise[J].
 \newblock Proceedings of the IRE, 1949, 86(2):10--21.
-
-\bibitem[Tsai and G.~Nishimura(2000)]{Tsai}
-Tsai C, G.~Nishimura D.
-\newblock Reduced aliasing artifacts using variable-density k-space sampling
-  trajectories[J].
-\newblock Magnetic Resonance in Medicine, 2000, 43(3):452--845.
-
-\bibitem[Marseille et al.(1996)]{Marseille}
-Marseille G, de~Beer R, Fuderer M, et al.
-\newblock Nonuniform phase-encode distributions for MRI scan time reduction[J].
-\newblock Journal of Magnetic Resonance Series B, 1996, 111(1):70--75.
-
-\bibitem[Greiser and von Kienlin(2003)]{Greiser}
-Greiser A, von Kienlin M.
-\newblock Efficient k-space sampling by density-weighted phase-encoding[J].
-\newblock Magnetic Resonance in Medicine, 2003, 50(6):1266--1275.
-
-\bibitem[McGibney et al.(1993)]{McGibney}
-McGibney G, Smith M, T~Nichols S, et al.
-\newblock Quantitative evaluation of several partial Fourier reconstruction
-  algorithms used in MRI[J].
-\newblock Magnetic Resonance in Medicine, 1993, 30(1):51--59.
-
-\bibitem[P.~Pruessmann et al.(1999)]{sense}
-P.~Pruessmann K, Weiger M, Scheidegger M, et al.
-\newblock SENSE: Sensitivity encoding for fast MRI[J].
-\newblock Magnetic Resonance in Medicine, 1999, 42(5):952--962.
-
-\bibitem[Sodickson and J.~Manning(1997)]{smash}
-Sodickson D, J.~Manning W.
-\newblock Simultaneous acquisition of spatial harmonics (SMASH): Fast imaging
-  with radiofrequency coil arrays[J].
-\newblock Magnetic Resonance in Medicine, 1997, 38(4):591--603.
-
-\bibitem[Griswold et al.(2002)]{grappa}
-Griswold M, Jakob P, Heidemann R, et al.
-\newblock Generalized autocalibrating partially parallel acquisitions
-  (GRAPPA)[J].
-\newblock Magnetic Resonance in Medicine, 2002, 47(6):1202--1210.
-
-\bibitem[Madore et al.(1999)]{Madore}
-Madore B, H.~Glover G, Pelc N.
-\newblock Unaliasing by Fourier-encoding the overlaps using temporal dimension
-  (UNFOLD), applied to cardiac imaging and fMRI.[J].
-\newblock Magnetic Resonance in Medicine, 1999, 42(5):813--828.
-
-\bibitem[Jeffrey et al.(2003)]{Jeffrey2003k}
-Jeffrey T, Peter B, Pruessmann K~P.
-\newblock k-t BLAST and k-t SENSE: Dynamic MRI with high frame rate exploiting
-  spatiotemporal correlations.[J].
-\newblock Magnetic Resonance in Medicine, 2003, 50(5):1031–1042.
 
 \bibitem[Cand{\`e}s and Tao(2006)]{candes2004near}
 Cand{\`e}s E~J, Tao T.
@@ -182,6 +131,11 @@ Chen S, Donoho D.
   Signals, Systems and Computers.
 \newblock Pacific Grove, CA, USA: IEEE, 1994:41--44.
 
+\bibitem[Eldar and Kutyniok(2012)]{eldar2012compressed}
+Eldar Y~C, Kutyniok G.
+\newblock Compressed sensing: theory and applications[M].
+\newblock New York: Cambridge University Press, 2012.
+
 \bibitem[H.~Bauschke and Combettes(2011)]{proximal}
 H.~Bauschke H, Combettes P.
 \newblock Convex analysis and monotone operator theory in Hilbert space[M].
@@ -276,6 +230,23 @@ Aharon M, Elad M, Bruckstein A.
 \newblock K-SVD: An algorithm for designing overcomplete dictionaries for
   sparse representation[J].
 \newblock IEEE Transactions on Signal Processing, 2006, 54(11):4311--4322.
+
+\bibitem[P.~Pruessmann et al.(1999)]{sense}
+P.~Pruessmann K, Weiger M, Scheidegger M, et al.
+\newblock SENSE: Sensitivity encoding for fast MRI[J].
+\newblock Magnetic Resonance in Medicine, 1999, 42(5):952--962.
+
+\bibitem[Sodickson and J.~Manning(1997)]{smash}
+Sodickson D, J.~Manning W.
+\newblock Simultaneous acquisition of spatial harmonics (SMASH): Fast imaging
+  with radiofrequency coil arrays[J].
+\newblock Magnetic Resonance in Medicine, 1997, 38(4):591--603.
+
+\bibitem[Griswold et al.(2002)]{grappa}
+Griswold M, Jakob P, Heidemann R, et al.
+\newblock Generalized autocalibrating partially parallel acquisitions
+  (GRAPPA)[J].
+\newblock Magnetic Resonance in Medicine, 2002, 47(6):1202--1210.
 
 \bibitem[Block et al.(2007)]{block2007undersampled}
 Block K~T, Uecker M, Frahm J.
@@ -644,6 +615,12 @@ Han Y, Ye J~C.
 Lee J, Han Y, Ryu J~K, et al.
 \newblock k-Space deep learning for reference-free EPI ghost correction[J].
 \newblock Magnetic Resonance in Medicine, 2019, 82(6):2299--2313.
+
+\bibitem[Jeffrey et al.(2003)]{Jeffrey2003k}
+Jeffrey T, Peter B, Pruessmann K~P.
+\newblock k-t BLAST and k-t SENSE: Dynamic MRI with high frame rate exploiting
+  spatiotemporal correlations.[J].
+\newblock Magnetic Resonance in Medicine, 2003, 50(5):1031–1042.
 
 \bibitem[Jung et al.(2007)]{jung2007improved}
 Jung H, Ye J~C, Kim E~Y.
@@ -1084,11 +1061,6 @@ Vasilevsky N~A, Brush M~H, Paddock H, et al.
 \newblock On the reproducibility of science: unique identification of research
   resources in the biomedical literature[J].
 \newblock PeerJ, 2013, 1(148):1--22.
-
-\bibitem[Collaboration(2015)]{osc_repro_2015}
-Collaboration O~S.
-\newblock Estimating the reproducibility of psychological science[J].
-\newblock Science, 2015, 349(6251):aac4716.
 
 \bibitem[Collins and Tabak(2014)]{collins_repro_2014}
 Collins F~S, Tabak L~A.

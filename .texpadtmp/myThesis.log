@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  10 NOV 2019 00:36
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  29 NOV 2019 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1845,6 +1845,11 @@ LaTeX Font Warning: Font shape `TU/STKaiti(0)/bx/n' undefined
 LaTeX Font Warning: Font shape `TU/STHeiti(0)/bx/n' undefined
 (Font)              using `TU/STHeiti(0)/m/n' instead on input line 45.
 
+
+Overfull \hbox (7.2655pt too wide) detected at line 45
+  \TU/STHeiti(0)/m/n/24.09 基 于 变 分 和 稀 疏 表 示 的 定 量 \TU/lmr/bx/n/24.09 MR \TU/STHeiti(0)/m/n/24.09 图 像  
+ []
+
 *************************************************
 * ctex warning: "deprecated-command"
 * 
@@ -1987,8 +1992,6 @@ Underfull \vbox (badness 1838) has occurred while \output is active []
 
 ] (./tex/introduction.tex
 1
-File: img/intro/mri.jpg Graphic file (type bmp)
-<img/intro/mri.jpg>
 File: img/intro/cine.png Graphic file (type bmp)
 <img/intro/cine.png>
 File: img/intro/breast.png Graphic file (type bmp)
@@ -2003,22 +2006,31 @@ File: img/intro/t1.eps Graphic file (type eps)
 <img/intro/t1.eps>
 File: img/intro/t2.eps Graphic file (type eps)
 <img/intro/t2.eps>
+File: img/intro/braincolor.eps Graphic file (type eps)
+<img/intro/braincolor.eps>
+File: img/intro/braint1.eps Graphic file (type eps)
+<img/intro/braint1.eps>
+File: img/intro/braint2.eps Graphic file (type eps)
+<img/intro/braint2.eps>
+File: img/intro/brainpd.eps Graphic file (type eps)
+<img/intro/brainpd.eps>
 [1
 
 ] [2]
-Overfull \hbox (2.99277pt too wide) in paragraph at lines 53--54
-[]\TU/lmr/m/n/12.045 2005 \TU/STSong(0)/m/n/12.045 年，| \TU/lmr/m/n/12.045 Candès\TU/STSong(0)/m/n/12.045 ，| \TU/lmr/m/n/12.045 Tao\TU/STSong(0)/m/n/12.045 ，| \TU/lmr/m/n/12.045 Romberg$[]$ \TU/STSong(0)/m/n/12.045 和 \TU/lmr/m/n/12.045 Donoho$[]$ \TU/STSong(0)/m/n/12.045 等 人 提 出 了 压 缩 感 知  |（\TU/lmr/m/n/12.045 compressed
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
+File: img/intro/phantom1.eps Graphic file (type eps)
+<img/intro/phantom1.eps>
+File: img/intro/phantomfourier.eps Graphic file (type eps)
+<img/intro/phantomfourier.eps>
+File: img/intro/zfuniform.eps Graphic file (type eps)
+<img/intro/zfuniform.eps>
+File: img/intro/zfrandom.eps Graphic file (type eps)
+<img/intro/zfrandom.eps>
+ [3] [4]
 Missing character: There is no ， in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 且 in font [lmroman12-regular]:mapping=tex-text;!
- [4] [5] [6]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 187.
- [7] [8] [9]
+ [5] [6] [7]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 216.
+ [8] [9]
 File: img/intro/phantom.png Graphic file (type bmp)
 <img/intro/phantom.png>
 File: img/intro/wavelet.png Graphic file (type bmp)
@@ -2036,23 +2048,23 @@ File: img/intro/spiral.png Graphic file (type bmp)
 <img/intro/spiral.png>
 File: img/intro/vd.png Graphic file (type bmp)
 <img/intro/vd.png>
- [12]
+ [12] [13]
 File: img/intro/pradial.eps Graphic file (type eps)
 <img/intro/pradial.eps>
 File: img/intro/dynamic.eps Graphic file (type eps)
 <img/intro/dynamic.eps>
- [13] [14] [15] [16] [17] [18]
+ [14] [15] [16] [17] [18] [19]
 File: img/intro/deepmri.png Graphic file (type bmp)
 <img/intro/deepmri.png>
 
-Underfull \vbox (badness 4913) has occurred while \output is active []
+Underfull \vbox (badness 5175) has occurred while \output is active []
 
- [19] [20] [21]
+ [20] [21] [22]
 File: img/intro/casorati.eps Graphic file (type eps)
 <img/intro/casorati.eps>
 File: img/intro/lowrank.eps Graphic file (type eps)
 <img/intro/lowrank.eps>
- [22]
+ [23]
 File: img/intro/pincat.eps Graphic file (type eps)
 <img/intro/pincat.eps>
 File: img/intro/pincatl.eps Graphic file (type eps)
@@ -2061,10 +2073,10 @@ File: img/intro/pincats.eps Graphic file (type eps)
 <img/intro/pincats.eps>
 File: img/intro/compare.eps Graphic file (type eps)
 <img/intro/compare.eps>
- [23] [24] [25] [26]
+ [24] [25] [26] [27]
 File: img/intro/mrf.png Graphic file (type bmp)
 <img/intro/mrf.png>
- [27]
+ [28]
 File: img/intro/fa.eps Graphic file (type eps)
 <img/intro/fa.eps>
 File: img/intro/tr.eps Graphic file (type eps)
@@ -2073,22 +2085,24 @@ File: img/intro/phantom.eps Graphic file (type eps)
 <img/intro/phantom.eps>
 File: img/intro/brain.eps Graphic file (type eps)
 <img/intro/brain.eps>
-
-Underfull \vbox (badness 1831) has occurred while \output is active []
-
- [28]
+ [29]
 File: img/intro/atoms.eps Graphic file (type eps)
 <img/intro/atoms.eps>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
+ [30]
 File: img/intro/mrfmap.eps Graphic file (type eps)
 <img/intro/mrfmap.eps>
- [30] [31] [32]) (./tex/preliminaries.tex [33] [34
+ [31] [32]
+File: img/intro/chapters.png Graphic file (type bmp)
+<img/intro/chapters.png>
+ [33] [34]) (./tex/preliminaries.tex [35] [36
 
 ]
 2
+File: img/intro/mri.jpg Graphic file (type bmp)
+<img/intro/mri.jpg>
 File: img/intro/system.eps Graphic file (type eps)
 <img/intro/system.eps>
 File: img/intro/main.eps Graphic file (type eps)
@@ -2097,7 +2111,7 @@ File: img/intro/rf.eps Graphic file (type eps)
 <img/intro/rf.eps>
 File: img/intro/gradient.eps Graphic file (type eps)
 <img/intro/gradient.eps>
-[35] [36] [37] [38] [39]
+[37] [38] [39] [40] [41]
 File: img/intro/t1decay.png Graphic file (type bmp)
 <img/intro/t1decay.png>
 File: img/intro/t2decay.png Graphic file (type bmp)
@@ -2106,17 +2120,17 @@ File: img/intro/se.png Graphic file (type bmp)
 <img/intro/se.png>
 File: img/intro/ge.png Graphic file (type bmp)
 <img/intro/ge.png>
- [40] [41] [42] [43]
-Underfull \vbox (badness 3895) has occurred while \output is active []
+ [42] [43]
+Underfull \vbox (badness 5741) has occurred while \output is active []
 
- [44]) (./tex/tgvnn.tex [45] [46
+ [44] [45] [46]) (./tex/tgvnn.tex [47] [48
 
 ]
 3
-[47] [48] [49] [50] [51]
+[49] [50] [51] [52] [53]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52] [53] [54] [55]
+ [54] [55] [56] [57]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -2150,7 +2164,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
 
-Overfull \hbox (5.21143pt too wide) in paragraph at lines 300--302
+Overfull \hbox (5.21143pt too wide) in paragraph at lines 300--301
 []\TU/STSong(0)/m/n/12.045 我 们 将 提 出 的 模 型 和 最 前 沿 的 模 型 进 行 比 较，|  它 们 分 别 为 \TU/lmr/m/n/12.045 kt-SLR[][][][][]$[]$, kt-RPCA[][][][][]$[]$,
  []
 
@@ -2158,14 +2172,14 @@ File: img/intro/pradial.eps Graphic file (type eps)
 <img/intro/pradial.eps>
 File: img/intro/cartesian.png Graphic file (type bmp)
 <img/intro/cartesian.png>
-[56] [57]
+[58] [59]
 File: img/tgvnn/figure2_pincat.eps Graphic file (type eps)
 <img/tgvnn/figure2_pincat.eps>
 File: img/tgvnn/figure3_perfusion.eps Graphic file (type eps)
 <img/tgvnn/figure3_perfusion.eps>
 File: img/tgvnn/figure4_perfusion_frames.eps Graphic file (type eps)
 <img/tgvnn/figure4_perfusion_frames.eps>
- [58] [59] [60]
+ [60] [61] [62]
 File: img/tgvnn/figure5_breast1.eps Graphic file (type eps)
 <img/tgvnn/figure5_breast1.eps>
 File: img/tgvnn/breast2.eps Graphic file (type eps)
@@ -2177,17 +2191,17 @@ File: img/tgvnn/figure6_breast1_frames.eps Graphic file (type eps)
 
 Underfull \vbox (badness 3019) has occurred while \output is active []
 
- [61] [62] [63] [64] [65] [66]) (./tex/qetsr.tex [67] [68
+ [63] [64] [65] [66] [67] [68]) (./tex/qetsr.tex [69] [70
 
 ]
 4
-[69] [70] [71] [72] [73]
+[71] [72] [73] [74] [75]
 File: img/qetsr/figure1.eps Graphic file (type eps)
 <img/qetsr/figure1.eps>
 
 Underfull \vbox (badness 1142) has occurred while \output is active []
 
- [74] (./tables/table_qetsr_result.tex) [75]
+ [76] (./tables/table_qetsr_result.tex) [77]
 File: img/qetsr/figure2.eps Graphic file (type eps)
 <img/qetsr/figure2.eps>
 File: img/qetsr/figure3.eps Graphic file (type eps)
@@ -2196,89 +2210,58 @@ File: img/qetsr/figure4.eps Graphic file (type eps)
 <img/qetsr/figure4.eps>
 File: img/qetsr/figure5.eps Graphic file (type eps)
 <img/qetsr/figure5.eps>
- [76] [77] [78] [79]
+ [78] [79] [80] [81]
 File: img/qetsr/figure6.eps Graphic file (type eps)
 <img/qetsr/figure6.eps>
 File: img/qetsr/figure7.eps Graphic file (type eps)
 <img/qetsr/figure7.eps>
- [80] [81] [82]) (./tex/snapMRF.tex [83] [84
+ [82] [83] [84]) (./tex/snapMRF.tex [85] [86
 
 ]
 5
-[85] [86]
+[87] [88]
 File: img/snapmrf/snapMRF.png Graphic file (type bmp)
 <img/snapmrf/snapMRF.png>
+ [89] [90]
+Underfull \vbox (badness 6380) has occurred while \output is active []
 
-Underfull \vbox (badness 4193) has occurred while \output is active []
+ [91] [92] [93]
+Overfull \hbox (14.10129pt too wide) in paragraph at lines 134--135
+[]\TU/STSong(0)/m/n/12.045 第 一，|  确 定 多 维 向 量 指 针 在 显 存 中 的 储 存 结 构，|  比 如 指 纹 数 据 \TU/lmtt/m/n/12.045 *d_img\TU/STSong(0)/m/n/12.045 、|  字 典 \TU/lmtt/m/n/12.045 *d_atoms\TU/STSong(0)/m/n/12.045 、|
+ []
 
- [87]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [88] [89] [90]
-Underfull \vbox (badness 1635) has occurred while \output is active []
-
- [91] [92]
+ [94] [95] [96] [97]
 File: img/snapmrf/time_vs_epgx.eps Graphic file (type eps)
 <img/snapmrf/time_vs_epgx.eps>
 File: img/snapmrf/time_vs_pnp.eps Graphic file (type eps)
 <img/snapmrf/time_vs_pnp.eps>
- [93] [94] (./tables/table_t1.tex) (./tables/table_t2.tex)
+ (./tables/table_t1.tex) (./tables/table_t2.tex) [98] [99] [100] [101]
 File: img/snapmrf/figure2.eps Graphic file (type eps)
 <img/snapmrf/figure2.eps>
 File: img/snapmrf/figure3.eps Graphic file (type eps)
 <img/snapmrf/figure3.eps>
- [95] [96] [97] [98] [99]) (./tex/future.tex [100]
+ [102] [103] [104]) (./tex/future.tex [105] [106
+
+]
 6
 
 Underfull \vbox (badness 1199) has occurred while \output is active []
 
- [101
-
-]) [102] (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.bbl
+ [107]) [108] (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103
+ [109
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [104]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [105]
-Underfull \hbox (badness 1122) in paragraph at lines 256--262
-[]\TU/lmr/m/n/12.045 Ji S, Ye J.   An accelerated gradient method for trace norm minimiza-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [106]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [107]
-Underfull \hbox (badness 1642) in paragraph at lines 429--434
-[]\TU/lmr/m/n/12.045 Chen C, Huang J.   Compressive sensing MRI with wavelet tree spar-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [108]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [109]
-Underfull \hbox (badness 3803) in paragraph at lines 620--626
-[]\TU/lmr/m/n/12.045 Gregor K, LeCun Y.   Learning fast approximations of sparse cod-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [110]
-Underfull \hbox (badness 1062) in paragraph at lines 639--642
-[]\TU/lmr/m/n/12.045 Han Y, Ye J C.  k-Space Deep learning for accelerated MRI[J].  arXiv,
+Underfull \hbox (badness 1122) in paragraph at lines 210--216
+[]\TU/lmr/m/n/12.045 Ji S, Ye J.   An accelerated gradient method for trace norm minimiza-
  []
 
 
@@ -2291,15 +2274,48 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [113]
+Underfull \hbox (badness 1642) in paragraph at lines 400--405
+[]\TU/lmr/m/n/12.045 Chen C, Huang J.   Compressive sensing MRI with wavelet tree spar-
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [114]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [115]
+Underfull \hbox (badness 3803) in paragraph at lines 591--597
+[]\TU/lmr/m/n/12.045 Gregor K, LeCun Y.   Learning fast approximations of sparse cod-
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 610--613
+[]\TU/lmr/m/n/12.045 Han Y, Ye J C.  k-Space Deep learning for accelerated MRI[J].  arXiv,
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [116]) (./tex/thanks.tex [117] [118
+ [116]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [117]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [118]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [119]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [120]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [121]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [122]) (./tex/thanks.tex [123] [124
 
 ]
 
@@ -2312,7 +2328,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.045pt
 (hyperref)                replaced by space on input line 1.
 
-) (./tex/publications.tex [119] [120
+) (./tex/publications.tex [125] [126
 
 ]
 
@@ -2327,7 +2343,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
- [121]
+ [127]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (/Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 114.
@@ -2345,12 +2361,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 29176 strings out of 492970
- 592402 string characters out of 6133937
- 679100 words of memory out of 5000000
- 32621 multiletter control sequences out of 15000+600000
+ 29223 strings out of 492970
+ 594850 string characters out of 6133937
+ 678247 words of memory out of 5000000
+ 32659 multiletter control sequences out of 15000+600000
  563159 words of font info for 207 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,17n,77p,10541b,907s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,17n,77p,10541b,909s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.pdf (139 pages).
+Output written on /Users/wangdong/Documents/Literature/My Papers/thesis/.texpadtmp/myThesis.pdf (145 pages).
