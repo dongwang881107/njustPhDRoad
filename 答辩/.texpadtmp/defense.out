@@ -6,11 +6,11 @@
 \BOOKMARK [3][]{Outline0.2.2.11}{基于二阶时空TGV和核范数的模型}{Outline0.2}% 6
 \BOOKMARK [3][]{Outline0.2.3.17}{数值实验结果与分析}{Outline0.2}% 7
 \BOOKMARK [2][]{Outline0.3}{胸部DCE-MRI压缩感知重建模型中时间稀疏正则项的量化评估}{}% 8
-\BOOKMARK [3][]{Outline0.3.1.25}{胸部DCE-MRI的定量参数}{Outline0.3}% 9
-\BOOKMARK [3][]{Outline0.3.2.26}{时间方向稀疏正则项的量化评估}{Outline0.3}% 10
-\BOOKMARK [3][]{Outline0.3.3.27}{数值实验结果与分析}{Outline0.3}% 11
+\BOOKMARK [3][]{Outline0.3.1.24}{胸部DCE-MRI的定量参数}{Outline0.3}% 9
+\BOOKMARK [3][]{Outline0.3.2.25}{时间方向稀疏正则项的量化评估}{Outline0.3}% 10
+\BOOKMARK [3][]{Outline0.3.3.26}{数值实验结果与分析}{Outline0.3}% 11
 \BOOKMARK [2][]{Outline0.4}{基于GPU的实时MRF字典生成与参数图重建}{}% 12
-\BOOKMARK [3][]{Outline0.4.1.34}{磁共振指纹成像}{Outline0.4}% 13
-\BOOKMARK [3][]{Outline0.4.2.37}{CUDA程序实现}{Outline0.4}% 14
-\BOOKMARK [3][]{Outline0.4.3.40}{数值实验结果与分析}{Outline0.4}% 15
+\BOOKMARK [3][]{Outline0.4.1.33}{磁共振指纹成像}{Outline0.4}% 13
+\BOOKMARK [3][]{Outline0.4.2.36}{CUDA程序实现}{Outline0.4}% 14
+\BOOKMARK [3][]{Outline0.4.3.39}{数值实验结果与分析}{Outline0.4}% 15
 \BOOKMARK [2][]{Outline0.5}{全文总结}{}% 16

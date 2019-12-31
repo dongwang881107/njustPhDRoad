@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  27 DEC 2019 17:01
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.10.29)  1 JAN 2020 01:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1756,33 +1756,38 @@ File: ../img/intro/brain.eps Graphic file (type eps)
  [3
 
 ]
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 185.
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 187.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 185.
+(Font)              scaled to size 10.07397pt on input line 187.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 185.
+(Font)              scaled to size 7.63599pt on input line 187.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 185.
-LaTeX Font Info:    Try loading font information for U+msa on input line 185.
+(Font)              scaled to size 5.51999pt on input line 187.
+LaTeX Font Info:    Try loading font information for U+msa on input line 187.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 185.
+LaTeX Font Info:    Try loading font information for U+msb on input line 187.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 185.
+(Font)              scaled to size 10.07397pt on input line 187.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 185.
+(Font)              scaled to size 7.63599pt on input line 187.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 185.
+(Font)              scaled to size 5.51999pt on input line 187.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 187.
  [4
 
-] [5
+]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 203.
+ [5
 
 ]
 File: ../img/intro/cartesian.png Graphic file (type bmp)
@@ -1793,10 +1798,7 @@ File: ../img/intro/spiral.png Graphic file (type bmp)
 <../img/intro/spiral.png>
  [6
 
-]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 251.
- [7
+] [7
 
 ] (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.toc) [8
 
@@ -1817,14 +1819,14 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
 ] [16
 
 ]
-Overfull \hbox (36.57774pt too wide) in paragraph at lines 542--542
+Overfull \hbox (28.39828pt too wide) in paragraph at lines 551--551
  [] 
  []
 
 File: ../img/intro/pradial.eps Graphic file (type eps)
 <../img/intro/pradial.eps>
 
-Overfull \hbox (23.87793pt too wide) in paragraph at lines 542--542
+Overfull \hbox (23.87793pt too wide) in paragraph at lines 551--551
 [][]  
  []
 
@@ -1834,139 +1836,120 @@ Overfull \hbox (23.87793pt too wide) in paragraph at lines 542--542
 File: ../img/tgvnn/figure2_pincat.eps Graphic file (type eps)
 <../img/tgvnn/figure2_pincat.eps>
 
-Overfull \hbox (30.73085pt too wide) in paragraph at lines 553--553
+Overfull \hbox (30.73085pt too wide) in paragraph at lines 562--562
  [][] 
  []
 
 [18
 
 ]
-File: ../img/tgvnn/figure4_perfusion_frames.eps Graphic file (type eps)
-<../img/tgvnn/figure4_perfusion_frames.eps>
-
-Overfull \hbox (30.73085pt too wide) in paragraph at lines 563--563
- [][] 
- []
-
-[19
-
-]
 File: ../img/tgvnn/figure5_breast1.eps Graphic file (type eps)
 <../img/tgvnn/figure5_breast1.eps>
- [20
+ [19
 
 ]
 File: ../img/tgvnn/figure6_breast1_frames.eps Graphic file (type eps)
 <../img/tgvnn/figure6_breast1_frames.eps>
 
-Overfull \hbox (46.0916pt too wide) in paragraph at lines 583--583
+Overfull \hbox (46.0916pt too wide) in paragraph at lines 592--592
  [][] 
  []
 
-[21
+[20
 
 ]
-Overfull \hbox (2.841pt too wide) in paragraph at lines 631--631
+Overfull \hbox (2.841pt too wide) in paragraph at lines 640--640
  [] 
  []
 
 File: ../img/intro/pradial.eps Graphic file (type eps)
 <../img/intro/pradial.eps>
 
-Overfull \hbox (21.60104pt too wide) in paragraph at lines 631--631
+Overfull \hbox (21.60104pt too wide) in paragraph at lines 640--640
 [][]  
  []
 
-[22
+[21
 
 ]
-Overfull \hbox (19.34251pt too wide) in paragraph at lines 684--684
+Overfull \hbox (19.34251pt too wide) in paragraph at lines 693--693
  [] 
  []
 
 File: ../img/intro/cartesian.png Graphic file (type bmp)
 <../img/intro/cartesian.png>
 
-Overfull \hbox (18.73329pt too wide) in paragraph at lines 684--684
+Overfull \hbox (18.73329pt too wide) in paragraph at lines 693--693
 [][]  
  []
 
 
-Overfull \hbox (39.11824pt too wide) in paragraph at lines 684--684
+Overfull \hbox (39.11824pt too wide) in paragraph at lines 693--693
  [] 
  []
 
-[23
+[22
 
-] (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.toc) [24
+] (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.toc) [23
 
 ]
 File: ktrans.png Graphic file (type bmp)
 <ktrans.png>
 File: ve.png Graphic file (type bmp)
 <ve.png>
- [25
+ [24
+
+] [25
 
 ] [26
 
-] [27
-
-] (../tables/table_qetsr_result.tex) [28
-
-]
-File: 001.pdf Graphic file (type pdf)
-<use 001.pdf>
-File: 105.pdf Graphic file (type pdf)
-<use 105.pdf>
-
-Overfull \vbox (8.61676pt too high) detected at line 813
- []
-
-[29
+] (../tables/table_qetsr_result.tex) [27
 
 ]
 File: ../img/qetsr/figure4.eps Graphic file (type eps)
 <../img/qetsr/figure4.eps>
- [30
+ [28
 
 ]
 File: ../img/qetsr/figure6.eps Graphic file (type eps)
 <../img/qetsr/figure6.eps>
 
-Overfull \vbox (4.71419pt too high) detected at line 831
+Overfull \vbox (4.71419pt too high) detected at line 840
  []
 
-[31
+[29
 
 ]
 File: ../img/qetsr/figure7.eps Graphic file (type eps)
 <../img/qetsr/figure7.eps>
 
-Overfull \vbox (8.7122pt too high) detected at line 839
+Overfull \vbox (8.7122pt too high) detected at line 848
  []
 
-[32
+[30
 
-] (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.toc) [33
+] [31
+
+] (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.toc) [32
 
 ]
 File: ../img/intro/mrf.png Graphic file (type bmp)
 <../img/intro/mrf.png>
- [34
+ [33
 
 ]
 File: ../img/intro/mrfmap.eps Graphic file (type eps)
 <../img/intro/mrfmap.eps>
 
-Overfull \hbox (61.45703pt too wide) in paragraph at lines 877--877
+Overfull \hbox (61.45703pt too wide) in paragraph at lines 898--898
  [][] 
  []
 
-[35
+[34
+
+] [35
 
 ] [36
-
-] [37
 
 ]
 File: ../img/snapmrf/snapMRF.png Graphic file (type bmp)
@@ -1978,7 +1961,7 @@ File: ../img/snapmrf/snapMRF.png Graphic file (type bmp)
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count359
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 965.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 986.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1994,77 +1977,77 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
 
-Overfull \hbox (7.24083pt too wide) in paragraph at lines 965--965
+Overfull \hbox (7.24083pt too wide) in paragraph at lines 986--986
 [][]  
  []
 
-[38
+[37
 
-] [39
+] [38
 
 ]
 File: ../img/snapmrf/time_vs_epgx.eps Graphic file (type eps)
 <../img/snapmrf/time_vs_epgx.eps>
 
-Overfull \hbox (13.82878pt too wide) in paragraph at lines 996--996
+Overfull \hbox (13.82878pt too wide) in paragraph at lines 1017--1017
  [][] 
  []
 
 File: ../img/snapmrf/time_vs_pnp.eps Graphic file (type eps)
 <../img/snapmrf/time_vs_pnp.eps>
 
-Overfull \hbox (13.82878pt too wide) in paragraph at lines 996--996
+Overfull \hbox (13.82878pt too wide) in paragraph at lines 1017--1017
  [][] 
+ []
+
+[39
+
+]
+Overfull \hbox (7.03491pt too wide) in paragraph at lines 1046--1046
+ [] 
  []
 
 [40
 
 ]
-Overfull \hbox (7.03491pt too wide) in paragraph at lines 1025--1025
- [] 
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 1086.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 1086.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 1086.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 1086.
+ (../tables/table_t1.tex) (../tables/table_t2.tex)
+Overfull \hbox (30.70372pt too wide) in paragraph at lines 1086--1086
+[][]  
  []
 
 [41
 
 ]
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 1065.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 1065.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 1065.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 1065.
- (../tables/table_t1.tex) (../tables/table_t2.tex)
-Overfull \hbox (30.70372pt too wide) in paragraph at lines 1065--1065
-[][]  
+File: ../img/snapmrf/figure2.eps Graphic file (type eps)
+<../img/snapmrf/figure2.eps>
+
+Overfull \vbox (12.30066pt too high) detected at line 1094
  []
 
 [42
 
 ]
-File: ../img/snapmrf/figure2.eps Graphic file (type eps)
-<../img/snapmrf/figure2.eps>
+File: ../img/snapmrf/figure3.eps Graphic file (type eps)
+<../img/snapmrf/figure3.eps>
 
-Overfull \vbox (12.30066pt too high) detected at line 1073
+Overfull \vbox (9.87056pt too high) detected at line 1102
  []
 
 [43
 
-]
-File: ../img/snapmrf/figure3.eps Graphic file (type eps)
-<../img/snapmrf/figure3.eps>
+] (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.toc) [44
 
-Overfull \vbox (9.87056pt too high) detected at line 1081
- []
-
-[44
-
-] (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.toc) [45
+] [45
 
 ] [46
-
-] [47
 
 ]
 \tf@nav=\write6
@@ -2076,21 +2059,21 @@ Overfull \vbox (9.87056pt too high) detected at line 1081
 \tf@snm=\write8
 \openout8 = `defense.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1113.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1113.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1134.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1134.
  (/Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1113.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1113.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1134.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1134.
 Package rerunfilecheck Info: File `defense.out' has not changed.
 (rerunfilecheck)             Checksum: .
  ) 
 Here is how much of TeX's memory you used:
- 33928 strings out of 492970
- 688196 string characters out of 6133937
- 809247 words of memory out of 5000000
- 37295 multiletter control sequences out of 15000+600000
- 609033 words of font info for 86 fonts, out of 8000000 for 9000
+ 33941 strings out of 492970
+ 689549 string characters out of 6133937
+ 809296 words of memory out of 5000000
+ 37310 multiletter control sequences out of 15000+600000
+ 617363 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  56i,19n,76p,10432b,796s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.pdf (47 pages).
+Output written on /Users/wangdong/Documents/Literature/My Papers/thesis/答辩/.texpadtmp/defense.pdf (46 pages).

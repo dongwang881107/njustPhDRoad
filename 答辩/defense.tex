@@ -182,21 +182,30 @@
 	B=AX+\epsilon,
 \end{equation}
 其中$A=\mathcal{M}\cdot\mathcal{F}$是采样算子，$\mathcal{F}$是作用在每一帧图像上的二维Fourier变换，$\mathcal{M}$是作用在每一帧图像上的二维采样模式，$\epsilon$是加性高斯白噪声。
+\vspace{1cm}\\
+\large{\textbf{问题：成像速度慢！}}
 \end{frame}
 
 \begin{frame}
 	\frametitle{基于压缩感知的快速MR成像}
-压缩感知理论是Candès等提出的采样理论，是目前快速MR成像的主流方法。基于压缩感知的动态MR图像重建模型为:
+	\begin{itemize}
+		\item 压缩感知理论是由Candès等提出的采样理论，是目前快速MR成像的主流方法。
+		\item 假设图像在某个变换域\textbf{稀疏}的前提下，对图像进行\textbf{非相干下采样}，通过\textbf{非线性重建}算法可以高概率地将图像重建出来。
+	\end{itemize}
+
+基于压缩感知的动态MR图像重建模型为:
 	\begin{equation}
 	\min_X \frac{1}{2}\|AX-B\|_{\mathrm{F}}^2+\alpha\|\Phi X\|_1,
 	\end{equation}
-其中$\Phi$是某个稀疏变换，$\alpha>0$是平衡数据项和稀疏正则项的参数，$\mathrm{F}$为Frobenius范数。这里$A\in \mathbb{C}^{M_1\times M_2\times d}$为下采样算子，且$M_1M_2<<N_1N_2$.
+其中$\Phi$是某个稀疏变换，$\alpha>0$是平衡数据项和稀疏正则项的参数，$\mathrm{F}$为Frobenius范数。这里$A$为下采样算子。
+
+%这里$A\in \mathbb{C}^{M_1\times M_2\times d}$为下采样算子，且$M_1M_2<<N_1N_2$.
 \end{frame}
 
 \begin{frame}
 %	\frametitle{已有的模型和方法}
 	\begin{itemize}
-		\item 常用的稀疏正则项：Fourier变换、Wavelet变换、全变差（TV）、广义全变差（TGV）、核范数、字典学习、深度神经网络等
+		\item 常用的稀疏表示：Fourier变换、小波变换、多尺度分析、全变差（TV）、广义全变差（TGV）、核范数、字典学习、深度神经网络等
 		\item 常用的采样方式：Cartesian采样、伪径向/径向采样、螺旋采样等
 		\item 常用的重建算法：ADMM、FISTA、Primal-Dual等
 	\end{itemize}
@@ -239,13 +248,13 @@
 \textbf{研究动机：}
 	\begin{itemize}
 		\item 重建速度慢，如磁共振动态对比增强（DCE-MRI）、磁共振指纹成像（MRF）中字典生成与参数图的重建等
-		\item 现有的动态MR图像重建模型存在空间伪影严重、边缘不清等问题，尤其在胸部DCE-MRI图像上
-		\item 临床上适用于胸部DCE-MRI的时间方向上的稀疏正则项是未知的
+		\item 现有的动态MR图像重建模型存在空间伪影严重、边缘不清、像素时间曲线拟合差等问题，尤其在胸部DCE-MRI图像上
+		\item 临床上适用于胸部DCE-MRI的时间方向上的稀疏表示是未知的
 	\end{itemize}
 	\textbf{研究成果：}
 	\begin{itemize}
 		\item 针对动态MR图像，结合压缩感知和图像分解的思想，提出了基于二阶时空TGV和核范数的重建模型
-		\item 通过定量分析的方式比较和评估了五种不同的时间方向的稀疏项，确定了适合胸部DCE-MRI的时间稀疏正则项
+		\item 通过定量分析的方式比较和评估了五种不同的时间方向的稀疏变换，确定了适用于胸部DCE-MRI的时间稀疏正则项
 		\item 利用图形处理单元（GPU）加速MRF字典生成与匹配，并设计开发了一款基于CUDA框架的开源程序snapMRF
 	\end{itemize}
 \end{frame}
@@ -504,7 +513,7 @@ $$
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
 		\hline
-		\multicolumn{2}{|c|}{\diagbox{模型}{数据集}}& 躯干体模 & 心脏灌注 & Breast1 & Breast2 & Breast3\\	
+		\multicolumn{2}{|c|}{\diagbox{模型}{数据集}}& 躯干体模 & 心脏灌注 & 胸部1 & 胸部2 & 胸部3\\	
 		\hline
 		\multirow{2}{*}{Zerofilled}
 		&SER & 20.54 & 14.80 & 11.32 & 11.57 & 14.85\\
@@ -552,15 +561,15 @@ $$
 \end{minipage}
 \end{frame}
 
-\begin{frame}
-%	\frametitle{数值实验结果}
-\hspace{-0.6cm}
-	\begin{minipage}{1\textwidth}
-	\centering
-		\includegraphics[width=1.1\textwidth]{../img/tgvnn/figure4_perfusion_frames.eps}
-%	\caption{各个模型在心脏灌注数据上的重建结果（时间方向）}
-\end{minipage}
-\end{frame}
+%\begin{frame}
+%%	\frametitle{数值实验结果}
+%\hspace{-0.6cm}
+%	\begin{minipage}{1\textwidth}
+%	\centering
+%		\includegraphics[width=1.1\textwidth]{../img/tgvnn/figure4_perfusion_frames.eps}
+%%	\caption{各个模型在心脏灌注数据上的重建结果（时间方向）}
+%\end{minipage}
+%\end{frame}
 
 \begin{frame}
 %	\frametitle{数值实验结果}
@@ -589,7 +598,7 @@ $$
 	\begin{minipage}{1\linewidth}
 \begin{table}
 	\centering
-	\caption{各个模型在不同加速因子下在Breast1数据上的重建结果}
+	\caption{各个模型在不同加速因子下在胸部1数据上的重建结果}
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
 		\hline
@@ -639,7 +648,7 @@ $$
 	\centering
 \begin{table}
 \centering
-\caption{各个模型在Breast1数据上的重建结果（Cartesian采样）}
+\caption{各个模型在胸部1数据上的重建结果（Cartesian采样）}
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -665,7 +674,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 	\centering
 \begin{table}
 \centering
-\caption{各个模型在Breast1数据上运行时间比较}
+\caption{各个模型在胸部1数据上运行时间比较}
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -729,7 +738,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 %	\frametitle{时间方向稀疏正则项的量化评估}
 	\begin{itemize}
 		\item 在将压缩感知理论应用于临床肿瘤成像之前，其可靠性和准确性的研究是必要的。
-		\item \textbf{首次}通过量化分析的方式比较和评估五种不同的时间方向的稀疏正则项$\Phi$在压缩感知模型中的表现，分别为：
+		\item \textbf{首次}通过量化分析的方式比较和评估五种不同的时间方向的稀疏变换$\Phi$在压缩感知模型中的表现，分别为：
 		\begin{equation}
 		\begin{aligned}
 	 \mathrm{FT}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||\mathcal{F}_tX||_1 \\
@@ -738,7 +747,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 %	\vspace{0.1cm}
 	 \mathrm{TV}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||\nabla_t X||_1 \\
 %	\vspace{0.1cm}
-	 \mathrm{TGV}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||\mathrm{TGV}_t(X)||_1 \\
+	 \mathrm{TGV}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||\mathrm{TGV}(X)||_1 \\
 %	\vspace{0.1cm}
 	 \mathrm{NN}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||X||_*
 \end{aligned}
@@ -773,10 +782,10 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 	\frametitle{数值实验设置}
 	\begin{itemize}
 		\item 胸部DCE-MRI图像
-		\item 随机生成200个Cartesian采样模式
+		\item 随机生成200个下采样率相同的Cartesian采样模式
 		\item 使用FISTA算法进行图像重建
-		\item 使用标准Tofts-Kely模型计算$K^{trans}$与$v_e$的值
-		\item 重建图像的信噪比和定量参数的一致性相关系数（CCC）
+		\item 使用标准Tofts-Kely模型计算肿瘤区域$K^{trans}$与$v_e$的值
+		\item 重建图像的信噪比和肿瘤区域定量参数的一致性相关系数（CCC）
 	\end{itemize}
 \end{frame}
 
@@ -799,18 +808,18 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \end{table}
 \end{frame}
 
-\begin{frame}
-	\begin{figure}
-	\begin{minipage}[t]{0.75\linewidth}
-		\centering
-		\includegraphics[width=1\textwidth]{001.pdf}
-	\end{minipage}
-	\begin{minipage}[t]{0.75\linewidth}
-		\centering
-		\includegraphics[width=1\textwidth]{105.pdf}
-	\end{minipage}
-	\end{figure}
-\end{frame}
+%\begin{frame}
+%	\begin{figure}
+%	\begin{minipage}[t]{0.75\linewidth}
+%		\centering
+%		\includegraphics[width=1\textwidth]{001.pdf}
+%	\end{minipage}
+%	\begin{minipage}[t]{0.75\linewidth}
+%		\centering
+%		\includegraphics[width=1\textwidth]{105.pdf}
+%	\end{minipage}
+%	\end{figure}
+%\end{frame}
 
 \begin{frame}
 %	\frametitle{实验结果}
@@ -836,6 +845,18 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
     \includegraphics[width=0.6\textwidth]{../img/qetsr/figure7.eps}
 }
 \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{数值试验分析}
+	对于\textbf{胸部DCE-MRI}：
+	\begin{itemize}
+		\item TV/TGV在统计上\textbf{没有}显著性差异
+		\item TV/TGV得到了最准确的\textbf{定量分析}
+		\item NN得到了最高的\textbf{信噪比}
+	\end{itemize}
+	\vspace{1cm}
+	\textbf{结论：}对于那些需要得到更加精确整体质量的应用，最好的稀疏项选择是核范数；如果需要得到更精确的参数分析，最好的选择是TV或者TGV。
 \end{frame}
 
 %------------------------------------------------
@@ -879,7 +900,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \begin{frame}
 	\frametitle{MRF的主要部分和问题：}
 	\begin{itemize}
-		\item 信号采集：选取合适的MR序列，如偏转角、重复时间（$T_\mathrm{R}$）
+		\item 信号采集：选取合适的MR序列和成像参数，如重复时间（$T_\mathrm{R}$）
 		\item 字典生成：扩展相图（EPG）模型\textbf{十分耗时且复杂!} $\Rightarrow$ 梯度场、射频场、驰豫等
 		\item 匹配算法：模板匹配算法\textbf{十分耗时!} $\Rightarrow$ $O(NL^2K)$
 		
@@ -937,11 +958,11 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 		\STATE 01：从CSV文件中读取MRF序列信息，存入\texttt{*d\_mrf}；
 		\STATE 02：从命令行输入字典参数信息，存入\texttt{*d\_params}；
 		\STATE 03：初始化状态矩阵\texttt{*d\_w}；
-		\STATE 04：\textbf{迭代}：从第1个时刻到第$L$个时刻，并行计算所有体素的信号
-		\STATE 05：\qquad 使用函数\texttt{fill\_transition\_matrix()}构造转移矩阵$T$；
+		\STATE 04：\textbf{迭代}：从第1个时刻到第$L$个时刻，并行计算字典中所有元素
+		\STATE 05：\qquad 使用函数\texttt{fill\_transition\_matrix()}构造转移矩阵；
 		\STATE 06：\qquad 使用函数\texttt{apply\_rf\_pulse()}将射频场作用在\texttt{*d\_w}上；
 		\STATE 07：\qquad 使用函数\texttt{decay\_signal()}将$T_1$和$T_2$衰减作用在\texttt{*d\_w}上；
-		\STATE 08：\qquad 使用函数\texttt{save\_atoms()}将原子的信号保存在\texttt{*d\_atoms}中；
+		\STATE 08：\qquad 使用函数\texttt{save\_atoms()}将元素的信号保存在\texttt{*d\_atoms}中；
 		\STATE 09：\qquad 使用函数\texttt{dephase\_gradients()}将梯度场作用在\texttt{*d\_w}上；
 		\STATE 10：\qquad 使用函数\texttt{decay\_signal()}将$T_1$和$T_2$衰减作用在\texttt{*d\_w}上；
 		\STATE 11：\textbf{终止迭代}；
@@ -967,9 +988,9 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \begin{frame}
 	\frametitle{snapMRF的难点与创新}
 	\begin{itemize}
-		\item 确定多维向量指针在显存中的储存结构
+		\item 确定一个合适的并行方案
+		\item 确定多维向量在显存中的储存结构
 		\item 计算多维向量在显存中对应的一维指标
-		\item 为EPG算法确定一个合适的并行方案
 		\item 将EPG算法生成字典的过程分裂为小的GPU核函数
 		\item 管理显存
 		\item 避免数据在GPU与CPU之间多次拷贝
@@ -990,7 +1011,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \begin{minipage}[t]{0.45\textwidth}
 \centering
 \includegraphics[width=1.1\textwidth]{../img/snapmrf/time_vs_pnp.eps}
-\\ snapMRF vs PnP
+\\ snapMRF vs PnP-MRF
 \end{minipage}
 \end{figure}
 \end{frame}
@@ -1092,7 +1113,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 	\begin{itemize}
 		\item 提出了动态MR图像的重建模型$\Rightarrow$ \textbf{二阶时空TGV+核范数}，优于其他的重建模型，尤其是在胸部DCE-MRI图像上
 		\item \textbf{首次}从定量分析的角度评估胸部DCE-MRI图像的时间方向的稀疏正则项$\Rightarrow$ TV/TGV可以得到最准确的定量参数，核范数可以提高重建图像的整体信噪比
-		\item \textbf{首次}在CUDA框架下进行MRF字典生成和匹配$\Rightarrow$ snapMRF字典生成的速度提高了10--1000$\times$，模板匹配的速度提高了10--100$\times$
+		\item \textbf{首次}在CUDA框架下进行MRF字典生成和匹配$\Rightarrow$ snapMRF字典生成的速度提高了10--1000$\times$，模板匹配的速度提高了10--100$\times$，并在多种MR序列中都可以生成高质量的参数图。
 	\end{itemize}
 	
 	\textbf{未来考虑：}
