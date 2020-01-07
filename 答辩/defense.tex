@@ -35,7 +35,8 @@
 \newcommand{\INDSTATE}[1][1]{\STATE\hspace{#1\algorithmicindent}}
 \DeclareMathOperator*{\argmax}{arg\,max}
 %\captionsetup[subfigure]{labelformat=empty}
-\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption}[default]
+\setbeamertemplate{section in toc}[circle]
 
 \newcommand{\cccve}{CCC\{$v_\mathrm{e}$\}}
 \newcommand{\ccckt}{CCC\{$K^\mathrm{trans}$\}}
@@ -133,6 +134,14 @@
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
+
+\begin{frame}
+\frametitle{目录}
+\scalebox{0.8}{
+\begin{minipage}{1\linewidth}
+     \tableofcontents
+     \end{minipage}}
+ \end{frame}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
@@ -249,13 +258,13 @@
 	\begin{itemize}
 		\item 重建速度慢，如磁共振动态对比增强（DCE-MRI）、磁共振指纹成像（MRF）中字典生成与参数图的重建等
 		\item 现有的动态MR图像重建模型存在空间伪影严重、边缘不清、像素时间曲线拟合差等问题，尤其在胸部DCE-MRI图像上
-		\item 临床上适用于胸部DCE-MRI的时间方向上的稀疏表示是未知的
+		\item 临床上适用于胸部DCE-MRI的时间方向上的稀疏正则项是未知的
 	\end{itemize}
 	\textbf{研究成果：}
 	\begin{itemize}
 		\item 针对动态MR图像，结合压缩感知和图像分解的思想，提出了基于二阶时空TGV和核范数的重建模型
-		\item 通过定量分析的方式比较和评估了五种不同的时间方向的稀疏变换，确定了适用于胸部DCE-MRI的时间稀疏正则项
-		\item 利用图形处理单元（GPU）加速MRF字典生成与匹配，并设计开发了一款基于CUDA框架的开源程序snapMRF
+		\item 通过定量分析比较和评估了五种不同的时间方向上的稀疏正则项，确定了适用于胸部DCE-MRI的时间稀疏正则项
+		\item 针对MRF重建中字典生成与匹配速度慢的问题，提出了基于图形处理单元（GPU）的并行加速算法snapMRF
 	\end{itemize}
 \end{frame}
 
@@ -269,7 +278,7 @@
     \end{frame}
 %}
 
-\subsection{低秩和稀疏分解模型}
+\subsection{基于二阶时空TGV和核范数的模型}
 %\begin{frame}
 %	\frametitle{基于压缩感知的动态MR图像重建模型}
 %	目前基于压缩感知模型的动态MR图像重建有以下三个策略：
@@ -303,7 +312,7 @@
 
 \begin{frame}
 	\frametitle{动态MR图像重建的低秩和稀疏分解模型}
-	\textbf{图像分解模型}是将动态MR图像建模为稀疏部分和低秩部分的加和，并分别用不同的正则项来约束：
+	Otazo等提出的\textbf{图像分解重建模型}是将动态MR图像建模为稀疏部分和低秩部分的加和，并分别用不同的正则项来约束：
     \begin{equation}
     	\min_{L,S}\frac{1}{2}||A(L+S)-B||_\mathrm{F}^2 + \alpha||\Phi S||_1 + \beta\|L\|_*,
     \end{equation}
@@ -312,7 +321,7 @@
      \textbf{$\Phi$的选择：}
      \begin{itemize}
      	\item 时间方向的一维Fourier变换（$\mathcal{F}_t$）$\Rightarrow$ 仅适用于具有周期性的图像
-     	\item 时间方向的梯度算子（$\nabla_t$）$\Rightarrow$ 仅仅利用了时间方向的稀疏性
+     	\item 时间方向的梯度算子（$\nabla_t$）$\Rightarrow$ 仅仅利用了时间方向的冗余性
      	\item 全变差（TV） $\Rightarrow$ 易产生阶梯效应且计算速度慢
      \end{itemize}
 \end{frame}
@@ -339,7 +348,7 @@ $$|\nabla_3\cdot| = \sqrt{(\nabla_x\cdot)^2+(\nabla_y\cdot)^2+\mu(\nabla_t\cdot)
 其中$\nabla_x$，$\nabla_y$和$\nabla_t$分别为$x$，$y$和$t$方向上的梯度算子，$\mu>0$是平衡空间与时间的参数。
 \end{frame}
 
-\subsection{基于二阶时空TGV和核范数的模型}
+%\subsection{基于二阶时空TGV和核范数的模型}
 \begin{frame}
 	\frametitle{基于二阶时空TGV和核范数的模型}
 针对动态MR图像，基于图像分解的思想，利用二阶时空TGV和核范数，提出模型：
@@ -348,12 +357,13 @@ $$|\nabla_3\cdot| = \sqrt{(\nabla_x\cdot)^2+(\nabla_y\cdot)^2+\mu(\nabla_t\cdot)
 \label{propopsed}
 \end{equation}
 \begin{itemize}
-	\item 模型是凸的、适定的
+%	\item 模型是凸的、适定的
 	\item 核范数建模时间上高度相关的背景
 	\item 二阶时空TGV泛函建模背景之上的动态信息
 \end{itemize}
 \end{frame}
 
+\subsection{Primal-Dual算法流程}
 \begin{frame}
 \frametitle{模型的求解}
 Primal-Dual算法被广泛地应用到寻找凸-凹鞍点问题的极大极小问题中：
@@ -361,11 +371,14 @@ Primal-Dual算法被广泛地应用到寻找凸-凹鞍点问题的极大极小�
 \min_{x\in\mathcal{X}}\max_{y\in\mathcal{Y}}\quad\langle \mathcal{K}x,y\rangle+f(x)-g(y).
 \label{saddle}
 \end{equation}
-%其中$\mathcal{X}$和$\mathcal{Y}$是Hilbert空间，$\mathcal{K}:\mathcal{X}\rightarrow\mathcal{Y}$是线性连续映射，并且泛函$f:\mathcal{X}\rightarrow(-\infty,\infty]$和$g:\mathcal{Y}\rightarrow(-\infty,\infty]$是适定的、凸的和下半连续的。
+%其中$\mathcal{X}$和$\mathcal{Y}$是Hilbert空间，
+这里算子$\mathcal{K}:\mathcal{X}\rightarrow\mathcal{Y}$是线性连续映射，泛函$f:\mathcal{X}\rightarrow(-\infty,\infty]$和$g:\mathcal{Y}\rightarrow(-\infty,\infty]$是适定的、凸的和下半连续的。
 %\begin{equation}
 %\min_{x}\max_{y}\quad\langle \mathcal{K}x,y\rangle+f(x)-g(y),
 %\label{saddle}
 %\end{equation}
+
+\vspace{0.5cm}
 Chambolle-Pock迭代格式：
 \begin{equation*}
 \left\{
@@ -509,7 +522,7 @@ $$
 	\begin{minipage}{1\linewidth}
 \begin{table}
 	\centering
-	\caption{各个模型在不同数据上的重建结果（伪随机采样）}
+	\caption{各个模型在不同数据上的重建结果（伪径向采样）}
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
 		\hline
@@ -598,7 +611,7 @@ $$
 	\begin{minipage}{1\linewidth}
 \begin{table}
 	\centering
-	\caption{各个模型在不同加速因子下在胸部1数据上的重建结果}
+	\caption{各个模型在不同下采样率下在胸部1数据上的重建结果}
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
 		\hline
@@ -693,7 +706,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \end{frame}
 
 %------------------------------------------------
-\section{胸部DCE-MRI压缩感知重建模型中时间稀疏正则项的量化评估}
+\section{胸部DCE-MRI重建模型中时间稀疏正则项的量化评估}
 %------------------------------------------------
 %\AtBeginSection[]
 %{
@@ -702,7 +715,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
     \end{frame}
 %}
 
-\subsection{胸部DCE-MRI的定量参数}
+\subsection{时间稀疏正则项的量化评估}
 \begin{frame}
 %	\frametitle{时间稀疏项}
 	\begin{itemize}
@@ -733,12 +746,12 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 %	\end{itemize}
 %\end{frame}
 
-\subsection{时间方向稀疏正则项的量化评估}
+%\subsection{时间稀疏正则项的量化评估}
 \begin{frame}
 %	\frametitle{时间方向稀疏正则项的量化评估}
 	\begin{itemize}
 		\item 在将压缩感知理论应用于临床肿瘤成像之前，其可靠性和准确性的研究是必要的。
-		\item \textbf{首次}通过量化分析的方式比较和评估五种不同的时间方向的稀疏变换$\Phi$在压缩感知模型中的表现，分别为：
+		\item \textbf{首次}通过量化分析的方式比较和评估五种不同的时间方向的稀疏正则项在压缩感知模型中的表现，分别为：
 		\begin{equation}
 		\begin{aligned}
 	 \mathrm{FT}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||\mathcal{F}_tX||_1 \\
@@ -747,7 +760,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 %	\vspace{0.1cm}
 	 \mathrm{TV}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||\nabla_t X||_1 \\
 %	\vspace{0.1cm}
-	 \mathrm{TGV}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||\mathrm{TGV}(X)||_1 \\
+	 \mathrm{TGV}:\quad &\min_{X,w}\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha_1||\nabla_t X-w||_1 +\alpha_0||\mathcal{E}_t(w)||_1\\
 %	\vspace{0.1cm}
 	 \mathrm{NN}:\quad &\min_X\frac{1}{2}||AX-B||_{\mathrm{F}}^2 + \alpha||X||_*
 \end{aligned}
@@ -832,7 +845,8 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \begin{frame}
 %	\frametitle{实验结果}
 	\begin{figure}[htbp]
-\centerline{\includegraphics[width=0.65\textwidth]{../img/qetsr/figure6}}
+%\centerline{\includegraphics[width=0.65\textwidth]{../img/qetsr/figure6}}
+\centerline{\includegraphics[width=1.1\textwidth]{figure6_up.pdf}}
 %\caption{
 %全采样图像与重建图像肿瘤区域像素时间曲线的比较图。
 %}
@@ -855,12 +869,12 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 		\item TV/TGV得到了最准确的\textbf{定量分析}
 		\item NN得到了最高的\textbf{信噪比}
 	\end{itemize}
-	\vspace{1cm}
-	\textbf{结论：}对于那些需要得到更加精确整体质量的应用，最好的稀疏项选择是核范数；如果需要得到更精确的参数分析，最好的选择是TV或者TGV。
+	\vspace{0.5cm}
+	\textbf{结论：}如果需要得到更高的整体图像质量，最好的选择是核范数；如果需要得到更精确的肿瘤区域的定量参数分析，最好的选择是TV/TGV。
 \end{frame}
 
 %------------------------------------------------
-\section{基于GPU的实时MRF字典生成与参数图重建}
+\section{基于图形处理单元的实时MRF字典生成与匹配算法}
 %------------------------------------------------
 %\AtBeginSection[]
 %{
@@ -924,20 +938,20 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 %	\end{itemize}
 %\end{frame}
 
-\subsection{CUDA程序实现}
+\subsection{snapMRF算法框架}
 \begin{frame}
-	\frametitle{图形处理单元（GPU）}
+	\frametitle{图形处理单元}
 	\begin{itemize}
 		\item 图形处理单元（GPU）逐渐成为并行加速科学计算的主流方法，在医学成像领域有着广泛的应用	
 		\item GPU中集成了大规模并行计算单元，用于浮点运算
-		\item CUDA是NVIDIA公司的应用程序接口，为用户提供了可编程的特性
-		\item \textbf{首次}在CUDA的框架下，利用GPU来实现并行加速MRF字典生成与模板匹配，并设计开发了一款开源程序snapMRF
+		\item CUDA是一种通用并行计算架构，可以使GPU能够高效地解决复杂的科学计算问题
+		\item \textbf{首次}在CUDA的架构下，提出了基于GPU的MRF字典生成与模板匹配的并行加速算法snapMRF
 	\end{itemize}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{snapMRF程序流程}
+	\frametitle{snapMRF算法流程}
 %	\begin{figure}
 %\begin{minipage}[t]{0.5\textwidth}
 %\includegraphics[width=0.5\textwidth]{../img/snapmrf/snapMRF.png}
@@ -950,7 +964,7 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 	\hspace{1.5cm}
 	\begin{minipage}{1.2\linewidth}
 	\begin{algorithm}[H]
-	\caption{snapMRF生成字典与模板匹配详细流程}
+	\caption{snapMRF生成字典与模板匹配算法流程}
 	\label{alg:snapMRF}
 	\begin{algorithmic}
 		\INDSTATE[-1] \textbf{输入：}\texttt{*d\_mrf}，\texttt{*d\_params}，\texttt{*d\_img}
@@ -1111,15 +1125,15 @@ SSIM & 0.7370 & 0.8942 & 0.9126 & 0.8379 & 0.7681 & \textbf{0.9169}\\
 \begin{frame}
 	\textbf{本文工作：}
 	\begin{itemize}
-		\item 提出了动态MR图像的重建模型$\Rightarrow$ \textbf{二阶时空TGV+核范数}，优于其他的重建模型，尤其是在胸部DCE-MRI图像上
+		\item 提出了动态MR图像的重建模型$\Rightarrow$ \textbf{二阶时空TGV+核范数}，重建的效果要好于经典的动态MR重建模型，在胸部DCE-MRI图像上的优势尤其明显
 		\item \textbf{首次}从定量分析的角度评估胸部DCE-MRI图像的时间方向的稀疏正则项$\Rightarrow$ TV/TGV可以得到最准确的定量参数，核范数可以提高重建图像的整体信噪比
-		\item \textbf{首次}在CUDA框架下进行MRF字典生成和匹配$\Rightarrow$ snapMRF字典生成的速度提高了10--1000$\times$，模板匹配的速度提高了10--100$\times$，并在多种MR序列中都可以生成高质量的参数图。
+		\item 提出了基于GPU的MRF字典生成和匹配的并行加速算法\textbf{snapMRF}$\Rightarrow$字典生成的速度提高了10--1000$\times$，模板匹配的速度提高了10--100$\times$，并在多种MR序列中都可以生成高质量的参数图。
 	\end{itemize}
 	
 	\textbf{未来考虑：}
 	\begin{itemize}
-		\item 其他类型的医学成像：CT、US等
-		\item 变分模型+深度神经网络：将变分模型按迭代算法展开成一个深度神经网络
+		\item 变分模型与深度神经网络相结合进行动态MR图像的重建
+		\item 其他类型的医学成像，如低剂量CT、US等
 	\end{itemize}
 \end{frame}
 

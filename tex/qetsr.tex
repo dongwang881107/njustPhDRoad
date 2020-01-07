@@ -51,8 +51,8 @@ $$|\nabla_3\cdot|=\sqrt{(\nabla_x \cdot)^2 + (\nabla_y \cdot)^2 + (\nabla_t \cdo
 
 \subsection{基于二阶TGV的重建模型}
 如上所言，有限差分算子可以很好地对MR图像进行稀疏表示，但是也会带来阶梯效应。因此，Bredies\cite{bredies2010total}等提出了基于高阶导数信息的TGV泛函，可以更好地对图像中的高阶信息进行建模，消除阶梯效应。对于二维图像$u\in \mathbb{C}^{N_1\times N_2}$，其离散二阶TGV的定义如下：
-$$\mathrm{TGV}_\alpha^2(u)=\min_{\omega\in \mathrm{BD}(\Omega)}\alpha_1\|\nabla_3 u-\omega\|_1 + \alpha_0\|\mathcal{E}(\omega)\|_1,$$
-其中$\nabla\cdot=(\nabla_x\cdot, \nabla_y\cdot)$一阶有限差分算子，$\mathcal{E}(\omega)=\frac{1}{2}(\nabla_3\omega+\nabla_3\omega^{T})$是对称梯度算子，$\mathrm{BD}(\Omega)$ 是有界形变函数空间。
+$$\mathrm{TGV}_\alpha^2(u)=\min_{\omega\in \mathrm{BD}(\Omega)}\alpha_1\|\nabla u-\omega\|_1 + \alpha_0\|\mathcal{E}(\omega)\|_1,$$
+其中$\nabla\cdot=(\nabla_x\cdot, \nabla_y\cdot)$一阶有限差分算子，$\mathcal{E}(\omega)=\frac{1}{2}(\nabla\omega+\nabla\omega^{T})$是对称梯度算子，$\mathrm{BD}(\Omega)$ 是有界形变函数空间。
 
 从定义中可以看出，$\mathrm{TGV}_\alpha^2$是TV的高阶推广，可以很好地保持图像一阶和二阶导数之间的平衡。因此$\mathrm{TGV}_\alpha^2$比TV更适合建模图像中的光滑部分。在压缩感知模型中，使用$\mathrm{TGV}_\alpha^2$可以在保持边缘的同时减少阶梯效应。在本文中，我们只考虑时间方向的$\mathrm{TGV}_\alpha^2$：
 \begin{equation}
