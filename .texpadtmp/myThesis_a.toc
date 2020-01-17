@@ -1,0 +1,87 @@
+\let \quad \relax 
+\contentsline {chapter}{摘\quad \quad 要}{I}{chapter*.1}
+\contentsline {chapter}{Abstract}{III}{chapter*.2}
+\contentsline {chapter}{目录}{IX}{chapter*.3}
+\contentsline {chapter}{\numberline {1\hspace {.3em}}绪论}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}研究背景和意义}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}压缩感知的基本理论}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}稀疏性}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}采样矩阵}{6}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}非线性重建算法}{7}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}本节小结}{10}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.3}基于压缩感知MR重建的研究现状}{10}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}MR图像的稀疏性}{10}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}MR采样模式}{12}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}MR图像的重建模型}{15}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}动态MR图像的重建模型}{22}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}本节小结}{28}{subsection.1.3.5}
+\contentsline {section}{\numberline {1.4}磁共振指纹的研究现状}{28}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}信号获取}{29}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}字典生成}{30}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}参数图重建}{31}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}本节小结}{33}{subsection.1.4.4}
+\contentsline {section}{\numberline {1.5}本文的主要研究内容和章节安排}{33}{section.1.5}
+\contentsline {chapter}{\numberline {2\hspace {.3em}}背景知识}{37}{chapter.2}
+\contentsline {section}{\numberline {2.1}MRI基本原理}{37}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}MRI的物理原理和数学模型}{37}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}MR成像序列}{42}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}本节小结}{44}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}扩展相图}{44}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}配置状态矩阵}{44}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}分区状态方法}{45}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}其他因素的作用和最终模型}{46}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}本节小结}{47}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}本章总结}{47}{section.2.3}
+\contentsline {chapter}{\numberline {3\hspace {.3em}}动态MR图像的低秩和稀疏分解的高阶变分模型和算法}{49}{chapter.3}
+\contentsline {section}{\numberline {3.1}模型的提出}{51}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}低秩矩阵补全}{51}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}二阶时空TGV泛函}{52}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}基于二阶时空TGV和核范数的模型}{53}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}模型的离散化和算法}{53}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}离散化模型}{53}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Primal-Dual算法及收敛条件}{56}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}数值实验数据与评价方法}{58}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}数值实验数据}{58}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}采样模式与评价方法}{58}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}数值实验结果}{60}{section.3.4}
+\contentsline {section}{\numberline {3.5}本章小结}{69}{section.3.5}
+\contentsline {chapter}{\numberline {4\hspace {.3em}}胸部DCE-MRI压缩感知重建模型中时间稀疏正则项的量化评估}{71}{chapter.4}
+\contentsline {section}{\numberline {4.1}胸部DCE-MRI的重建模型}{72}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}基于Fourier变换的重建模型}{72}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}基于Haar小波变换的重建模型}{72}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}基于TV的重建模型}{73}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}基于二阶TGV的重建模型}{73}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}基于核范数的重建模型}{74}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}图像重建快速算法}{74}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}FISTA快速算法}{74}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}模型参数的选择}{75}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}数值实验数据与评价方法}{76}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}数值实验数据}{76}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}采样模式与评价方法}{76}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}数值实验结果}{77}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}重建图像质量}{77}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}定量参数精度}{78}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}数值实验分析}{85}{section.4.5}
+\contentsline {section}{\numberline {4.6}本章小结}{85}{section.4.6}
+\contentsline {chapter}{\numberline {5\hspace {.3em}}基于GPU的实时MRF字典生成与参数图重建}{87}{chapter.5}
+\contentsline {section}{\numberline {5.1}MRF重建参数图的主要问题}{87}{section.5.1}
+\contentsline {section}{\numberline {5.2}基于GPU的MRF重建}{88}{section.5.2}
+\contentsline {section}{\numberline {5.3}snapMRF程序设计与单元测试}{89}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}snapMRF程序流程}{89}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}snapMRF核函数的功能}{91}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}snapMRF并行计算的难点与创新}{92}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}单元测试}{95}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}数值实验数据与评价方法}{96}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}体模数据}{96}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}活体人脑数据}{97}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}数值实验结果}{98}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}程序运行时间}{98}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}体模数据的重建参数图}{98}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}活体人脑数据的重建参数图}{102}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}数值实验分析}{105}{section.5.6}
+\contentsline {section}{\numberline {5.7}本章小结}{105}{section.5.7}
+\contentsline {chapter}{\numberline {6\hspace {.3em}}总结与展望}{107}{chapter.6}
+\contentsline {section}{\numberline {6.1}本文工作总结}{107}{section.6.1}
+\contentsline {section}{\numberline {6.2}下一步工作展望}{108}{section.6.2}
+\contentsline {chapter}{致\quad \quad 谢}{125}{chapter*.60}
+\contentsline {chapter}{附\quad \quad 录}{127}{chapter*.61}

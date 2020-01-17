@@ -1,0 +1,1132 @@
+\begin{thebibliography}{191}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[俎栋林(2004)]{mrireview}
+俎栋林.
+\newblock 核磁共振成像学[M].
+\newblock 北京: 高等教育出版社, 2004.
+
+\bibitem[Yankeelov and Gore(2009)]{Yankeelov2009}
+Yankeelov T~E, Gore J~C.
+\newblock Dynamic contrast enhanced magnetic resonance imaging in oncology:
+  Theory, data acquisition, analysis, and examples.[J].
+\newblock Curr Med Imaging Rev, 2009, 3(2):91--107.
+
+\bibitem[Ma et al.(2013)]{mrf}
+Ma D, Gulani V, Seiberlich N, et al.
+\newblock Magnetic resonance fingerprinting[J].
+\newblock Nature, 2013, 495(7440):187--192.
+
+\bibitem[Shannon(1949)]{Nyquist}
+Shannon C.
+\newblock Communication in the presence of noise[J].
+\newblock Proceedings of the IRE, 1949, 86(2):10--21.
+
+\bibitem[Cand{\`e}s and Tao(2006)]{candes2004near}
+Cand{\`e}s E~J, Tao T.
+\newblock Near-optimal signal recovery from random projections: Universal
+  encoding strategies?[J].
+\newblock IEEE transactions on information theory, 2006, 52(12):5406--5425.
+
+\bibitem[Cand{\`e}s {\em et~al.}(2006)]{candes2006compressive}
+Cand{\`e}s E~J, et al.
+\newblock
+\newblock Compressive sampling[C]//Proceedings of the International Congress of
+  Mathematicians.
+\newblock Madrid, Spain: EMS, 2006:1433--1452.
+
+\bibitem[Cand{\`e}s and Romberg(2006)]{candes2006quantitative}
+Cand{\`e}s E~J, Romberg J.
+\newblock Quantitative robust uncertainty principles and optimally sparse
+  decompositions[J].
+\newblock Foundations of Computational Mathematics, 2006, 6(2):227--254.
+
+\bibitem[Cand{\`e}s et al.(2006){\natexlab{a}}]{candes2006stable}
+Cand{\`e}s E~J, Romberg J~K, Tao T.
+\newblock Stable signal recovery from incomplete and inaccurate
+  measurements[J].
+\newblock Communications on Pure and Applied Mathematics, 2006,
+  59(8):1207--1223.
+
+\bibitem[Donoho(2006)]{Donoho2006Compressed}
+Donoho D~L.
+\newblock Compressed sensing[J].
+\newblock IEEE Transactions on Information Theory, 2006, 52(4):1289--1306.
+
+\bibitem[Golbabaee and Vandergheynst(2012)]{golbabaee2012hyperspectral}
+Golbabaee M, Vandergheynst P.
+\newblock
+\newblock Hyperspectral image compressed sensing via low-rank and joint-sparse
+  matrix recovery[C]//2012 IEEE International Conference on Acoustics, Speech
+  and Signal Processing.
+\newblock Kyoto, Japan: IEEE, 2012:2741--2744.
+
+\bibitem[Quinsac et al.(2010)]{quinsac2010compressed}
+Quinsac C, Basarab A, Girault J~M, et al.
+\newblock
+\newblock Compressed sensing of ultrasound images: Sampling of spatial and
+  frequency domains[C]//2010 IEEE Workshop On Signal Processing Systems.
+\newblock San Francisco, CA, USA: IEEE, 2010:231--236.
+
+\bibitem[Xu et al.(2012)]{xu2012low}
+Xu Q, Yu H, Mou X, et al.
+\newblock Low-dose X-ray CT reconstruction via dictionary learning[J].
+\newblock IEEE Transactions on Medical Imaging, 2012, 31(9):1682--1697.
+
+\bibitem[Lustig et al.(2006)]{lustig2006}
+Lustig M, Santos J~M, Donoho D~L, et al.
+\newblock
+\newblock kt SPARSE: High frame rate dynamic MRI exploiting spatio-temporal
+  sparsity[C]//Proceedings of the 13th Annual Meeting of ISMRM.
+\newblock Seattle, WA, USA: ISMRM, 2006:2420.
+
+\bibitem[Wright et al.(2008)]{wright2008robust}
+Wright J, Yang A~Y, Ganesh A, et al.
+\newblock Robust face recognition via sparse representation[J].
+\newblock IEEE Transactions on Pattern Analysis and Machine Intelligence, 2008,
+  31(2):210--227.
+
+\bibitem[Choi et al.(2010)]{choi2010compressed}
+Choi K, Wang J, Zhu L, et al.
+\newblock Compressed sensing based cone-beam computed tomography reconstruction
+  with a first-order method[J].
+\newblock Medical Physics, 2010, 37(9):5113--5125.
+
+\bibitem[Needell and Tropp(2008)]{cosamp}
+Needell D, Tropp J.
+\newblock CoSaMP: Iterative signal recovery from incomplete and inaccurate
+  samples.[J].
+\newblock Applied and Computational Harmonic Analysis, 2008, 26(3):301--321.
+
+\bibitem[Tropp(2006)]{tropp2006just}
+Tropp J~A.
+\newblock Just relax: Convex programming methods for identifying sparse signals
+  in noise[J].
+\newblock IEEE Transactions on Information Theory, 2006, 52(3):1030--1051.
+
+\bibitem[Gorodnitsky and Rao(1997)]{gorodnitsky1997sparse}
+Gorodnitsky I~F, Rao B~D.
+\newblock Sparse signal reconstruction from limited data using FOCUSS: A
+  re-weighted minimum norm algorithm[J].
+\newblock IEEE Transactions on signal processing, 1997, 45(3):600--616.
+
+\bibitem[Cand{\`e}s et al.(2008)]{candes2008enhancing}
+Cand{\`e}s E~J, Wakin M~B, Boyd S~P.
+\newblock Enhancing sparsity by reweighted l1 minimization[J].
+\newblock Journal of Fourier Analysis and Applications, 2008, 14(5-6):877--905.
+
+\bibitem[Chen et al.(2001)]{chen2001atomic}
+Chen S~S, Donoho D~L, Saunders M~A.
+\newblock Atomic decomposition by basis pursuit[J].
+\newblock SIAM Review, 2001, 43(1):129--159.
+
+\bibitem[Chen and Donoho(1994)]{bp}
+Chen S, Donoho D.
+\newblock
+\newblock Basis pursuit[C]//Proceedings of 1994 28th Asilomar Conference on
+  Signals, Systems and Computers.
+\newblock Pacific Grove, CA, USA: IEEE, 1994:41--44.
+
+\bibitem[Eldar and Kutyniok(2012)]{eldar2012compressed}
+Eldar Y~C, Kutyniok G.
+\newblock Compressed sensing: theory and applications[M].
+\newblock New York: Cambridge University Press, 2012.
+
+\bibitem[H.~Bauschke and Combettes(2011)]{proximal}
+H.~Bauschke H, Combettes P.
+\newblock Convex analysis and monotone operator theory in Hilbert space[M].
+\newblock New York: Springer, 2011.
+
+\bibitem[Combettes and R.~Wajs(2005)]{fbs}
+Combettes P, R.~Wajs V.
+\newblock Signal recovery by proximal forward-backward splitting[J].
+\newblock Multiscale Modeling \& Simulation, 2005, 4(4):1168--1200.
+
+\bibitem[Goldstein and Osher(2009)]{sb}
+Goldstein T, Osher S.
+\newblock The split Bregman method for L1-regularized problems[J].
+\newblock SIAM J. Imaging Sciences, 2009, 2(2):323--343.
+
+\bibitem[Wang et al.(2008)]{admm}
+Wang Y, Yang J, Yin W, et al.
+\newblock A new alternating minimization algorithm for total variation image
+  reconstruction[J].
+\newblock SIAM J. Imaging Sciences, 2008, 1(3):248--272.
+
+\bibitem[Ramani and Fessler(2010)]{ramani2010parallel}
+Ramani S, Fessler J~A.
+\newblock Parallel MR image reconstruction using augmented Lagrangian
+  methods[J].
+\newblock IEEE Transactions on Medical Imaging, 2010, 30(3):694--706.
+
+\bibitem[Boyd et al.(2011)]{boyd2011distributed}
+Boyd S, Parikh N, Chu E, et al.
+\newblock Distributed optimization and statistical learning via the alternating
+  direction method of multipliers[J].
+\newblock Foundations and Trends{\textregistered} in Machine Learning, 2011,
+  3(1):1--122.
+
+\bibitem[Yang and Zhang(2011)]{yang2011alternating}
+Yang J, Zhang Y.
+\newblock Alternating direction algorithms for l1-problems in compressive
+  sensing[J].
+\newblock SIAM Journal on Scientific Computing, 2011, 33(1):250--278.
+
+\bibitem[Combettes and Pesquet(2008)]{dr}
+Combettes P, Pesquet J~C.
+\newblock A Douglas–Rachford splitting approach to nonsmooth convex
+  variational signal recovery[J].
+\newblock IEEE Journal of Selected Topics in Signal Processing, 2008,
+  1(4):564--574.
+
+\bibitem[Beck and Teboulle(2009){\natexlab{a}}]{fista}
+Beck A, Teboulle M.
+\newblock A fast iterative shrinkage-thresholding algorithm for linear inverse
+  problems[J].
+\newblock SIAM J. Imaging Sciences, 2009, 2(1):183--202.
+
+\bibitem[Chambolle and Pock(2011)]{pd}
+Chambolle A, Pock T.
+\newblock A first-order primal-dual algorithm for convex problems with
+  applications to imaging[J].
+\newblock Journal of Mathematical Imaging and Vision, 2011, 40(1):120--145.
+
+\bibitem[Powell(1977)]{powell1977restart}
+Powell M~J~D.
+\newblock Restart procedures for the conjugate gradient method[J].
+\newblock Mathematical Programming, 1977, 12(1):241--254.
+
+\bibitem[Beck and Teboulle(2009){\natexlab{b}}]{beck2009fast}
+Beck A, Teboulle M.
+\newblock Fast gradient-based algorithms for constrained total variation image
+  denoising and deblurring problems[J].
+\newblock IEEE Transactions on Image Processing, 2009, 18(11):2419--2434.
+
+\bibitem[Ji and Ye(2009)]{ji2009accelerated}
+Ji S, Ye J.
+\newblock
+\newblock An accelerated gradient method for trace norm
+  minimization[C]//Proceedings of the 26th Annual International Conference on
+  Machine Learning.
+\newblock Montreal, Quebec, Canada: ACM, 2009:457--464.
+
+\bibitem[Knoll et al.(2011)]{tgv}
+Knoll F, Bredies K, Pock T, et al.
+\newblock Second order total generalized variation (TGV) for MRI[J].
+\newblock Magnetic Resonance in Medicine, 2011, 65(2):480--91.
+
+\bibitem[Easley et al.(2008)]{easley2008sparse}
+Easley G, Labate D, Lim W~Q.
+\newblock Sparse directional image representations using the discrete shearlet
+  transform[J].
+\newblock Applied and Computational Harmonic Analysis, 2008, 25(1):25--46.
+
+\bibitem[Aharon et al.(2006)]{ksvd}
+Aharon M, Elad M, Bruckstein A.
+\newblock K-SVD: An algorithm for designing overcomplete dictionaries for
+  sparse representation[J].
+\newblock IEEE Transactions on Signal Processing, 2006, 54(11):4311--4322.
+
+\bibitem[P.~Pruessmann et al.(1999)]{sense}
+P.~Pruessmann K, Weiger M, Scheidegger M, et al.
+\newblock SENSE: Sensitivity encoding for fast MRI[J].
+\newblock Magnetic Resonance in Medicine, 1999, 42(5):952--962.
+
+\bibitem[Sodickson and J.~Manning(1997)]{smash}
+Sodickson D, J.~Manning W.
+\newblock Simultaneous acquisition of spatial harmonics (SMASH): Fast imaging
+  with radiofrequency coil arrays[J].
+\newblock Magnetic Resonance in Medicine, 1997, 38(4):591--603.
+
+\bibitem[Griswold et al.(2002)]{grappa}
+Griswold M, Jakob P, Heidemann R, et al.
+\newblock Generalized autocalibrating partially parallel acquisitions
+  (GRAPPA)[J].
+\newblock Magnetic Resonance in Medicine, 2002, 47(6):1202--1210.
+
+\bibitem[Block et al.(2007)]{block2007undersampled}
+Block K~T, Uecker M, Frahm J.
+\newblock Undersampled radial MRI with multiple coils. Iterative image
+  reconstruction using a total variation constraint[J].
+\newblock Magnetic Resonance in Medicine, 2007, 57(6):1086--1098.
+
+\bibitem[Liang et al.(2009)]{liang2009accelerating}
+Liang D, Liu B, Wang J, et al.
+\newblock Accelerating SENSE using compressed sensing[J].
+\newblock Magnetic Resonance in Medicine, 2009, 62(6):1574--1584.
+
+\bibitem[Feng et al.(2014)]{igrasp}
+Feng L, Grimm R, Tobias~Block K, et al.
+\newblock Golden-angle radial sparse parallel MRI: Combination of compressed
+  sensing, parallel imaging, and golden-angle radial sampling for fast and
+  flexible dynamic volumetric MRI[J].
+\newblock Magnetic Resonance in Medicine, 2014, 72(3):707--717.
+
+\bibitem[Hong et al.(2010)]{focuss}
+Hong J, Kyunghyun S, Nayak K~S, et al.
+\newblock k-t FOCUSS: A general compressed sensing framework for high
+  resolution dynamic MRI.[J].
+\newblock Magnetic Resonance in Medicine, 2010, 61(1):103--116.
+
+\bibitem[Glover and Pauly(1992)]{glover1992projection}
+Glover G~H, Pauly J~M.
+\newblock Projection reconstruction techniques for reduction of motion effects
+  in MRI[J].
+\newblock Magnetic Resonance in Medicine, 1992, 28(2):275--289.
+
+\bibitem[Meyer et al.(1992)]{meyer1992fast}
+Meyer C~H, Hu B~S, Nishimura D~G, et al.
+\newblock Fast spiral coronary artery imaging[J].
+\newblock Magnetic Resonance in Medicine, 1992, 28(2):202--213.
+
+\bibitem[Gai and Axel(1996)]{gai1996correction}
+Gai N, Axel L.
+\newblock Correction of motion artifacts in linogram and projection
+  reconstruction MRI using geometry and consistency constraints[J].
+\newblock Medical Physics, 1996, 23(2):251--262.
+
+\bibitem[Sajan~Goud et al.(2011)]{Sajan2011Accelerated}
+Sajan~Goud L, Yue H, Edward D~B, et al.
+\newblock Accelerated dynamic MRI exploiting sparsity and low-rank structure:
+  k-t SLR[J].
+\newblock IEEE Transactions on Medical Imaging, 2011, 30(5):1042--1054.
+
+\bibitem[Smith et al.(2012)]{smith2012}
+Smith D, Li X, V~Gambrell J, et al.
+\newblock Robustness of quantitative compressive sensing MRI: The effect of
+  random undersampling patterns on derived parameters for DCE- and DSC-MRI[J].
+\newblock IEEE Transactions on Medical Imaging, 2012, 31(2):504--11.
+
+\bibitem[Holland et al.(2013)]{holland2013compressed}
+Holland D, Liu C, Song X, et al.
+\newblock Compressed sensing reconstruction improves sensitivity of variable
+  density spiral fMRI[J].
+\newblock Magnetic Resonance in Medicine, 2013, 70(6):1634--1643.
+
+\bibitem[Kressler et al.(2007)]{kressler2007three}
+Kressler B, Spincemaille P, Nguyen T~D, et al.
+\newblock Three-dimensional cine imaging using variable-density spiral
+  trajectories and SSFP with application to coronary artery angiography[J].
+\newblock Magnetic Resonance in Medicine, 2007, 58(3):535--543.
+
+\bibitem[Karampinos et al.(2009)]{karampinos2009high}
+Karampinos D~C, Van A~T, Olivero W~C, et al.
+\newblock High-resolution diffusion tensor imaging of the human pons with a
+  reduced field-of-view, multishot, variable-density, spiral acquisition at
+  3T[J].
+\newblock Magnetic Resonance in Medicine, 2009, 62(4):1007--1016.
+
+\bibitem[Santos et al.(2006)]{santos2006single}
+Santos J~M, Cunningham C~H, Lustig M, et al.
+\newblock Single breath-hold whole-heart MRA using variable-density spirals at
+  3T[J].
+\newblock Magnetic Resonance in Medicine, 2006, 55(2):371--379.
+
+\bibitem[Ravishankar et al.(2019)]{ravishankar2019image}
+Ravishankar S, Ye J~C, Fessler J~A.
+\newblock Image reconstruction: From sparsity to data-adaptive methods and
+  machine learning[J].
+\newblock arXiv, 2019:1904.02816.
+
+\bibitem[Ye(2019)]{ye2019compressed}
+Ye J~C.
+\newblock Compressed sensing MRI: a review from signal processing
+  perspective[J].
+\newblock BMC Biomedical Engineering, 2019, 1(8):1--17.
+
+\bibitem[Ma et al.(2008)]{tvcmri}
+Ma S, Yin W, Zhang Y, et al.
+\newblock
+\newblock An efficient algorithm for compressed MR imaging using total
+  variation and wavelets[C]//Proceedings IEEE Conference on Computer Vision
+  Pattern Recognition.
+\newblock Anchorage, AK, USA: IEEE, 2008:1--8.
+
+\bibitem[Yang et al.(2010)]{Yang2010A}
+Yang J, Yin Z, Yin W.
+\newblock A fast alternating direction method for TVL1-L2 signal reconstruction
+  from partial Fourier data[J].
+\newblock IEEE Journal of Selected Topics in Signal Processing, 2010,
+  4(2):288--297.
+
+\bibitem[Huang et al.(2011)]{Huang2011Efficient}
+Huang J, Zhang S, Metaxas D.
+\newblock Efficient MR image reconstruction for compressed MR imaging[J].
+\newblock Medical Image Analysis, 2011, 15(5):670--679.
+
+\bibitem[Bredies et al.(2010)]{bredies2010total}
+Bredies K, Kunisch K, Pock T.
+\newblock Total generalized variation[J].
+\newblock SIAM Journal on Imaging Sciences, 2010, 3(3):492--526.
+
+\bibitem[Schloegl et al.(2017)]{infimaltgv}
+Schloegl M, Holler M, Schwarzl A, et al.
+\newblock Infimal convolution of total generalized variation functionals for
+  dynamic MRI[J].
+\newblock Magnetic Resonance in Medicine, 2017, 78(1):142--155.
+
+\bibitem[Stankovi{\'c} and Falkowski(2003)]{stankovic2003haar}
+Stankovi{\'c} R~S, Falkowski B~J.
+\newblock The Haar wavelet transform: Its status and achievements[J].
+\newblock Computers \& Electrical Engineering, 2003, 29(1):25--44.
+
+\bibitem[Cand{\`e}s and Donoho(2005)]{candes2000curvelets}
+Cand{\`e}s E~J, Donoho D~L.
+\newblock Continuous curvelet transform: I. Resolution of the wavefront set[J].
+\newblock Applied and Computational Harmonic Analysis, 2005, 19(2):162--197.
+
+\bibitem[Do and Vetterli(2005)]{do2005contourlet}
+Do M~N, Vetterli M.
+\newblock The contourlet transform: An efficient directional multiresolution
+  image representation[J].
+\newblock IEEE Transactions on Image Processing, 2005, 14(12):2091--2106.
+
+\bibitem[Qu et al.(2010){\natexlab{a}}]{qu2010combined}
+Qu X, Cao X, Guo D, et al.
+\newblock Combined sparsifying transforms for compressed sensing MRI[J].
+\newblock Electronics Letters, 2010, 46(2):121--123.
+
+\bibitem[Qu et al.(2010){\natexlab{b}}]{qu2010iterative}
+Qu X, Zhang W, Guo D, et al.
+\newblock Iterative thresholding compressed sensing MRI based on contourlet
+  transform[J].
+\newblock Inverse Problems in Science and Engineering, 2010, 18(6):737--758.
+
+\bibitem[Chen and Huang(2012)]{tree}
+Chen C, Huang J.
+\newblock
+\newblock Compressive sensing MRI with wavelet tree sparsity[C]//Advances in
+  Neural Information Processing Systems.
+\newblock Nevada: NIPS, 2012:1115--1123.
+
+\bibitem[Chen and Huang(2014)]{chen2014exploiting}
+Chen C, Huang J.
+\newblock Exploiting the wavelet structure in compressed sensing MRI[J].
+\newblock Magnetic Resonance Imaging, 2014, 32(10):1377--1389.
+
+\bibitem[Peyr{\'e} et al.(2008)]{peyre2008non}
+Peyr{\'e} G, Bougleux S, Cohen L.
+\newblock
+\newblock Non-local regularization of inverse problems[C]//European Conference
+  on Computer Vision.
+\newblock Marseille, France: Springer, 2008:57--68.
+
+\bibitem[Lou et al.(2010)]{lou2010image}
+Lou Y, Zhang X, Osher S, et al.
+\newblock Image recovery via nonlocal operators[J].
+\newblock Journal of Scientific Computing, 2010, 42(2):185--197.
+
+\bibitem[Gilboa and Osher(2008)]{gilboa2008nonlocal}
+Gilboa G, Osher S.
+\newblock Nonlocal operators with applications to image processing[J].
+\newblock Multiscale Modeling \& Simulation, 2008, 7(3):1005--1028.
+
+\bibitem[Ak{\c{c}}akaya et al.(2011)]{akccakaya2011low}
+Ak{\c{c}}akaya M, Basha T~A, Goddu B, et al.
+\newblock Low-dimensional-structure self-learning and thresholding:
+  Regularization beyond compressed sensing for MRI reconstruction[J].
+\newblock Magnetic Resonance in Medicine, 2011, 66(3):756--767.
+
+\bibitem[Liang et al.(2011)]{liang2011sensitivity}
+Liang D, Wang H, Chang Y, et al.
+\newblock Sensitivity encoding reconstruction with nonlocal total variation
+  regularization[J].
+\newblock Magnetic Resonance in Medicine, 2011, 65(5):1384--1392.
+
+\bibitem[Liu et al.(2017)]{liu2017mri}
+Liu S, Cao J, Liu H, et al.
+\newblock MRI reconstruction using a joint constraint in patch-based total
+  variational framework[J].
+\newblock Journal of Visual Communication and Image Representation, 2017,
+  46:150--164.
+
+\bibitem[Qu et al.(2014)]{qu2014magnetic}
+Qu X, Hou Y, Lam F, et al.
+\newblock Magnetic resonance image reconstruction from undersampled
+  measurements using a patch-based nonlocal operator[J].
+\newblock Medical Image Analysis, 2014, 18(6):843--856.
+
+\bibitem[Dabov et al.(2007)]{dabov2007image}
+Dabov K, Foi A, Katkovnik V, et al.
+\newblock Image denoising by sparse 3-D transform-domain collaborative
+  filtering[J].
+\newblock IEEE Transactions on Image Processing, 2007, 16(8):2080--2095.
+
+\bibitem[Eksioglu(2016)]{eksioglu2016decoupled}
+Eksioglu E~M.
+\newblock Decoupled algorithm for MRI reconstruction using nonlocal block
+  matching model: BM3D-MRI[J].
+\newblock Journal of Mathematical Imaging and Vision, 2016, 56(3):430--440.
+
+\bibitem[Gleichman and Eldar(2011)]{gleichman2011blind}
+Gleichman S, Eldar Y~C.
+\newblock Blind compressed sensing[J].
+\newblock IEEE Transactions on Information Theory, 2011, 57(10):6958--6975.
+
+\bibitem[Saiprasad and Yoram(2011)]{dlmri}
+Saiprasad R, Yoram B.
+\newblock MR image reconstruction from highly undersampled k-space data by
+  dictionary learning[J].
+\newblock IEEE Transactions on Medical Imaging, 2011, 30(5):1028--1041.
+
+\bibitem[Mairal et al.(2010)]{mairal2010online}
+Mairal J, Bach F, Ponce J, et al.
+\newblock Online learning for matrix factorization and sparse coding[J].
+\newblock Journal of Machine Learning Research, 2010, 11(1):19--60.
+
+\bibitem[Rubinstein et al.(2009)]{rubinstein2009double}
+Rubinstein R, Zibulevsky M, Elad M.
+\newblock Double sparsity: Learning sparse dictionaries for sparse signal
+  approximation[J].
+\newblock IEEE Transactions on Signal Processing, 2009, 58(3):1553--1564.
+
+\bibitem[Ravishankar et al.(2017)]{ravishankar2017efficient}
+Ravishankar S, Nadakuditi R~R, Fessler J~A.
+\newblock Efficient sum of outer products dictionary learning (SOUP-DIL) and
+  its application to inverse problems[J].
+\newblock IEEE Transactions on Computational Imaging, 2017, 3(4):694--709.
+
+\bibitem[Bruckstein et al.(2009)]{bruckstein2009sparse}
+Bruckstein A~M, Donoho D~L, Elad M.
+\newblock From sparse solutions of systems of equations to sparse modeling of
+  signals and images[J].
+\newblock SIAM Review, 2009, 51(1):34--81.
+
+\bibitem[Ravishankar and Bresler(2015)]{ravishankar2015efficient}
+Ravishankar S, Bresler Y.
+\newblock Efficient blind compressed sensing using sparsifying transforms with
+  convergence guarantees and application to magnetic resonance imaging[J].
+\newblock SIAM Journal on Imaging Sciences, 2015, 8(4):2519--2557.
+
+\bibitem[Ravishankar and Bresler(2016)]{ravishankar2016data}
+Ravishankar S, Bresler Y.
+\newblock Data-driven learning of a union of sparsifying transforms model for
+  blind compressed sensing[J].
+\newblock IEEE Transactions on Computational Imaging, 2016, 2(3):294--309.
+
+\bibitem[Wen et al.(2017)]{wen2017frist}
+Wen B, Ravishankar S, Bresler Y.
+\newblock FRIST—flipping and rotation invariant sparsifying transform
+  learning and applications[J].
+\newblock Inverse Problems, 2017, 33(7):074007.
+
+\bibitem[Wen et al.(2018)]{wen2018power}
+Wen B, Li Y, Bresler Y.
+\newblock The power of complementary regularizers: Image recovery via transform
+  learning and low-rank modeling[J].
+\newblock arXiv, 2018:1808.01316.
+
+\bibitem[Wen et al.(2019)]{wen2019transform}
+Wen B, Ravishankar S, Pfister L, et al.
+\newblock Transform learning for magnetic resonance image reconstruction: From
+  model-based learning to building neural networks[J].
+\newblock arXiv, 2019:1903.11431.
+
+\bibitem[LeCun et al.(2015)]{lecun2015deep}
+LeCun Y, Bengio Y, Hinton G.
+\newblock Deep learning[J].
+\newblock Nature, 2015, 521(7553):436--444.
+
+\bibitem[Schmidhuber(2015)]{schmidhuber2015deep}
+Schmidhuber J.
+\newblock Deep learning in neural networks: An overview[J].
+\newblock Neural Networks, 2015, 61:85--117.
+
+\bibitem[Jin et al.(2017)]{jin2017deep}
+Jin K~H, McCann M~T, Froustey E, et al.
+\newblock Deep convolutional neural network for inverse problems in imaging[J].
+\newblock IEEE Transactions on Image Processing, 2017, 26(9):4509--4522.
+
+\bibitem[Yang et al.(2017){\natexlab{a}}]{admmnet}
+Yang Y, Sun J, Li H, et al.
+\newblock ADMM-Net: A deep learning approach for compressive sensing MRI[J].
+\newblock arXiv, 2017:1705.06869.
+
+\bibitem[Wang et al.(2016){\natexlab{a}}]{wang2016accelerating}
+Wang S, Su Z, Ying L, et al.
+\newblock
+\newblock Accelerating magnetic resonance imaging via deep learning[C]//2016
+  IEEE 13th International Symposium on Biomedical Imaging (ISBI).
+\newblock Prague, Czech Republic: IEEE, 2016{\natexlab{a}}:514--517.
+
+\bibitem[Lee et al.(2018)]{lee2018deep}
+Lee D, Yoo J, Tak S, et al.
+\newblock Deep residual learning for accelerated MRI using magnitude and phase
+  networks[J].
+\newblock IEEE Transactions on Biomedical Engineering, 2018, 65(9):1985--1995.
+
+\bibitem[Han et al.(2018)]{han2018deep}
+Han Y, Yoo J, Kim H~H, et al.
+\newblock Deep learning with domain adaptation for accelerated
+  projection-reconstruction MR[J].
+\newblock Magnetic Resonance in Medicine, 2018, 80(3):1189--1205.
+
+\bibitem[Zhu et al.(2018)]{zhu2018image}
+Zhu B, Liu J~Z, Cauley S~F, et al.
+\newblock Image reconstruction by domain-transform manifold learning[J].
+\newblock Nature, 2018, 555(7697):487--492.
+
+\bibitem[Hyun et al.(2017)]{unetcs}
+Hyun C, Kim H, Min~Lee S, et al.
+\newblock Deep learning for undersampled MRI reconstruction[J].
+\newblock Physics in Medicine and Biology, 2017, 63(13):135007.
+
+\bibitem[Hammernik et al.(2017)]{varnet}
+Hammernik K, Klatzer T, Kobler E, et al.
+\newblock Learning a variational network for reconstruction of accelerated MRI
+  data[J].
+\newblock Magnetic Resonance in Medicine, 2017, 79(6):3055--3071.
+
+\bibitem[Quan et al.(2018)]{gannet}
+Quan T~M, Nguyen-Duc T, Jeong W~K.
+\newblock Compressed sensing MRI reconstruction using a generative adversarial
+  network with a cyclic loss[J].
+\newblock IEEE Transactions on Medical Imaging, 2018, 37(6):1488--1497.
+
+\bibitem[Gregor and LeCun(2010)]{gregor2010learning}
+Gregor K, LeCun Y.
+\newblock
+\newblock Learning fast approximations of sparse coding[C]//Proceedings of the
+  27th International Conference on International Conference on Machine
+  Learning.
+\newblock Haifa, Israel: Omnipress, 2010:399--406.
+
+\bibitem[Adler and {\"O}ktem(2018)]{adler2018learned}
+Adler J, {\"O}ktem O.
+\newblock Learned primal-dual reconstruction[J].
+\newblock IEEE Transactions on Medical Imaging, 2018, 37(6):1322--1332.
+
+\bibitem[Gupta et al.(2018)]{gupta2018cnn}
+Gupta H, Jin K~H, Nguyen H~Q, et al.
+\newblock CNN-based projected gradient descent for consistent CT image
+  reconstruction[J].
+\newblock IEEE Transactions on Medical Imaging, 2018, 37(6):1440--1453.
+
+\bibitem[Han and Ye(2018)]{han2019k}
+Han Y, Ye J~C.
+\newblock k-Space Deep learning for accelerated MRI[J].
+\newblock arXiv, 2018:1805.03779.
+
+\bibitem[Lee et al.(2019)]{lee2019k}
+Lee J, Han Y, Ryu J~K, et al.
+\newblock k-Space deep learning for reference-free EPI ghost correction[J].
+\newblock Magnetic Resonance in Medicine, 2019, 82(6):2299--2313.
+
+\bibitem[Jeffrey et al.(2003)]{Jeffrey2003k}
+Jeffrey T, Peter B, Pruessmann K~P.
+\newblock k-t BLAST and k-t SENSE: Dynamic MRI with high frame rate exploiting
+  spatiotemporal correlations.[J].
+\newblock Magnetic Resonance in Medicine, 2003, 50(5):1031–1042.
+
+\bibitem[Jung et al.(2007)]{jung2007improved}
+Jung H, Ye J~C, Kim E~Y.
+\newblock Improved k--t BLAST and k--t SENSE using FOCUSS[J].
+\newblock Physics in Medicine and Biology, 2007, 52(11):3201--3226.
+
+\bibitem[Cand{\`e}s and Recht(2009)]{candes2009exact}
+Cand{\`e}s E~J, Recht B.
+\newblock Exact matrix completion via convex optimization[J].
+\newblock Foundations of Computational Mathematics, 2009, 9(6):717--772.
+
+\bibitem[Zhao et al.(2012){\natexlab{a}}]{zhao2012image}
+Zhao B, Haldar J~P, Christodoulou A~G, et al.
+\newblock Image reconstruction from highly undersampled (k, t)-space data with
+  joint partial separability and sparsity constraints[J].
+\newblock IEEE Transactions on Medical Imaging, 2012, 31(9):1809--1820.
+
+\bibitem[Ricardo et al.(2015)]{lpluss}
+Ricardo O, Emmanuel C, Sodickson D~K.
+\newblock Low-rank plus sparse matrix decomposition for accelerated dynamic MRI
+  with separation of background and dynamic components[J].
+\newblock Magnetic Resonance in Medicine, 2015, 73(3):1125--1136.
+
+\bibitem[Cand{\`e}s et al.(2011)]{rpca}
+Cand{\`e}s E~J, Li X, Ma Y, et al.
+\newblock Robust principal component analysis?[J].
+\newblock Journal of the ACM, 2011, 58(3):1--37.
+
+\bibitem[Tr{\'e}moulh{\'e}ac et al.(2014)]{tremoulheac}
+Tr{\'e}moulh{\'e}ac B, Dikaios N, Atkinson D, et al.
+\newblock Dynamic MR image reconstruction--separation from undersampled
+  (k,t)-space via low-rank plus sparse prior[J].
+\newblock IEEE Transactions on Medical Imaging, 2014, 33(8):1689--1701.
+
+\bibitem[Shin et al.(2014)]{shin2014calibrationless}
+Shin P~J, Larson P~E, Ohliger M~A, et al.
+\newblock Calibrationless parallel imaging reconstruction based on structured
+  low-rank matrix completion[J].
+\newblock Magnetic Resonance in Medicine, 2014, 72(4):959--970.
+
+\bibitem[Haldar(2013)]{haldar2013low}
+Haldar J~P.
+\newblock Low-rank modeling of local $ k $-space neighborhoods (LORAKS) for
+  constrained MRI[J].
+\newblock IEEE Transactions on Medical Imaging, 2013, 33(3):668--681.
+
+\bibitem[Jin et al.(2016)]{jin2016general}
+Jin K~H, Lee D, Ye J~C.
+\newblock A general framework for compressed sensing and parallel MRI using
+  annihilating filter based low-rank Hankel matrix[J].
+\newblock IEEE Transactions on Computational Imaging, 2016, 2(4):480--495.
+
+\bibitem[Lee et al.(2016)]{lee2016acceleration}
+Lee D, Jin K~H, Kim E~Y, et al.
+\newblock Acceleration of MR parameter mapping using annihilating filter-based
+  low rank Hankel matrix (ALOHA)[J].
+\newblock Magnetic Resonance in Medicine, 2016, 76(6):1848--1864.
+
+\bibitem[Ongie and Jacob(2016)]{ongie2016off}
+Ongie G, Jacob M.
+\newblock Off-the-grid recovery of piecewise constant images from few Fourier
+  samples[J].
+\newblock SIAM Journal on Imaging Sciences, 2016, 9(3):1004--1041.
+
+\bibitem[Lingala and Jacob(2013)]{lingala2013blind}
+Lingala S~G, Jacob M.
+\newblock Blind compressive sensing dynamic MRI[J].
+\newblock IEEE Transactions on Medical Imaging, 2013, 32(6):1132--1145.
+
+\bibitem[Wang and Ying(2013)]{wang2013compressed}
+Wang Y, Ying L.
+\newblock Compressed sensing dynamic cardiac cine MRI using learned
+  spatiotemporal dictionary[J].
+\newblock IEEE Transactions on Biomedical Engineering, 2013, 61(4):1109--1120.
+
+\bibitem[Caballero et al.(2014)]{caballero2014dictionary}
+Caballero J, Price A~N, Rueckert D, et al.
+\newblock Dictionary learning and time sparsity for dynamic MR data
+  reconstruction[J].
+\newblock IEEE Transactions on Medical Imaging, 2014, 33(4):979--994.
+
+\bibitem[Schlemper et al.(2017)]{schlemper2017deep}
+Schlemper J, Caballero J, Hajnal J~V, et al.
+\newblock A deep cascade of convolutional neural networks for dynamic MR image
+  reconstruction[J].
+\newblock IEEE Transactions on Medical Imaging, 2017, 37(2):491--503.
+
+\bibitem[Qin et al.(2018)]{qin2018convolutional}
+Qin C, Schlemper J, Caballero J, et al.
+\newblock Convolutional recurrent neural networks for dynamic MR image
+  reconstruction[J].
+\newblock IEEE Transactions on Medical Imaging, 2018, 38(1):280--290.
+
+\bibitem[Wang et al.(2018)]{wang2018dimension}
+Wang S, Ke Z, Cheng H, et al.
+\newblock Dimension: Dynamic MR imaging with both k-space and spatial prior
+  knowledge obtained via multi-supervised network training[J].
+\newblock arXiv, 2018:1810.00302.
+
+\bibitem[Ke et al.(2019)]{ke2019crdn}
+Ke Z, Wang S, Cheng H, et al.
+\newblock CRDN: Cascaded residual dense networks for dynamic MR imaging with
+  edge-enhanced loss constraint[J].
+\newblock arXiv, 2019:1901.06111.
+
+\bibitem[Panda et al.(2017)]{mrfreview}
+Panda A, B.~Mehta B, Coppo S, et al.
+\newblock Magnetic resonance fingerprinting - An overview[J].
+\newblock Current Opinion in Biomedical Engineering, 2017, 3:56--66.
+
+\bibitem[D~Elster(1993)]{ussfp}
+D~Elster A.
+\newblock Gradient-echo MR imaging: Techniques and acronyms[J].
+\newblock Radiology, 1993, 186(1):1--8.
+
+\bibitem[Jiang et al.(2015)]{jiang}
+Jiang Y, Ma D, Seiberlich N, et al.
+\newblock MR fingerprinting using fast imaging with steady state precession
+  (FISP) with spiral readout[J].
+\newblock Magnetic Resonance in Medicine, 2015, 74(6):1621--1631.
+
+\bibitem[Rieger et al.(2016)]{joint}
+Rieger B, Zimmer F, Zapp J, et al.
+\newblock Magnetic resonance fingerprinting using echo-planar imaging: Joint
+  quantification of T1 and T2* relaxation times[J].
+\newblock Magnetic Resonance in Medicine, 2016, 78(5):1724--1733.
+
+\bibitem[Jiang et al.(2016)]{quest}
+Jiang Y, Ma D, Jerecic R, et al.
+\newblock MR fingerprinting using the quick echo splitting NMR imaging
+  technique[J].
+\newblock Magnetic Resonance in Medicine, 2016, 77(3):979--988.
+
+\bibitem[Weigel(2015)]{weigel}
+Weigel M.
+\newblock Extended phase graphs: {Dephasing}, {RF} pulses, and echoes---pure
+  and simple[J].
+\newblock Journal of Magnetic Resonance Imaging, 2015, 41(2):266--295.
+
+\bibitem[Cauley et al.(2015)]{groupingmrf}
+Cauley S~F, Setsompop K, Ma D, et al.
+\newblock Fast group matching for MR fingerprinting reconstruction[J].
+\newblock Magnetic Resonance in Medicine, 2015, 74(2):523--528.
+
+\bibitem[Yang et al.(2017){\natexlab{b}}]{svdmrf}
+Yang M, Ma D, Jiang Y, et al.
+\newblock Low rank approximation methods for MR fingerprinting with large scale
+  dictionaries: Large scale low rank MR fingerprinting[J].
+\newblock Magnetic Resonance in Medicine, 2017, 79(4):2392--2400.
+
+\bibitem[Davies et al.(2014)]{davies2014compressed}
+Davies M, Puy G, Vandergheynst P, et al.
+\newblock A compressed sensing framework for magnetic resonance
+  fingerprinting[J].
+\newblock SIAM Journal on Imaging Sciences, 2014, 7(4):2623--2656.
+
+\bibitem[Cline et al.(2017)]{cline2017air}
+Cline C~C, Chen X, Mailhe B, et al.
+\newblock AIR-MRF: Accelerated iterative reconstruction for magnetic resonance
+  fingerprinting[J].
+\newblock Magnetic Resonance Imaging, 2017, 41:29--40.
+
+\bibitem[Pierre et al.(2016)]{multiscale}
+Pierre E~Y, Ma D, Chen Y, et al.
+\newblock Multiscale reconstruction for MR fingerprinting[J].
+\newblock Magnetic Resonance in Medicine, 2016, 75(6):2481--2492.
+
+\bibitem[Wang et al.(2016){\natexlab{b}}]{wang2016magnetic}
+Wang Z, Li H, Zhang Q, et al.
+\newblock Magnetic resonance fingerprinting with compressed sensing and
+  distance metric learning[J].
+\newblock Neurocomputing, 2016, 174:560--570.
+
+\bibitem[Zhao et al.(2016)]{zhao2016maximum}
+Zhao B, Setsompop K, Ye H, et al.
+\newblock Maximum likelihood reconstruction for magnetic resonance
+  fingerprinting[J].
+\newblock IEEE Transactions on Medical Imaging, 2016, 35(8):1812--1823.
+
+\bibitem[Cohen et al.(2018)]{cohen2018mr}
+Cohen O, Zhu B, Rosen M~S.
+\newblock MR fingerprinting deep reconstruction network (DRONE)[J].
+\newblock Magnetic Resonance in Medicine, 2018, 80(3):885--894.
+
+\bibitem[Hoppe et al.(2017)]{hoppe2017deep}
+Hoppe E, K{\"o}rzd{\"o}rfer G, W{\"u}rfl T, et al.
+\newblock Deep learning for magnetic resonance fingerprinting: A new approach
+  for predicting quantitative parameter values from time series.[J].
+\newblock Studies in Health Technology and Informatics, 2017, 243:202--206.
+
+\bibitem[Balsiger et al.(2018)]{balsiger2018magnetic}
+Balsiger F, Konar A~S, Chikop S, et al.
+\newblock
+\newblock Magnetic resonance fingerprinting reconstruction via spatiotemporal
+  convolutional neural networks[C]//International Workshop on Machine Learning
+  for Medical Image Reconstruction.
+\newblock Granada, Spain: Springer, 2018:39--46.
+
+\bibitem[乔梁 and 涂光忠(2009)]{2009nmr}
+乔梁, 涂光忠.
+\newblock NMR核磁共振[M].
+\newblock 北京: 化学工业出版社, 2009.
+
+\bibitem[Haacke et al.(1999)]{haacke1999magnetic}
+Haacke E~M, Brown R~W, Thompson M~R, et al.
+\newblock Magnetic resonance imaging: physical principles and sequence
+  design[M].
+\newblock New York: Wiley-Liss, 1999.
+
+\bibitem[Sprawls(2000)]{sprawls2000magnetic}
+Sprawls P.
+\newblock Magnetic resonance imaging: principles, methods, and techniques[M].
+\newblock Wisconsin, USA: Medical Physics Publishing, 2000.
+
+\bibitem[Bloch(1946)]{bloch}
+Bloch F.
+\newblock Nuclear induction[J].
+\newblock Physical Review, 1946, 70(7-8):460--474.
+
+\bibitem[Haidekker(2013)]{haidekker2013medical}
+Haidekker M~A.
+\newblock Medical imaging technology[M].
+\newblock New York, USA: Springer, 2013.
+
+\bibitem[van Vaals et al.(1993)]{van1993}
+van Vaals J~J, Brummer M~E, Dixon W~T, et al.
+\newblock Keyhole method for accelerating imaging of contrast agent uptake[J].
+\newblock Journal of Magnetic Resonance Imaging, 1993, 3(4):671--675.
+
+\bibitem[Cand{\`e}s et al.(2006){\natexlab{b}}]{Candes2006Robust}
+Cand{\`e}s E~J, Romberg J, Tao T.
+\newblock Robust uncertainty principles: Exact signal reconstruction from
+  highly incomplete frequency information[J].
+\newblock IEEE Transactions on Information Theory, 2006, 52(2):489--509.
+
+\bibitem[Zhao et al.(2012){\natexlab{b}}]{zhaobo}
+Zhao B, P.~Haldar J, Christodoulou A, et al.
+\newblock Image reconstruction from highly undersampled (k, t)-space data with
+  joint partial separability and sparsity constraints[J].
+\newblock IEEE Transactions on Medical Imaging, 2012, 31(9):1809--20.
+
+\bibitem[Gamper et al.(2008)]{dmrics}
+Gamper U, Boesiger P, Kozerke S.
+\newblock Compressed sensing in dynamic MRI[J].
+\newblock Magnetic Resonance in Medicine, 2008, 59(2):365--73.
+
+\bibitem[Qiu et al.(2009)]{kalman}
+Qiu C, Lu W, Vaswani N.
+\newblock
+\newblock Real-time dynamic MR image reconstruction using Kalman filtered
+  compressed sensing[C]//ICASSP.
+\newblock Washington, DC, USA: IEEE Computer Society, 2009:393--396.
+
+\bibitem[Han et al.(2012)]{han}
+Han S, Paulsen J, Zhu G, et al.
+\newblock Temporal/spatial resolution improvement of in vivo DCE-MRI with
+  compressed sensing-optimized FLASH[J].
+\newblock Magnetic Resonance Imaging, 2012, 30(6):741--52.
+
+\bibitem[Lustig et al.(2008)]{Lustig2008Compressed}
+Lustig M, Donoho D~L, Santos J~M, et al.
+\newblock Compressed sensing MRI[J].
+\newblock IEEE Signal Processing Magazine, 2008, 25(2):72--82.
+
+\bibitem[Segars and Tsui(2002)]{segars2002study}
+Segars W~P, Tsui B~M.
+\newblock Study of the efficacy of respiratory gating in myocardial SPECT using
+  the new 4-D NCAT phantom[J].
+\newblock IEEE Transactions on Nuclear Science, 2002, 49(3):675--679.
+
+\bibitem[Sharif and Bresler(2007)]{sharif2007adaptive}
+Sharif B, Bresler Y.
+\newblock
+\newblock Adaptive real-time cardiac MRI using PARADISE: Validation by the
+  physiologically improved NCAT phantom[C]//IEEE International Symposium on
+  Biomedical Imaging: From Nano to Macro.
+\newblock Arlington, TX, USA: IEEE, 2007:1020--1023.
+
+\bibitem[Li et al.(2015)]{li}
+Li X, Abramson R~G, Arlinghaus L~R, et al.
+\newblock Multiparametric magnetic resonance imaging for predicting
+  pathological response after the first cycle of neoadjuvant chemotherapy in
+  breast cancer.[J].
+\newblock Investigative Radiology, 2015, 50(4):195--204.
+
+\bibitem[Wang et al.(2004)]{ssim}
+Wang Z, Bovik A~C, Sheikh H~R, et al.
+\newblock Image quality assessment: from error visibility to structural
+  similarity[J].
+\newblock IEEE Transactions on Image Processing, 2004, 13(4):600--612.
+
+\bibitem[Smith et al.(2013)]{smith2013}
+Smith D, Li X, Abramson R, et al.
+\newblock Potential of compressed sensing in quantitative MR imaging of
+  cancer[J].
+\newblock Cancer Imaging, 2013, 13(4):633--44.
+
+\bibitem[Chen et al.(2010)]{chen}
+Chen L, Schabel M, Dibella E.
+\newblock Reconstruction of dynamic contrast enhanced magnetic resonance
+  imaging of the breast with temporal constraints[J].
+\newblock Magnetic Resonance Imaging, 2010, 28(5):637--45.
+
+\bibitem[Ji and Lang(2008)]{ji2008}
+Ji J, Lang T.
+\newblock
+\newblock Dynamic MRI with compressed sensing imaging using temporal
+  correlations[C]//IEEE International Symposium on Biomedical Imaging: From
+  Nano to Macro.
+\newblock Paris, France: IEEE, 2008:1613--1616.
+
+\bibitem[Smith et al.(2011)]{smith2011}
+Smith D, Welch E, Li X, et al.
+\newblock Quantitative effects of using compressed sensing in dynamic contrast
+  enhanced MRI[J].
+\newblock Physics in Medicine and Biology, 2011, 56(15):4933--46.
+
+\bibitem[Lustig et al.(2010)]{Lustig2010Sparse}
+Lustig M, Donoho D, Pauly J~M.
+\newblock Sparse MRI: The application of compressed sensing for rapid MR
+  imaging[J].
+\newblock Magnetic Resonance in Medicine, 2010, 58(6):1182--1195.
+
+\bibitem[I.~Rudin et al.(1992)]{rof}
+I.~Rudin L, Osher S, Fatemi E.
+\newblock Nonlinear total variation based noise removal algorithms[J].
+\newblock Physica D: Nonlinear Phenomena, 1992, 60(1-4):259--268.
+
+\bibitem[Li et al.(2014)]{xia}
+Li X, Abramson R, Arlinghaus L, et al.
+\newblock Multiparametric magnetic resonance imaging for predicting
+  pathological response after the first cycle of neoadjuvant chemotherapy in
+  breast cancer[J].
+\newblock Investigative Radiology, 2014, 50(4):195--204.
+
+\bibitem[Tofts et al.(1999)]{tofts}
+Tofts P, Brix G, L.~Buckley D, et al.
+\newblock Estimating kinetic parameters from dynamic contrast-enhanced T1-
+  weighted MRI of a diffusable tracer: Standardized quantities and symbols[J].
+\newblock Journal of Magnetic Resonance Imaging, 1999, 10(3):223--32.
+
+\bibitem[Smith et al.(2015)]{Smith2015}
+Smith D, Li X, Arlinghaus L, et al.
+\newblock DCEMRI.jl: A fast, validated, open source toolkit for dynamic
+  contrast enhanced MRI analysis[J].
+\newblock PeerJ, 2015, 3(909):1--19.
+
+\bibitem[{European Society of Radiology (ESR)}(2015)]{esr}
+{European Society of Radiology (ESR)}.
+\newblock Magnetic {resonance} {fingerprinting}---A promising new approach to
+  obtain standardized imaging biomarkers from {MRI}[J].
+\newblock Insights into Imaging, 2015, 6(2):163--165.
+
+\bibitem[Bipin~Mehta et al.(2019)]{bipin_mehta_magnetic_2019}
+Bipin~Mehta B, Coppo S, McGivney D, et al.
+\newblock Magnetic resonance fingerprinting: A technical review[J].
+\newblock Magnetic Resonance in Medicine, 2019, 81(1):25--46.
+
+\bibitem[Malik et al.(2018)]{malik_extended_2018}
+Malik S~J, Teixeira R~P~A, Hajnal J~V.
+\newblock Extended phase graph formalism for systems with magnetization
+  transfer and exchange: {EPG}-{X}: {Extended} {phase} {graphs} {with}
+  {exchange}[J].
+\newblock Magnetic Resonance in Medicine, 2018, 80(2):767--779.
+
+\bibitem[Després and Jia(2017)]{gpu}
+Després P, Jia X.
+\newblock A review of GPU-based medical image reconstruction[J].
+\newblock Physica Medica, 2017, 42:76--92.
+
+\bibitem[Biguri et al.(2016)]{biguri2016tigre}
+Biguri A, Dosanjh M, Hancock S, et al.
+\newblock TIGRE: A MATLAB-GPU toolbox for CBCT image reconstruction[J].
+\newblock Biomedical Physics \& Engineering Express, 2016, 2(5):055010.
+
+\bibitem[Palenstijn et al.(2011)]{palenstijn2011performance}
+Palenstijn W, Batenburg K, Sijbers J.
+\newblock Performance improvements for iterative electron tomography
+  reconstruction using graphics processing units (GPUs)[J].
+\newblock Journal of Structural Biology, 2011, 176(2):250--253.
+
+\bibitem[Knoll et al.(2010)]{Knoll}
+Knoll F, Unger M, Diwoky C, et al.
+\newblock Fast reduction of undersampling artifacts in radial {MR} angiography
+  with {3D} total variation on graphics hardware[J].
+\newblock Magetic Resonance Materials in Physics, Biology and Medicine, 2010,
+  23(2):103--114.
+
+\bibitem[S{\o}rensen et al.(2008)]{Sorensen}
+S{\o}rensen T~S, Schaeffter T, Noe K~{\O}, et al.
+\newblock Accelerating the nonequispaced fast {Fourier} transform on commodity
+  graphics hardware[J].
+\newblock IEEE Transactions in Medical Imaging, 2008, 27(4):538--547.
+
+\bibitem[Smith et al.(2019)]{tron}
+Smith D~S, Sengupta S, Smith S~A, et al.
+\newblock Trajectory optimized {NUFFT}: Faster non-{Cartesian} {MRI}
+  reconstruction through prior knowledge and parallel architectures[J].
+\newblock Magnetic Resonance in Medicine, 2019, 81(3):2064--2071.
+
+\bibitem[Eklund et al.(2014)]{Eklund2014BROCCOLI}
+Eklund A, Dufort P, Villani M, et al.
+\newblock BROCCOLI: Software for fast fMRI analysis on many-core CPUs and
+  GPUs[J].
+\newblock Frontiers in Neuroinformatics, 2014, 8(24):1--19.
+
+\bibitem[Xanthis et al.(2014)]{Xanthis2014MRISIMUL}
+Xanthis C~G, Venetis I~E, Chalkias A~V, et al.
+\newblock MRISIMUL: a GPU-based parallel approach to MRI simulations[J].
+\newblock IEEE Transactions on Medical Imaging, 2014, 33(3):607--617.
+
+\bibitem[Jung~Woo et al.(2013)]{Jung2013GPU}
+Jung~Woo C, Amin N, Omer O, et al.
+\newblock GPU-based real-time volumetric ultrasound image reconstruction for a
+  ring array[J].
+\newblock IEEE Transactions on Medical Imaging, 2013, 32(7):1258--1264.
+
+\bibitem[Yakang et al.(2010)]{Yakang2010Real}
+Yakang D, Jie T, Di D, et al.
+\newblock Real-time visualized freehand 3D ultrasound reconstruction based on
+  GPU[J].
+\newblock IEEE Transactions on Information Technology in Biomedicine, 2010,
+  14(6):1338--1345.
+
+\bibitem[Garcia et al.(2016)]{Garcia2016Accelerated}
+Garcia M~P, Bert J, Benoit D, et al.
+\newblock Accelerated GPU based SPECT Monte Carlo simulations[J].
+\newblock Physics in Medicine and Biology, 2016, 61(11):4001--4018.
+
+\bibitem[Cui et al.(2013)]{Cui2013Distributed}
+Cui J, Pratx G, Meng B, et al.
+\newblock Distributed MLEM: An iterative tomographic image reconstruction
+  algorithm for distributed memory architectures[J].
+\newblock IEEE Transactions on Medical Imaging, 2013, 32(5):957--67.
+
+\bibitem[Vasilevsky et al.(2013)]{vasilevsy_repro_2013}
+Vasilevsky N~A, Brush M~H, Paddock H, et al.
+\newblock On the reproducibility of science: unique identification of research
+  resources in the biomedical literature[J].
+\newblock PeerJ, 2013, 1(148):1--22.
+
+\bibitem[Collins and Tabak(2014)]{collins_repro_2014}
+Collins F~S, Tabak L~A.
+\newblock Policy: {NIH} plans to enhance reproducibility[J].
+\newblock Nature, 2014, 505(7485):612--613.
+
+\bibitem[Begley and Ioannidis(2015)]{begley_repro_2015}
+Begley C~G, Ioannidis J~P.
+\newblock Reproducibility in science[J].
+\newblock Circulation Research, 2015, 116(1):116--126.
+
+\bibitem[{Smith, David S.}(2018)]{RawArray}
+{Smith, David S.}
+\newblock
+\newblock {RawArray} file format reference implementation[OL].
+\newblock \url{http://github.com/davidssmith/ra}.
+\newblock [Online; accessed 12-May-2018].
+
+\bibitem[{Hargreaves, B.}(2019)]{web}
+{Hargreaves, B.}
+\newblock
+\newblock Bloch equation simulation[OL].
+\newblock \url{http://mrsrl.stanford.edu/~brian/bloch}.
+\newblock [Online; accessed 25-January-2019].
+
+\bibitem[Keenan et al.(2016)]{keenan_comparison_2016}
+Keenan K~E, Stupic K~F, Boss M~A, et al.
+\newblock
+\newblock Comparison of {T1} measurement using {ISMRM/NIST} system
+  phantom[C]//Proceedings of ISMRM 24th Annual Meeting.
+\newblock Singapore: ISMRM, 2016:3209.
+
+\bibitem[Pipe and Zwart(2014)]{pipe_spiral_2014}
+Pipe J~G, Zwart N~R.
+\newblock Spiral trajectory design: A flexible numerical algorithm and base
+  analytical equations[J].
+\newblock Magnetic Resonance in Medicine, 2014, 71(1):278--285.
+
+\bibitem[Uecker et al.(2015)]{bart}
+Uecker M, Ong F, Tamir J~I, et al.
+\newblock
+\newblock Berkeley advanced reconstruction toolbox[C]//Proceedings of ISMRM
+  23rd Annual Meeting.
+\newblock Toronto, Ontario, Canada: ISMRM, 2015:2486.
+
+\bibitem[Zwart et al.(2012)]{zwart_sdc_2012}
+Zwart N~R, Johnson K~O, Pipe J~G.
+\newblock Efficient sample density estimation by combining gridding and an
+  optimized kernel[J].
+\newblock Magnetic Resonance in Medicine, 2012, 67(3):701--710.
+
+\bibitem[Cloos et al.(2016)]{cloos2016multiparametric}
+Cloos M~A, Knoll F, Zhao T, et al.
+\newblock Multiparametric imaging with heterogeneous radiofrequency fields[J].
+\newblock Nature communications, 2016, 7(12445):1--10.
+
+\bibitem[Ma et al.(2017)]{Ma_B1_MRF}
+Ma D, Coppo S, Chen Y, et al.
+\newblock Slice profile and {B1} corrections in {2D} magnetic resonance
+  fingerprinting[J].
+\newblock Magnetic Resonance in Medicine, 2017, 78(5):1781--1789.
+
+\bibitem[Hamilton et al.(2015)]{Hamilton}
+Hamilton J~I, Griswold M~A, Seiberlich N.
+\newblock MR Fingerprinting with chemical exchange ({MRF-X}) to quantify
+  subvoxel {T1} and extracellular volume fraction[J].
+\newblock Journal of Cardiovascular Magnetic Resonance, 2015, 17(35):1--3.
+
+\end{thebibliography}
