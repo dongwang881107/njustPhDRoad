@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{引言}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{研究背景}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{论文研究动机和研究成果}{4}{0}{1}
+\beamer@sectionintoc {2}{第一部分}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{数值实验结果与分析}{8}{0}{2}
+\beamer@sectionintoc {3}{第二部分}{10}{0}{3}
+\beamer@sectionintoc {4}{第三部分}{12}{0}{4}
+\beamer@sectionintoc {5}{全文总结}{14}{0}{5}

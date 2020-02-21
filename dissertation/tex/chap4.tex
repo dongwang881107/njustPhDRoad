@@ -1,0 +1,50 @@
+\chapter{第四章}
+\label{chap:chap4}
+模式识别是将采集到的指纹数据和字典进行匹配，Ma等\cite{mrf}使用了模板匹配的方法来进行参数图的重建。记$X=\{x_n\in \mathbb{C}^L\}, n=1,...,N$为采集到的指纹数据，$\mathcal{D}=\{d_k\in \mathbb{C}^L\},k=1,...,K$为生成的字典。那么模板匹配即为从从字典$\mathcal{D}$中选取和$x_n$内积最大的元素：
+	\begin{equation}
+	\hat{k}_n = \argmax_k \left|\left\langle \mathbf{d}_k,\mathbf{x}_n \right\rangle \right|.
+	\end{equation}
+并且质子密度也可以同时计算：
+	\begin{equation}
+	\hat{\rho}_n=\left|\langle \mathbf{d}_{\hat{k}_n},\mathbf{x}_n \rangle\right|.
+	\end{equation}
+
+\begin{algorithm}
+	\caption{snapMRF生成字典与匹配详细流程。}
+	\label{alg:snapMRF}
+	\begin{algorithmic}
+		\INDSTATE[-1.25] \textbf{输入：}\texttt{*d\_mrf}，\texttt{*d\_params}，\texttt{*d\_img}
+		\INDSTATE[-1.25] \textbf{输出：}\texttt{*d\_atoms}，\texttt{*d\_maps}
+		\STATE 01：从CSV文件中读取MRF序列信息，存入\texttt{*d\_mrf}；
+		\STATE 02：从命令行输入字典参数信息，存入\texttt{*d\_params}；
+		\STATE 03：初始化状态矩阵\texttt{*d\_w}；
+		\STATE 04：\textbf{迭代}：从第1个时刻到第$L$个时刻，并行计算所有体素的信号
+		\STATE 05：\qquad 使用函数\texttt{fill\_transition\_matrix()}构造转移矩阵$T$；
+		\STATE 06：\qquad 使用函数\texttt{apply\_rf\_pulse()}将射频场作用在\texttt{*d\_w}上；
+		\STATE 07：\qquad 使用函数\texttt{decay\_signal()}将$T_1$和$T_2$衰减作用在\texttt{*d\_w}上；
+		\STATE 08：\qquad 使用函数\texttt{save\_atoms()}将原子的信号保存在\texttt{*d\_atoms}中；
+		\STATE 09：\qquad 使用函数\texttt{dephase\_gradients()}将梯度场作用在\texttt{*d\_w}上；
+		\STATE 10：\qquad 使用函数\texttt{decay\_signal()}将$T_1$和$T_2$衰减作用在\texttt{*d\_w}上；
+		\STATE 11：\textbf{终止迭代}；
+		\STATE 12：释放\texttt{*d\_w}；
+		\STATE 13：从RawArray文件中读取指纹数据，存入\texttt{*d\_img}；
+		\STATE 14：计算剩余显存大小，并根据剩余显存，将\texttt{*d\_img}分为$G$组；
+		\STATE 15：\textbf{迭代}：从第1组到第$G$组，在每一组内并行计算所有体素的参数
+		\STATE 16：\qquad 使用函数\texttt{MRF\_minimatch()}进行匹配；
+		\STATE 17：\qquad 使用函数\texttt{generate\_maps()}生成参数图；
+		\STATE 18：\textbf{终止迭代}；
+		\STATE 19：将\texttt{*d\_atoms}和\texttt{*d\_maps}保存为RawArray文件；
+		\STATE 20：释放所有显存和内存。
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+
+
+
+
+
+
+
+

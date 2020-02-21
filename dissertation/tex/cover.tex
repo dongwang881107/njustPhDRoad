@@ -1,0 +1,57 @@
+%
+%%% >>> Title Page
+%%
+%%
+%%%%********************** Chinese Title Page ****************************************
+%%
+  \classification{}
+  \confidential{}
+  \UDC{}
+%% 标题格式 \title[short title for headers]{Long title of thesis}
+  \title[南京理工大学博士学位论文模板]{南京理工大学博士学位论文模板}
+  \titleUpp{南京理工大学}
+  \titleLow{博士学位论文模板}
+  \author{张三}
+  \advisor{李四}
+  \advisortitle{教授}
+  \degree{*学博士}
+  \major{****}
+  \interest{****}
+  \school{南京理工大学}
+  \submitdate{****年**月}
+  \incoverdate{****年**月}
+  %
+  \titleBackbone{南\\京\\理\\工\\大\\学\\博\\士\\学\\位\\论\\文\\模\\板}
+  \schoolBackbone{南\\京\\理\\工\\大\\学}
+%%
+%%%%********************** English Title Page ****************************************
+%%
+  \englishtitle{Dissertation template of Nanjing University of Science and Technology}
+  \englishauthor{San Zhang}
+  \englishadvisor{Si Li}
+  \englishinstitute{Nanjing University of Science \& Technology}
+  \englishdate{****.**}
+  \englishdegree{Dissertation}
+%%
+%%%%********************** Generate CHN & Eng Title ***********************************
+%%%
+%%
+\maketitle
+%%
+\makeincovertitle
+%%
+\makeenglishtitle
+%% make statement page
+\makeatletter
+\cleardoublepage
+\thispagestyle{empty}
+\begin{center}
+\input{tex/statement}
+\end{center}
+\clearpage
+\if@twoside
+  \thispagestyle{empty}
+  \cleardoublepage
+\fi
+ \makeatother
+%%%%*********************************** END *******************************************

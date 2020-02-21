@@ -1,0 +1,12 @@
+This is makeindex, version 2.15 [TeX Live 2018] (kpathsea + Thai support).
+Scanning style file /usr/local/texlive/2018/texmf-dist/makeindex/nomencl/nomencl.ist.......
+** Input style error (file = /usr/local/texlive/2018/texmf-dist/makeindex/nomencl/nomencl.ist, line = 70):
+   -- Unknown specifier lethead_prefix.
+** Input style error (file = /usr/local/texlive/2018/texmf-dist/makeindex/nomencl/nomencl.ist, line = 71):
+   -- Unknown specifier lethead_suffix.
+** Input style error (file = /usr/local/texlive/2018/texmf-dist/makeindex/nomencl/nomencl.ist, line = 72):
+   -- Unknown specifier lethead_flag.
+...done (10 attributes redefined, 3 ignored).
+Scanning input file /Users/wangdong/Documents/Literature/My Papers/njustPhDRoad/dissertation/.texpadtmp/myThesis.nlo...done (0 entries accepted, 0 rejected).
+Nothing written in /Users/wangdong/Documents/Literature/My Papers/njustPhDRoad/dissertation/.texpadtmp/myThesis.nls.
+Transcript written in /Users/wangdong/Documents/Literature/My Papers/njustPhDRoad/dissertation/.texpadtmp/myThesis.nlg.
