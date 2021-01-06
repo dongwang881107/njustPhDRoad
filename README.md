@@ -25,17 +25,24 @@
 - /img 包含了各个章节中所使用的图片文件
 - /sty 包含了论文的格式文件，使用时无需修改
 - /tex 包含了各个章节的`.tex`文件
+再次感谢`jiec827`提供的模板。
 
-具体的使用方法请参考[https://github.com/jiec827/njustThesis](https://github.com/jiec827/njustThesis) 。再次感谢`jiec827`提供的模板。
+这里也提供一个overleaf的在线模板[NJUST-Thesis-Template](https://www.overleaf.com/read/fkjpqsqsqwvt) 。
+使用方法
+- 在自己的账号下复制（Copy）一份;
+- 点`Menu`，在`Tex Live version` 里选择`2017(Legacy)`;
+- 回到主目录，点`myThesis.tex`，右上角编译（Recompile）即可正常运行。
 
 ## 预答辩-predefense
 按照如下步骤进行预答辩，填写并提交材料
-- 从研究生教务员办公室拿到`《博士学位论文预评审评阅书》x2`，并请2位专家进行评定，填写意见
+- 从所在学院研究生教务员办公室拿到`《博士学位论文预评审评阅书》x2`，并请2位专家进行评定，填写意见
 - 制作预答辩PPT，`defense.tex`
 - 从研究生网站[下载](http://gs.njust.edu.cn/57/2e/c4557a87854/page.htm)并填写`《预答辩情况登记表》x1`，如实填写信息，并请研究生教务员签字
-- 从研究生网站[下载](http://gs.njust.edu.cn/57/32/c4557a87858/page.htm)并填写`《保密审查表》x2`，导师签字后，并请院长签字并盖章
+- （目前的流程在送审过程中不再需要）从研究生网站[下载](http://gs.njust.edu.cn/57/32/c4557a87858/page.htm)并填写`《保密审查表》x2`，导师签字后，并请院长签字并盖章 
 - 请导师定好预答辩日期，并请3位专家参加预答辩
 - 认真记录专家提出的修改意见，整理后填入`《预答辩情况登记表》`，并请专家和导师签字
+
+> 原则上，预答辩时间点要在送审前一个月。
 
 ## 送审-review
 ### 由于疫情，现在改到了线上，流程参见[研究生院官网](http://gs.njust.edu.cn/a2/39/c4540a238137/page.htm)
